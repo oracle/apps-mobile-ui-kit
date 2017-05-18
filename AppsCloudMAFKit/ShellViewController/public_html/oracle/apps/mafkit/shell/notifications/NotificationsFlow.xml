@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="NotificationsFlow">
+    <default-activity>Notifications</default-activity>
+    <managed-bean id="__8">
+      <managed-bean-name>NotificationsBean</managed-bean-name>
+      <managed-bean-class>oracle.apps.mafkit.shell.notifications.NotificationsBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="Notifications">
+      <page>/oracle/apps/mafkit/shell/notifications/Notifications.amx</page>
+    </view>
+    <router id="NotificationDetailRouter">
+      <case id="__16">
+        <expression>#{pageFlowScope.NotificationsBean.selectedNotification.type == 'CAPTURED_IMAGE'}</expression>
+        <outcome>image</outcome>
+      </case>
+      <case id="__17">
+        <expression>#{pageFlowScope.NotificationsBean.selectedNotification.type == 'CAPTURED_NOTE'}</expression>
+        <outcome>note</outcome>
+      </case>
+      <case id="__18">
+        <expression>#{pageFlowScope.NotificationsBean.selectedNotification.type == 'APPROVAL'}</expression>
+        <outcome>approval</outcome>
+      </case>
+      <case id="__19">
+        <expression>#{pageFlowScope.NotificationsBean.selectedNotification.type == 'FYI'}</expression>
+        <outcome>fyi</outcome>
+      </case>
+      <default-outcome>fyi</default-outcome>
+    </router>
+    <view id="ImageDetail">
+      <page>/oracle/apps/mafkit/shell/notifications/ImageDetail.amx</page>
+    </view>
+    <view id="NoteDetail">
+      <page>/oracle/apps/mafkit/shell/notifications/NoteDetail.amx</page>
+    </view>
+    <view id="ApprovalDetail">
+      <page>/oracle/apps/mafkit/shell/notifications/ApprovalDetail.amx</page>
+    </view>
+    <view id="FYIDetail">
+      <page>/oracle/apps/mafkit/shell/notifications/FYIDetail.amx</page>
+    </view>
+    <method-call id="initNotificationDetails">
+      <method>#{pageFlowScope.NotificationsBean.initializeNotificationDetails}</method>
+      <outcome>
+        <fixed-outcome>done</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id>NotificationDetailRouter</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>image</from-outcome>
+        <to-activity-id>ImageDetail</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>note</from-outcome>
+        <to-activity-id>NoteDetail</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>approval</from-outcome>
+        <to-activity-id>ApprovalDetail</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>fyi</from-outcome>
+        <to-activity-id>FYIDetail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>initNotificationDetails</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>done</from-outcome>
+        <to-activity-id>NotificationDetailRouter</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>Notifications</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>detail</from-outcome>
+        <to-activity-id>initNotificationDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

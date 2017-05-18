@@ -1,0 +1,1020 @@
+/*
+ * Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+ * Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+ */
+
+/***********************************
+***********CAPTURE STYLES***********
+***********************************/
+.EMA_action-wheel{
+    direction:ltr;
+}
+
+.EMA_action-wheel-container{
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+.EMA_floatContainer img {
+    height: 32px;
+    width: 32px;
+    margin-top: 8px;
+}
+
+.EMA_floatContainer {
+    position: fixed;
+    padding: 0px !important;
+    right: 10px;
+    bottom: 5px;
+    z-index: 10;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: #E01E25;
+    text-align: center;
+    opacity: 0.8;
+    animation: float-opacity 500000ms infinite;
+    -webkit-animation: float-opacity 500000ms infinite;
+}
+
+@keyframes float-opacity {
+    0.0%{
+        opacity: 0.8;
+    }
+    0.1% {
+        opacity: 0.5;
+    }
+    0.2%{
+        opacity: 0.2;
+    }
+}
+
+@-webkit-keyframes float-opacity {
+    0%{
+        opacity: 0.8;
+    }
+    0.1% {
+        opacity: 0.5;
+    }
+    0.2%{
+        opacity: 0.2;
+    }
+}
+
+.EMA_action-wheel-icons {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+/*icon move to center*/
+.EMA_float-move {
+    animation: EMA_float-animate 600ms linear;
+    -webkit-animation: EMA_float-animate 600ms linear;
+}
+@keyframes EMA_float-animate {
+    from {
+        bottom: 5%;
+        right: 5%;
+    }
+    
+    to {
+        bottom: 45%;
+        right: 45%;
+    }
+}
+
+@-moz-keyframes EMA_float-animate {
+    from {
+        bottom: 5%;
+        right: 5%;
+    }
+    
+    to {
+        bottom: 45%;
+        right: 45%;
+    }
+}
+
+
+@-webkit-keyframes EMA_float-animate {
+    from {
+        bottom: 5%;
+        right: 5%;
+    }
+    
+    to {
+        bottom: 45%;
+        right: 45%;
+    }
+}
+
+/****OOTB icons background for capture****/
+.EMA_capture-notes {
+    background-color: #5A68AD;
+}
+
+.EMA_capture-audio {
+    background-color: #E75D70;
+}
+
+.EMA_capture-icon {
+    margin-top: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.EMA_capture-central-container{
+    background-color:#E01E25;
+    opacity:0.8;
+}
+
+.EMA_capture-central-image{
+    height:70px; 
+    width:70px; 
+    margin-top: 15px;
+}
+
+.EMA_avatar-central-image{
+    height:100px; 
+    width:100px;
+    border-radius:50%;    
+}
+
+.EMA_capture-central-icon {
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    margin-top:73px;
+    left:-6px;
+    border:2px white solid;
+    background-repeat: no-repeat;
+    -webkit-animation: central-popup 1200ms linear;
+    animation: central-popup 1200ms linear;
+}
+
+@keyframes central-popup {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes central-popup {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+.EMA_avatar-central-icon {
+   height:100px;
+   width:100px;
+   border-radius:50%;
+   margin-top:73px;
+   left: -6px;
+   position: relative;
+   border:2px white solid;
+   background-repeat: no-repeat;
+    -webkit-animation: central-popup-home 1200ms linear;
+    animation: central-popup-home 1200ms linear;
+}
+@keyframes central-popup-home {
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes central-popup-home {
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+/****CAPTURE RING****/
+.EMA_capture-ring {
+    border: 2px solid #ffffff;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    -webkit-animation: EMA_capture-ring-spin 1200ms linear;
+    animation: EMA_capture-ring-spinspin 1200ms linear;
+}
+
+@keyframes EMA_capture-ring-spin {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    40% {
+        visibility: hidden;
+    }
+    50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes EMA_capture-ring-spin {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    40% {
+        visibility: hidden;
+    }
+    50% {
+         visibility: visible;
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/****AVATAR RING****/
+.EMA_avatar-ring {
+    border: 2px solid #ffffff;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    -webkit-animation: EMA_avatar-ring-spin 1200ms linear;
+    animation: EMA_avatar-ring-spin 1200ms linear;
+}
+
+@keyframes EMA_avatar-ring-spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes EMA_avatar-ring-spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/****CLOCK POSITIONS****/
+.popup-pos-1{
+    bottom: 30px;
+    right: -160px;
+    -webkit-animation: pos-1-spin 1200ms linear;
+    animation: pos-1-spin 1200ms linear;
+}
+
+.popup-pos-1-2{
+    top:-70px;
+    right: -150px;
+    -webkit-animation: pos-1-spin 1200ms linear;
+    animation: pos-1-spin 1200ms linear;
+}
+
+@keyframes pos-1-spin {
+    0% {
+        visibility: hidden;
+    }
+    19% {
+        visibility: hidden;
+    }
+    20% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-1-spin {
+    0% {
+        visibility: hidden;
+    }
+    19% {
+        visibility: hidden;
+    }
+    20% {
+        visibility: visible;
+    }
+}
+
+.popup-pos-1-delay{
+    bottom: 30px;
+    right: -170px;
+    -webkit-animation: pos-1-spin-delay 1200ms linear;
+    animation: pos-1-spin-delay 1200ms linear;
+}
+
+.popup-pos-1-2-delay{
+    top:-70px;
+    right: -150px;
+    -webkit-animation: pos-1-spin-delay 1200ms linear;
+    animation: pos-1-spin-delay 1200ms linear;
+}
+
+@keyframes pos-1-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    59% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes pos-1-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    59% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+.popup-pos-4{
+    left: 190px;
+    top: 60px;
+    -webkit-animation: pos-4-spin 1200ms linear;
+    animation: pos-4-spin 1200ms linear;
+}
+
+@keyframes pos-4-spin {
+    0% {
+        visibility: hidden;
+    }
+    39% {
+        visibility: hidden;
+    }
+    40% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-4-spin {
+    0% {
+        visibility: hidden;
+    }
+    39% {
+        visibility: hidden;
+    }
+    40% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-4-delay{
+    left: 210px;
+    top: 70px;
+    -webkit-animation: pos-4-spin-delay 1200ms linear;
+    animation: pos-4-spin-delay 1200ms linear;
+}
+
+@keyframes pos-4-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    69% {
+        visibility: hidden;
+    }
+    70% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-4-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    69% {
+        visibility: hidden;
+    }
+    70% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-5{
+    left: 160px;
+    top:95px;
+    -webkit-animation: pos-5-spin 1200ms linear;
+    animation: pos-5-spin 1200ms linear;
+}
+
+@keyframes pos-5-spin {
+    0% {
+        visibility: hidden;
+    }
+    44% {
+        visibility: hidden;
+    }
+    45% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-5-spin {
+    0% {
+        visibility: hidden;
+    }
+    44% {
+        visibility: hidden;
+    }
+    45% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-5-delay{
+    left: 160px;
+    top:95px;
+    -webkit-animation: pos-5-spin-delay 1200ms linear;
+    animation: pos-5-spin-delay 1200ms linear;
+}
+
+@keyframes pos-5-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    74% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-5-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    74% {
+        visibility: hidden;
+    }
+    75% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-7{
+    left: -170px;
+    top: 175px;
+    -webkit-animation: pos-7-spin 1200ms linear;
+    animation: pos-7-spin 1200ms linear;
+}
+
+.popup-pos-7-2{
+    left: -150px;
+    top: 155px;
+    -webkit-animation: pos-7-spin 1200ms linear;
+    animation: pos-7-spin 1200ms linear;
+}
+
+@keyframes pos-7-spin {
+    0% {
+        visibility: hidden;
+    }
+    59% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-7-spin {
+    0% {
+        visibility: hidden;
+    }
+    59% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-7-delay{
+    left: -160px;
+    top: 195px;
+    -webkit-animation: pos-7-spin-delay 1200ms linear;
+    animation: pos-7-spin-delay 1200ms linear;
+}
+
+.popup-pos-7-2-delay{
+    left: -150px;
+    top: 145px;
+    -webkit-animation: pos-7-spin-delay 1200ms linear;
+    animation: pos-7-spin-delay 1200ms linear;
+}
+
+@keyframes pos-7-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    79% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-7-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    79% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-9{
+    top:30px;
+    left:-220px;
+    -webkit-animation: pos-9-spin 1200ms linear;
+    animation: pos-9-spin 1200ms linear;
+}
+
+@keyframes pos-9-spin {
+    0% {
+        visibility: hidden;
+    }
+    69% {
+        visibility: hidden;
+    }
+    70% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-9-spin {
+    0% {
+        visibility: hidden;
+    }
+    69% {
+        visibility: hidden;
+    }
+    70% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-9-delay{
+    top:35px;
+    left:-220px;
+    -webkit-animation: pos-9-spin-delay 1200ms linear;
+    animation: pos-9-spin-delay 1200ms linear;
+}
+
+@keyframes pos-9-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    84% {
+        visibility: hidden;
+    }
+    85% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-9-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    84% {
+        visibility: hidden;
+    }
+    85% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-10{
+    top: -60px;
+    left: -210px;
+    -webkit-animation: pos-10-spin 1200ms linear;
+    animation: pos-10-spin 1200ms linear;
+}
+
+@keyframes pos-10-spin {
+    0% {
+        visibility: hidden;
+    }
+    79% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-10-spin {
+    0% {
+        visibility: hidden;
+    }
+    79% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }  
+}
+
+.popup-pos-10-delay{
+    top: -60px;
+    left: -220px;
+    -webkit-animation: pos-10-spin-delay 1200ms linear;
+    animation: pos-10-spin-delay 1200ms linear;
+}
+
+@keyframes pos-10-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    89% {
+        visibility: hidden;
+    }
+    90% {
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes pos-10-spin-delay {
+    0% {
+        visibility: hidden;
+    }
+    89% {
+        visibility: hidden;
+    }
+    90% {
+        visibility: visible;
+    }  
+}
+
+/****OOTB BACKGROUND SUPPORT FOR ACTION WHEEL ICONS****/
+.EMA_avatar-mail-icon {
+    background-color: #1AABE2;
+}
+
+.EMA_avatar-chat-icon {
+    background-color: #F09543;
+}
+
+.EMA_avatar-call-icon {
+    background-color: #44AC61;
+}
+
+.EMA_avatar-location-icon{
+    background-color: #CA589D;
+}
+
+.EMA_avatar-disabled-icon{
+    background-color: #CCCCCC;
+}
+
+.EMA_avatar-disabled-icon img,
+.EMA_capture-disabled-icon img{
+    opacity : 0.5;
+}
+/***********************************
+*********CAPTURE STYLES END*********
+***********************************/
+
+
+/************************************************************************************
+**************This file includes css for capture and contact quick-links**************
+************************************************************************************/
+
+
+
+
+/*.capture-fade{
+    animation: float-opacity 5000000ms linear;
+    -webkit-animation: float-opacity 5000000ms linear;
+    -moz-animation: float-opacity 5000000ms linear;
+}
+
+*/
+
+
+
+
+
+
+
+
+/* Popup clock positions */
+
+
+
+
+
+/*.captureImages {
+    margin-top: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.capture-photo {
+    background-color: #20B4BC;*/
+   /* bottom: 70px;
+    right: -180px;
+    -webkit-animation: camera-spin 1200ms linear;
+    -moz-animation: camera-spin 1200ms linear;
+    animation: camera-spin 1200ms linear;*/
+/*}
+
+.capture-photo-dc {
+    background-color: #20B4BC;
+    bottom: 70px;
+    right: -180px;
+    -webkit-animation: camera-spin-dc 1200ms linear;
+    -moz-animation: camera-spin-dc 1200ms linear;
+    animation: camera-spin-dc 1200ms linear;
+}
+
+
+
+.capture-audio-dc{
+    background-color: #E75D70;
+    left: -160px;
+    top: 160px;
+    -webkit-animation: audio-spin-dc 1200ms linear;
+    -moz-animation: audio-spin-dc 1200ms linear;
+    animation: audio-spin-dc 1200ms linear;
+}
+
+@keyframes note-spin {
+    0% {
+        visibility: hidden;
+    }
+    40%{
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+
+@-moz-keyframes note-spin {
+    0% {
+        visibility: hidden;
+    }
+    40%{
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes note-spin {
+    0% {
+        visibility: hidden;
+    }
+    40%{
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+
+@keyframes audio-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+
+@-moz-keyframes audio-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes audio-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    60% {
+        visibility: visible;
+    }
+}
+
+
+@keyframes camera-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }
+}
+
+
+@-moz-keyframes camera-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes camera-spin {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: hidden;
+    }
+    80% {
+        visibility: visible;
+    }
+}
+
+@keyframes audio-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+
+@-moz-keyframes audio-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes audio-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    25% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+}
+
+@keyframes camera-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: visible;
+    }
+    
+}
+
+
+@-moz-keyframes camera-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: visible;
+    }
+}
+
+
+@-webkit-keyframes camera-spin-dc {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    62% {
+        visibility: visible;
+    }
+}*/
+
+
+
+/* css for voice capture screen */
+
+/*.grey-audio-ring {
+    border: 6px solid #95979B;
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+}
+
+.audio-buttons{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background-color: #D6001D;
+}
+
+.microphoneIcon{
+    margin-top:20px;   
+}
+
+.capture-audio-action{
+    margin-top:5px;
+}
+
+.action-wheel{
+    direction:ltr;
+}*/
+
+/* New additions removing inline styles */

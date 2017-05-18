@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.22" id="HomePageDef"
+                Package="oracle.apps.mafkit.shell.home">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="InfoletsData" id="InfoletsDataIterator"/>
+    <accessorIterator MasterBinding="InfoletsDataIterator" Binds="openPipelineList" RangeSize="-1"
+                      DataControl="InfoletsData" BeanClass="oracle.apps.mafkit.shell.infolets.OpenPipeline"
+                      id="openPipelineListIterator"/>
+    <accessorIterator MasterBinding="InfoletsDataIterator" Binds="openOpportunitiesList" RangeSize="25"
+                      DataControl="InfoletsData" BeanClass="oracle.apps.mafkit.shell.infolets.Opportunity"
+                      id="openOpportunitiesListIterator"/>
+    <accessorIterator MasterBinding="InfoletsDataIterator" Binds="openLeadsList" RangeSize="25"
+                      DataControl="InfoletsData" BeanClass="oracle.apps.mafkit.shell.infolets.Lead"
+                      id="openLeadsListIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="toggleSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="toggleSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <attributeValues IterBinding="InfoletsDataIterator" id="remainingOpportunityAmount">
+      <AttrNames>
+        <Item Value="remainingOpportunityAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InfoletsDataIterator" id="wonOpportunityAmount">
+      <AttrNames>
+        <Item Value="wonOpportunityAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="openPipelineListIterator" id="openPipelineList">
+      <nodeDefinition DefName="oracle.apps.mafkit.shell.infolets.OpenPipeline" Name="openPipelineList0">
+        <AttrNames>
+          <Item Value="pipelineValue"/>
+          <Item Value="pipelineSeries"/>
+          <Item Value="pipelineGroup"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="openOpportunitiesListIterator" id="openOpportunitiesList">
+      <nodeDefinition DefName="oracle.apps.mafkit.shell.infolets.Opportunity" Name="openOpportunitiesList0">
+        <AttrNames>
+          <Item Value="opportunityAmount"/>
+          <Item Value="quarter"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="openLeadsListIterator" id="openLeadsList">
+      <nodeDefinition DefName="oracle.apps.mafkit.shell.infolets.Lead" Name="openLeadsList0">
+        <AttrNames>
+          <Item Value="leadAmount"/>
+          <Item Value="quarter"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="navigateToFeature" RequiresUpdateModel="true" Action="invokeMethod" MethodName="resetFeature"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider">
+      <NamedData NDName="fid" NDValue="#{viewScope.navigateToFeature}" NDType="java.lang.String"/>
+      <NamedData NDName="gotoTheFeature" NDValue="true" NDType="java.lang.Boolean"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

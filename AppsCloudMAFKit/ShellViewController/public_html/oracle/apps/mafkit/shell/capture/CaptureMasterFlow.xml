@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="CaptureMasterFlow">
+    <default-activity>CaptureFlowRouter</default-activity>
+    <managed-bean id="__12">
+      <managed-bean-name>CaptureBean</managed-bean-name>
+      <managed-bean-class>oracle.apps.mafkit.shell.capture.CaptureBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <router id="CaptureFlowRouter">
+      <case id="__10">
+        <expression>#{applicationScope.ApplicationStateBean.captureNavigationParam == 'CAMERA'}</expression>
+        <outcome>goToCameraFlow</outcome>
+      </case>
+      <case id="__11">
+        <expression>#{applicationScope.ApplicationStateBean.captureNavigationParam == 'NOTE'}</expression>
+        <outcome>goToNoteFlow</outcome>
+      </case>
+      <default-outcome>goToCameraFlow</default-outcome>
+    </router>
+    <task-flow-call id="CaptureCameraFlow">
+      <task-flow-reference>
+        <document>/oracle/apps/mafkit/shell/capture/CaptureCameraFlow.xml</document>
+        <id>CaptureCameraFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="CaptureNoteFlow">
+      <task-flow-reference>
+        <document>/oracle/apps/mafkit/shell/capture/CaptureNoteFlow.xml</document>
+        <id>CaptureNoteFlow</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="navigateToCallingFeature">
+      <method>#{pageFlowScope.CaptureBean.navigateToCallingFeature}</method>
+      <outcome>
+        <fixed-outcome>navigateToEmptyWebView</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="CaptureMaster">
+      <page>/oracle/apps/mafkit/shell/capture/CaptureMaster.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>navigateToCallingFeature</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>navigateToEmptyWebView</from-outcome>
+        <to-activity-id>CaptureMaster</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>CaptureCameraFlow</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>returnToCallingFeature</from-outcome>
+        <to-activity-id>navigateToCallingFeature</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>CaptureNoteFlow</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>returnToCallingFeature</from-outcome>
+        <to-activity-id>navigateToCallingFeature</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>CaptureFlowRouter</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>goToCameraFlow</from-outcome>
+        <to-activity-id>CaptureCameraFlow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>goToNoteFlow</from-outcome>
+        <to-activity-id>CaptureNoteFlow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

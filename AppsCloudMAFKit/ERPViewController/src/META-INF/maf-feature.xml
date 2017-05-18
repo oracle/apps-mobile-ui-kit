@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="oracle.apps.mafkit.erp.procurement" name="Procurement" vendor="Planning">
+    <adfmf:content id="oracle.apps.mafkit.erp.procurement.1" image="resources/images/spli_clipboard_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/erp/procurement/ProcurementFlow.xml#ProcurementFlow">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="resources/js/AutoDismissPopup.js" id="i1"/>
+          <adfmf:include type="JavaScript" file="resources/js/CustomSearch.js" id="i2"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+    <adfmf:properties id="p1">
+      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.erp.shipments" name="Shipment Tracking" vendor="Planning">
+    <adfmf:content id="oracle.apps.mafkit.erp.shipments.1" image="resources/images/spli_receipt_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/erp/shipments/ShipmentsFlow.xml#ShipmentsFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p3">
+      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
+    </adfmf:properties>
+  </adfmf:feature>
+</adfmf:features>

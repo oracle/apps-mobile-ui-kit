@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.22" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.apps.mafkit.sales" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/oracle/apps/mafkit/sales/opportunities/Opportunities.amx"
+          usageId="oracle_apps_mafkit_sales_OpportunitiesPageDef"/>
+    <page path="/oracle/apps/mafkit/sales/commissions/Commissions.amx"
+          usageId="oracle_apps_mafkit_sales_CommissionsPageDef"/>
+    <page path="/oracle/apps/mafkit/sales/opportunities/OpportunityDetail.amx"
+          usageId="oracle_apps_mafkit_sales_OpportunityDetailPageDef"/>
+    <page path="/oracle/apps/mafkit/sales/opportunities/OpportunityEdit.amx"
+          usageId="oracle_apps_mafkit_sales_OpportunityEditPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_apps_mafkit_sales_OpportunitiesPageDef"
+          path="oracle.apps.mafkit.sales.opportunities.OpportunitiesPageDef"/>
+    <page id="oracle_apps_mafkit_sales_CommissionsPageDef"
+          path="oracle.apps.mafkit.sales.commissions.CommissionsPageDef"/>
+    <page id="oracle_apps_mafkit_sales_OpportunityDetailPageDef"
+          path="oracle.apps.mafkit.sales.opportunities.OpportunityDetailPageDef"/>
+    <page id="oracle_apps_mafkit_sales_OpportunityEditPageDef"
+          path="oracle.apps.mafkit.sales.opportunities.OpportunityEditPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="OpportunitiesData" path="oracle.apps.mafkit.sales.OpportunitiesData"/>
+    <dc id="ApplicationFeatures" path="oracle.apps.mafkit.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

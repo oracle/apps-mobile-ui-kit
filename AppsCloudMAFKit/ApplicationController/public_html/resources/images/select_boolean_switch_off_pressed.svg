@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="pressed_boolean_switch_off" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="53px" height="36px" viewBox="0 0 53 36" enable-background="new 0 0 53 36" xml:space="preserve">
+<path id="base_1_" fill-rule="evenodd" clip-rule="evenodd" fill="#FEFEFE" d="M15.5,3.01h20c8.56,0,15.5,6.57,15.5,15.13
+	c0,8.56-6.94,14.88-15.5,14.88h-20C6.94,33.02,0,26.71,0,18.14C0,9.58,6.94,3.01,15.5,3.01z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#E6E6E6" d="M15.5,3.01h20c8.56,0,15.5,6.57,15.5,15.13
+	c0,8.56-6.94,14.88-15.5,14.88h-20C6.94,33.02,0,26.71,0,18.14C0,9.58,6.94,3.01,15.5,3.01z M15.33,5.02h20.24
+	c7.38,0,13.37,5.69,13.37,13.11c0,7.42-5.98,12.89-13.37,12.89H15.33c-7.38,0-13.37-5.47-13.37-12.89
+	C1.96,10.71,7.94,5.02,15.33,5.02z"/>
+<circle fill-rule="evenodd" clip-rule="evenodd" fill="#DAEAF8" cx="18.04" cy="18" r="18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#C1D0DF" d="M36,18.02c0,9.94-8.06,18-18,18c-9.94,0-18-8.06-18-18
+	c0-9.94,8.06-18,18-18C27.94,0.02,36,8.08,36,18.02z M18,1.02c-9.39,0-17,7.61-17,17c0,9.39,7.61,17,17,17c9.39,0,17-7.61,17-17
+	C35,8.63,27.39,1.02,18,1.02z"/>
+</svg>

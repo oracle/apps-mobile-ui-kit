@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.22" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.apps.mafkit.erp" ClientType="Generic">
+  <pageMap>
+    <page path="/oracle/apps/mafkit/erp/procurement/Procurement.amx"
+          usageId="oracle_apps_mafkit_erp_ProcurementPageDef"/>
+    <page path="/oracle/apps/mafkit/erp/shipments/Shipments.amx" usageId="oracle_apps_mafkit_erp_ShipmentsPageDef"/>
+    <page path="/oracle/apps/mafkit/erp/procurement/ProductDetail.amx"
+          usageId="oracle_apps_mafkit_erp_ProductDetailPageDef"/>
+    <page path="/oracle/apps/mafkit/erp/procurement/ShoppingCart.amx"
+          usageId="oracle_apps_mafkit_erp_ShoppingCartPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_apps_mafkit_erp_ProcurementPageDef" path="oracle.apps.mafkit.erp.procurement.ProcurementPageDef"/>
+    <page id="oracle_apps_mafkit_erp_ShipmentsPageDef" path="oracle.apps.mafkit.erp.shipments.ShipmentsPageDef"/>
+    <page id="oracle_apps_mafkit_erp_ProductDetailPageDef"
+          path="oracle.apps.mafkit.erp.procurement.ProductDetailPageDef"/>
+    <page id="oracle_apps_mafkit_erp_ShoppingCartPageDef"
+          path="oracle.apps.mafkit.erp.procurement.ShoppingCartPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ProcurementData" path="oracle.apps.mafkit.erp.ProcurementData"/>
+    <dc id="ApplicationFeatures" path="oracle.apps.mafkit.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

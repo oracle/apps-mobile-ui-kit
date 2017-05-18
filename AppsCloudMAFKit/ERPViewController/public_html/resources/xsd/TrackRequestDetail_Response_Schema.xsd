@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.canadapost.ca/ws/track"
+            targetNamespace="http://www.canadapost.ca/ws/track" elementFormDefault="qualified">
+  <xsd:element name="tracking-detail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="pin" type="xsd:integer"/>
+        <xsd:element name="active-exists" type="xsd:integer"/>
+        <xsd:element name="archive-exists"/>
+        <xsd:element name="changed-expected-date" type="xsd:date"/>
+        <xsd:element name="destination-postal-id" type="xsd:string"/>
+        <xsd:element name="expected-delivery-date" type="xsd:date"/>
+        <xsd:element name="changed-expected-delivery-reason"/>
+        <xsd:element name="mailed-by-customer-number" type="xsd:integer"/>
+        <xsd:element name="mailed-on-behalf-of-customer-number" type="xsd:integer"/>
+        <xsd:element name="original-pin"/>
+        <xsd:element name="service-name" type="xsd:string"/>
+        <xsd:element name="service-name-2" type="xsd:string"/>
+        <xsd:element name="customer-ref-1" type="xsd:string"/>
+        <xsd:element name="customer-ref-2"/>
+        <xsd:element name="return-pin"/>
+        <xsd:element name="signature-image-exists" type="xsd:string"/>
+        <xsd:element name="suppress-signature" type="xsd:string"/>
+        <xsd:element name="delivery-options">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="item" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="delivery-option" type="xsd:string"/>
+                    <xsd:element name="delivery-option-description" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="significant-events">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="occurrence" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="event-identifier" type="xsd:integer"/>
+                    <xsd:element name="event-date" type="xsd:date"/>
+                    <xsd:element name="event-time" type="xsd:time"/>
+                    <xsd:element name="event-time-zone" type="xsd:string"/>
+                    <xsd:element name="event-description" type="xsd:string"/>
+                    <xsd:element name="signatory-name" type="xsd:string"/>
+                    <xsd:element name="event-site" type="xsd:string"/>
+                    <xsd:element name="event-province" type="xsd:string"/>
+                    <xsd:element name="event-retail-location-id" type="xsd:integer"/>
+                    <xsd:element name="event-retail-name" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

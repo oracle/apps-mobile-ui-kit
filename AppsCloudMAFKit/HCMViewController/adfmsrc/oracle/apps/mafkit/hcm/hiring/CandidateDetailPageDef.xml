@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="CandidateDetailPageDef"
+                Package="oracle.apps.mafkit.hcm.hiring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HiringData" id="HiringDataIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="filteredCandidatesList" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Candidate"
+                      id="filteredCandidatesListIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="educationData" RangeSize="25" DataControl="HiringData"
+                      BeanClass="oracle.apps.mafkit.hcm.data.TimeLineEvent" id="educationDataIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="workExperienceData" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.TimeLineEvent"
+                      id="workExperienceDataIterator"/>
+    <accessorIterator MasterBinding="filteredCandidatesListIterator" Binds="submissions" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Submission"
+                      id="submissionsIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="filteredCandidatesListIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="educationDataIterator" id="educationData">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.TimeLineEvent" Name="educationData0">
+        <AttrNames>
+          <Item Value="title"/>
+          <Item Value="description"/>
+          <Item Value="endDate"/>
+          <Item Value="startDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="workExperienceDataIterator" id="workExperienceData">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.TimeLineEvent" Name="workExperienceData0">
+        <AttrNames>
+          <Item Value="title"/>
+          <Item Value="description"/>
+          <Item Value="endDate"/>
+          <Item Value="startDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="submissionsIterator" id="submissions">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.Submission" Name="submissions0">
+        <AttrNames>
+          <Item Value="reqId"/>
+          <Item Value="candidateStatus"/>
+          <Item Value="reqCity"/>
+          <Item Value="reqCountry"/>
+          <Item Value="reqName"/>
+          <Item Value="reqPostingDate"/>
+          <Item Value="reqState"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="filterRequisitionCandidates" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterRequisitionCandidates" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="requisitionId" NDValue="#{pageFlowScope.HiringBean.viewedRequisitionId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="stage" NDValue="#{pageFlowScope.HiringBean.stageSwitcher}" NDType="java.lang.String"/>
+      <NamedData NDName="pageNavigation" NDValue="#{pageFlowScope.HiringBean.pageNavigation}" NDType="boolean"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

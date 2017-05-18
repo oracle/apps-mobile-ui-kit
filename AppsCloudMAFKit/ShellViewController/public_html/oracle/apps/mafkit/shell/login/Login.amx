@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1" styleClass="EMA_globalBackground">
+    <amx:panelStretchLayout id="psl1" scrollPolicy="none" styleClass="amx-fitParent">
+      <amx:facet name="top">
+        <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+          <amx:spacer id="s1" height="90"/>
+          <amx:outputText value="Apps UX Mobile" id="ot1" styleClass="EMA_text-white EMA_5XLargeFontSize"/>
+          <amx:outputText value="Rapid Development Kit" id="ot3" styleClass="EMA_text-white EMA_4XLargeFontSize"/>
+          <amx:spacer id="s2" height="60"/>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="center">
+        <amx:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+          <amx:panelGroupLayout id="pgl4" styleClass="EMA_loginContainer" layout="vertical">
+            <amx:inputText id="it1" hintText="User Name" simple="true"
+                           styleClass="EMA_inputText-login EMA_CredentialsLogin EMA_InputLoginField"
+                           value="#{pageFlowScope.LoginBean.username}" autoCapitalize="none" autoCorrect="off"/>
+            <amx:spacer id="s5" height="5"/>
+            <amx:inputText id="it2" hintText="Password" styleClass="EMA_inputText-login EMA_InputLoginField"
+                           simple="true" value="#{pageFlowScope.LoginBean.password}" secret="true"/>
+            <amx:spacer id="s4" height="5" rendered="#{! (empty pageFlowScope.validCredentials)}"/>
+            <amx:outputText value="#{pageFlowScope.validCredentials}" id="ot2"
+                            rendered="#{! (empty pageFlowScope.validCredentials)}" styleClass="EMA_loginError"/>
+            <amx:selectBooleanSwitch label="Remember User Name" id="sbs1" styleClass="EMA_selectBooleanSwitch-login"
+                                     value="#{pageFlowScope.LoginBean.rememberUsername}"
+                                     valueChangeListener="#{pageFlowScope.LoginBean.handleRememberUserNameChange}"/>
+            <amx:selectBooleanSwitch label="Remember Password" id="sbs2"
+                                     value="#{pageFlowScope.LoginBean.rememberPassword}"
+                                     styleClass="EMA_selectBooleanSwitch-login"
+                                     valueChangeListener="#{pageFlowScope.LoginBean.handleRememberPasswordChange}"/>
+            <amx:commandButton text="Sign In" id="cb2" styleClass="EMA_commandButton-login"
+                               actionListener="#{pageFlowScope.LoginBean.validateCredentials}"
+                               shortDesc="Sign In Button"/>
+          </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="bottom">
+        <amx:panelGroupLayout id="pgl2" layout="vertical" halign="center">
+          <amx:image id="i1" source="/resources/images/oracleLogoTrans.png" shortDesc="Oracle Logo"/>
+          <amx:spacer id="s3" height="10"/>
+        </amx:panelGroupLayout>
+      </amx:facet>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+</amx:view>

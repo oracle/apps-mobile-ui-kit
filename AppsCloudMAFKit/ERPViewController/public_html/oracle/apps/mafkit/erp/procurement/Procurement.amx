@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt" xmlns:custom="http://xmlns.example.com/custom">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="#{pageFlowScope.ProcurementBean.searchPerformed eq true ? 'Product Catalog' : 'Self-Service Procurement'}" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button"
+                         rendered="#{pageFlowScope.ProcurementBean.searchPerformed == true ? false : true}"
+                         iconPosition="leading"/>
+      <amx:commandButton id="cb2" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
+                         shortDesc="Back" styleClass="EMA_primaryHeader-button"
+                         rendered="#{pageFlowScope.ProcurementBean.searchPerformed == true ? true : false}"
+                         actionListener="#{pageFlowScope.ProcurementBean.resetProductFilters}">
+        <amx:setPropertyListener id="spl1" from="#{''}" to="#{pageFlowScope.ProcurementBean.searchString}"
+                                 type="action"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb101" shortDesc="Hidden Button" styleClass="EMA_hide">
+        <amx:showPopupBehavior id="spb1" popupId="p1" align="overlapTopCenter" alignId="pgl1"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb102" shortDesc="Hidden Button" styleClass="EMA_hide">
+        <amx:closePopupBehavior id="cpb1" popupId="p1"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb7" shortDesc="Card View"
+                         rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'list' &amp;&amp; pageFlowScope.ProcurementBean.searchPerformed eq true}"
+                         icon="/resources/images/func_grid_24_ena.png" styleClass="EMA_secondaryHeader-button">
+        <amx:setPropertyListener id="spl2" from="#{'card'}" to="#{pageFlowScope.ProcurementBean.resultsViewMode}"
+                                 type="action"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb6" shortDesc="List View"
+                         rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' &amp;&amp; pageFlowScope.ProcurementBean.searchPerformed eq true}"
+                         icon="/resources/images/func_list_24_ena.png" styleClass="EMA_secondaryHeader-button">
+        <amx:setPropertyListener id="spl3" from="#{'list'}" to="#{pageFlowScope.ProcurementBean.resultsViewMode}"
+                                 type="action"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb5" shortDesc="Shopping Cart"
+                         styleClass="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
+                         action="shoppingCart" icon="/resources/images/func_cart_24_ena.png"
+                         text="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : bindings.shoppingCartItemCount.inputValue}"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" layout="vertical" halign="start" valign="top">
+      <amx:panelGroupLayout id="pgl2" layout="horizontal"
+                            styleClass="EMA_pickerSearchContainer EMA_mapSearchContainer">
+        <custom:csearch id="customSearchBox1" value="#{pageFlowScope.ProcurementBean.searchString}"
+                        valueChangeListener="#{pageFlowScope.ProcurementBean.filterProductList}" 
+                        hintText="Search" controlType="search" width="calc(100vw - 20px)">
+          <?audit suppress oracle.ide.xml.validation-warning?>
+        </custom:csearch>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+    <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start"
+                         styleClass="EMA_SimpleForm EMA_BaseComponentLabel EMA_BaseComponentValue"
+                         rendered="#{!pageFlowScope.ProcurementBean.searchPerformed eq true}">
+      <amx:panelLabelAndMessage id="plam2" styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper"
+                                label="#{''}">
+        <amx:tableLayout id="tl1" width="100%" styleClass="EMA_subHeader-form">
+          <amx:rowLayout id="rl1">
+            <amx:cellFormat id="cf1" height="32px">
+              <amx:outputText value="Recent Requisitions" id="ot2" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl3" styleClass="EMA_subHeader-form-contents">
+          <amx:listView var="row" value="#{bindings.recentRequisitions.collectionModel}"
+                        fetchSize="3"
+                        selectedRowKeys="#{bindings.recentRequisitions.collectionModel.selectedRow}"
+                        initialScrollRowKeys="#{bindings.recentRequisitions.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.recentRequisitions.collectionModel.makeCurrent}"
+                        showMoreStrategy="off" bufferStrategy="viewport" id="lv1" styleClass="EMA_standardListView">
+            <amx:listItem id="li1" showLinkIcon="false" shortDesc="Recent Requisition Item">
+              <amx:tableLayout id="tl4" cellSpacing="5" width="100%">
+                <amx:rowLayout id="rl4">
+                  <amx:cellFormat id="cf5" halign="center" width="22%">
+                    <amx:panelGroupLayout id="pgl6"
+                                          styleClass="EMA_productImageFrame">
+                      <amx:image id="i1" source="#{row.image}"
+                                 styleClass="EMA_image40" shortDesc="Requisition Product Image"/>
+                    </amx:panelGroupLayout>
+                  </amx:cellFormat>
+                  <amx:cellFormat id="cf4" halign="start" width="78%">
+                    <amx:outputText value="#{row.description}" id="ot5"
+                                    styleClass="EMA_BoldFont EMA_XSmallFontSize EMA_truncate"/>
+                    <amx:panelGroupLayout id="pgl7" layout="horizontal">
+                      <amx:outputText value="#{row.number}" id="ot6" styleClass="EMA_XSmallFontSize EMA_text-normal-2"/>
+                      <amx:spacer id="s2" width="3"/>
+                      <amx:outputText value="|" id="ot8" styleClass="EMA_text-normal-2"/>
+                      <amx:spacer id="s3" width="3"/>
+                      <amx:outputText value="#{row.finalAmount}" id="ot9"
+                                      styleClass="EMA_text-normal-2 EMA_XSmallFontSize">
+                        <amx:convertNumber id="cn1" type="currency" currencySymbol="$" groupingUsed="true"
+                                           minFractionDigits="2" maxFractionDigits="2"/>
+                      </amx:outputText>
+                    </amx:panelGroupLayout>
+                    <amx:panelGroupLayout id="pgl8" layout="horizontal" valign="middle">
+                      <amx:image id="i2" source="/resources/images/menu_checkmark_24_full.png"
+                                 rendered="#{row.status eq 'Approved'}" shortDesc="Approved Icon" styleClass="EMA_image16"/>
+                      <amx:spacer id="s1" width="5" rendered="#{row.status eq 'Approved'}"/>
+                      <amx:outputText value="#{row.status}" id="ot7"
+                                      styleClass="EMA_BoldFont EMA_XSmallFontSize #{row.status eq 'Approved' ? 'EMA_text-green' : ''}"/>
+                    </amx:panelGroupLayout>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+              </amx:tableLayout>
+            </amx:listItem>
+          </amx:listView>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage id="plam3" styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper"
+                                label="#{''}">
+        <amx:tableLayout id="tl2" styleClass="EMA_subHeader-form" width="100%">
+          <amx:rowLayout id="rl2">
+            <amx:cellFormat id="cf2" height="32px">
+              <amx:outputText value="Top Categories" id="ot3" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl4" styleClass="EMA_subHeader-form-contents" scrollPolicy="scroll">
+          <amx:tableLayout id="tl5">
+            <amx:rowLayout id="rl5">
+              <amx:iterator var="row" value="#{bindings.topCategoriesList.collectionModel}" id="i3">
+                <amx:cellFormat id="cf7" styleClass="EMA_padding10">
+                  <amx:panelGroupLayout id="pgl9" layout="vertical" halign="center">
+                    <amx:image id="i4" source="#{row.image}" styleClass="EMA_image70"
+                               shortDesc="Product Category Image"/>
+                    <amx:outputText value="#{row.name}" id="ot10"
+                                    styleClass="EMA_2XSmallFontSize EMA_text-normal-3 EMA_noWrap"/>
+                  </amx:panelGroupLayout>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf6">
+                  <amx:spacer id="s4" width="20"/>
+                </amx:cellFormat>
+              </amx:iterator>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage id="plam1" styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper"
+                                label="#{''}">
+        <amx:tableLayout id="tl3" styleClass="EMA_subHeader-form" width="100%">
+          <amx:rowLayout id="rl3">
+            <amx:cellFormat id="cf3" height="32px">
+              <amx:outputText value="Purchasing News" id="ot4" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl5" styleClass="EMA_subHeader-form-contents">
+          <amx:listView var="row" value="#{bindings.purchasingNews.collectionModel}"
+                        fetchSize="-1"
+                        selectedRowKeys="#{bindings.purchasingNews.collectionModel.selectedRow}"
+                        initialScrollRowKeys="#{bindings.purchasingNews.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.purchasingNews.collectionModel.makeCurrent}"
+                        showMoreStrategy="off" bufferStrategy="viewport" id="lv2" styleClass="EMA_NoListDividers">
+            <amx:listItem id="li2" showLinkIcon="false" shortDesc="Purchasing News Item">
+              <amx:tableLayout id="tl6" cellSpacing="5" width="100%">
+                <amx:rowLayout id="rl6">
+                  <amx:cellFormat id="cf8" halign="start" valign="top" width="7%">
+                    <amx:image id="i5" source="/resources/images/cluster_dot_light_ovr.png"
+                               shortDesc="Bullet Point Dot"/>
+                  </amx:cellFormat>
+                  <amx:cellFormat id="cf9" width="93%" halign="start">
+                    <amx:outputText value="#{row.element}" id="ot11" styleClass="EMA_preWrap"/>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+              </amx:tableLayout>
+            </amx:listItem>
+          </amx:listView>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+    </amx:panelFormLayout>
+    <amx:listView var="row" value="#{bindings.filteredProductList.collectionModel}"
+                  fetchSize="-1" id="lv3"
+                  styleClass="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' ? 'EMA_listView-card' : 'EMA_standardListView-accessory'}"
+                  layout="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' ? 'cards' : 'rows'}"
+                  rendered="#{pageFlowScope.ProcurementBean.searchPerformed eq true}"
+                  selectedRowKeys="#{bindings.filteredProductList.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.filteredProductList.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.filteredProductList.collectionModel.makeCurrent}">
+      <amx:listItem id="li3" action="productDetail"
+                    showLinkIcon="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' ? false : true}"
+                    shortDesc="Product Item" styleClass="EMA_standardListViewCaret">
+        <amx:accessoryLayout id="al1"
+                             rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' ? false : true}">
+          <amx:facet name="end">
+            <amx:commandLink id="cl1" shortDesc="Add to Cart" styleClass="EMA_bkgd-green"
+                             inlineStyle="padding:0px; min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"
+                             actionListener="#{pageFlowScope.ProcurementBean.addProductToCart}">
+              <amx:image id="i6" source="/resources/images/func_cart_24_ena.png"
+                         shortDesc="Shopping Cart"/>
+              <amx:setPropertyListener id="spl4" from="#{row.id}" type="action"
+                                       to="#{pageFlowScope.ProcurementBean.selectedProductId}"/>
+              <amx:setPropertyListener id="spl7" from="#{1}" type="action"
+                                       to="#{pageFlowScope.ProcurementBean.orderQuantity}"/>
+            </amx:commandLink>
+          </amx:facet>
+          <amx:tableLayout id="tl8" width="100%">
+            <amx:rowLayout id="rl7">
+              <amx:cellFormat id="cf10" inlineStyle="padding-left:5px;" width="50px" halign="center">
+                <amx:image id="i7" source="#{row.image}" shortDesc="Product Image" styleClass="EMA_image50"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf11" width="10px"/>
+              <amx:cellFormat id="cf12" width="100%">
+                <amx:panelGroupLayout id="pgl10" layout="vertical" halign="start" valign="middle">
+                  <amx:outputText value="#{row.name}" id="ot12" styleClass="EMA_XSmallFontSize" truncateAt="80"
+                                  inlineStyle="white-space:normal;"/>
+                  <amx:panelGroupLayout id="pgl11" layout="horizontal" halign="start">
+                    <amx:outputText value="#{row.unitPrice}" id="ot13" styleClass="EMA_XSmallFontSize EMA_text-normal-3 ">
+                      <amx:convertNumber id="cn2" type="currency" currencySymbol="$" groupingUsed="true"
+                                         minFractionDigits="2" maxFractionDigits="2"/>
+                    </amx:outputText>
+                    <amx:spacer id="s5" width="5"/>
+                    <amx:outputText value="each" id="ot14" styleClass="EMA_XSmallFontSize EMA_text-normal-3"/>
+                  </amx:panelGroupLayout>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:accessoryLayout>
+        <amx:tableLayout id="tl7" rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' ? true : false}">
+          <amx:rowLayout id="rl8">
+            <amx:cellFormat id="cf13" halign="center">
+              <amx:commandLink id="cl2" action="productDetail" shortDesc="Product Detail">
+                <amx:setPropertyListener id="spl6" from="#{row.id}" type="action"
+                                         to="#{pageFlowScope.ProcurementBean.selectedProductId}"/>
+                <amx:image id="i8" styleClass="EMA_image100" source="#{row.image}"
+                           shortDesc="Product Image"/>
+              </amx:commandLink>
+              <amx:panelGroupLayout id="pgl12" layout="vertical" halign="center">
+                <amx:outputText value="#{row.name}" id="ot15"
+                                styleClass="EMA_XSmallFontSize EMA_text-normal-3 EMA_truncate-multiLine"
+                                inlineStyle="white-space: normal;width:150px;-webkit-line-clamp:3"/>
+                <amx:panelGroupLayout id="pgl13" layout="horizontal" halign="start">
+                  <amx:outputText value="#{row.unitPrice}" id="ot17"
+                                  styleClass="EMA_XSmallFontSize EMA_text-normal-3 EMA_BoldFont">
+                    <amx:convertNumber id="cn3" type="currency" currencySymbol="$" groupingUsed="true"
+                                       minFractionDigits="2" maxFractionDigits="2"/>
+                  </amx:outputText>
+                  <amx:spacer id="s6" width="10"/>
+                  <amx:outputText value="each" id="ot16" styleClass="EMA_XSmallFontSize EMA_text-normal-3"/>
+                </amx:panelGroupLayout>
+              </amx:panelGroupLayout>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:setPropertyListener id="spl5" from="#{row.id}" type="action"
+                                 to="#{pageFlowScope.ProcurementBean.selectedProductId}"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+  <amx:popup id="p1" shortDesc="Notification Popup" styleClass="EMA_notificationPopup" animation="slideDown"
+             autoDismiss="true" backgroundDimming="on">
+    <amx:commandLink id="cl3" shortDesc="Notification Popup">
+      <amx:closePopupBehavior id="cpb2" popupId="p1"/>
+      <amx:tableLayout id="tl9" width="100%">
+        <amx:rowLayout id="rl9">
+          <amx:cellFormat id="cf14" width="40px">
+            <amx:image id="i9" source="/resources/images/menu_checkmark_24_full.png" shortDesc="Addd to Cart"/>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf15" width="100%" halign="start">
+            <amx:outputText value="Addd to Cart" id="ot18" styleClass="EMA_text-normal-1 EMA_LargeFontSize"/>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:commandLink>
+  </amx:popup>
+</amx:view>

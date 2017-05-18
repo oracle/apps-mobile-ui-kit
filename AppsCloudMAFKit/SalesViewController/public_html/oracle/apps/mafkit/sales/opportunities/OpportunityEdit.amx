@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Cancel" action="__back" styleClass="EMA_primaryHeader-button"
+                         shortDesc="Cancel" actionListener="#{pageFlowScope.OpportunitiesBean.restorePreEditValues}"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" text="Save" shortDesc="Save" styleClass="EMA_secondaryHeader-button" action="__back"
+                         actionListener="#{pageFlowScope.OpportunitiesBean.saveEditChanges}"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start"
+                           styleClass="EMA_SimpleForm  EMA_BaseComponentLabel EMA_BaseComponentValue">
+        <amx:inputText label="Name" id="it1" inputType="text" value="#{bindings.name.inputValue}"
+                       hintText="Opportunity Name" styleClass="EMA_inputText"/>
+        <amx:panelLabelAndMessage label="Account" id="plam2">
+          <amx:outputText value="#{bindings.organization.inputValue}" id="ot1"/>
+        </amx:panelLabelAndMessage>
+        <amx:inputText label="Amount" id="it2" value="#{bindings.amount.inputValue}" hintText="Opportunity Amount"
+                       styleClass="EMA_inputText">
+          <amx:convertNumber id="cn1" type="currency" currencySymbol="$" integerOnly="true"/>
+        </amx:inputText>
+        <amx:panelLabelAndMessage label="Sales Stage" id="plam4" styleClass="EMA_SimpleFieldWrapper">
+          <amx:fragment src="/oracle/apps/mafkit/sales/common/OrderedChoiceList.amxf" id="f1">
+            <amx:attribute name="list" value="#{bindings.salesStage.items}" id="a1"/>
+            <amx:attribute name="readOnly" value="false" id="a2"/>
+            <amx:attribute name="label" value="Sales Stage" id="a3"/>
+            <amx:attribute name="selectedValue" value="#{bindings.opportunityStage.inputValue}" id="a4"/>
+            <amx:attribute name="simple" value="true" id="a5"/>
+            <amx:attribute name="showRequired" value="false" id="a6"/>
+          </amx:fragment>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Win Probability" id="plam5" styleClass="EMA_SimpleFieldWrapper">
+          <amx:tableLayout id="tl1" width="100%">
+            <amx:rowLayout id="rl1">
+              <amx:cellFormat id="cf1" halign="end" valign="middle" width="50%">
+                <amx:commandButton id="cb3"
+                                   actionListener="#{pageFlowScope.OpportunitiesBean.handleDecreaseWinProbability}"
+                                   icon="/resources/images/func_circleminus_24_ena.png"
+                                   shortDesc="Decrease Win Probability"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf2" width="100px" halign="center" valign="middle">
+                <dvtm:statusMeterGauge id="smg1" orientation="circular" value="#{bindings.winProbability.inputValue}" shortDesc="Win%"
+                                       animationOnDataChange="auto" rendered="#{bindings.winProbability.inputValue lt '35'}"
+                                       color="#cf1515" thresholdDisplay="all" minValue="0" maxValue="100"
+                                       styleClass="EMA_detailCircularGaugeSize" readOnly="true">
+                  <dvtm:threshold id="t1" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml1" labelStyle="font-size:16px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg2" orientation="circular"
+                                       rendered="#{bindings.winProbability.inputValue ge '75'}" shortDesc="Win%"
+                                       value="#{bindings.winProbability.inputValue}" color="#0f8038"
+                                       styleClass="EMA_detailCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t2" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml2" labelStyle="font-size:16px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg3" orientation="circular"
+                                       rendered="#{bindings.winProbability.inputValue lt '75' and bindings.winProbability.inputValue ge '35'}"
+                                       shortDesc="Win%" value="#{bindings.winProbability.inputValue}" color="#fbce4a"
+                                       styleClass="EMA_detailCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t3" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml3" labelStyle="font-size:16px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf3" halign="start" valign="middle" width="50%">
+                <amx:commandButton id="cb4"
+                                   actionListener="#{pageFlowScope.OpportunitiesBean.handleIncreaseWinProbability}"
+                                   shortDesc="Increase Win Probability"
+                                   icon="/resources/images/func_circleplus_24_ena.png"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelLabelAndMessage>
+        <amx:inputDate label="Close Date" id="id1" inputType="date" value="#{bindings.closeDate.inputValue}"
+                       styleClass="EMA_inputDate EMA_inputText"/>
+        <amx:panelLabelAndMessage label="Primary Contact" id="plam7" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.primaryContactName.inputValue}" id="ot6"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Status" id="plam8" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText id="ot5" value="#{bindings.status.inputValue}"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Include in Forecast" id="plam9" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.forcastCriteria.inputValue}" id="ot4"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Owner" id="plam10" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.ownerName.inputValue}" id="ot3"
+                          styleClass="EMA_text-normal-1 EMA_truncate EMA_BaseFontSize"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Primary Competitor" id="plam11" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.primaryCompetitor.inputValue}" id="ot2"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{''}" id="plam12"
+                                  styleClass="EMA_SimpleFieldWrapper EMA_sectionHeader-wrapper">
+          <amx:tableLayout id="tl10" width="100%" styleClass="EMA_subHeader-form">
+            <amx:rowLayout id="rl13">
+              <amx:cellFormat id="cf25" height="32px">
+                <amx:outputText value="Products" id="ot20" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+          <amx:panelGroupLayout id="pgl10" styleClass="EMA_subHeader-form-contents">
+            <amx:listView var="row" value="#{bindings.productList.collectionModel}"
+                          fetchSize="#{bindings.productList.rangeSize}"
+                          selectedRowKeys="#{bindings.productList.collectionModel.selectedRow}"
+                          initialScrollRowKeys="#{bindings.productList.collectionModel.selectedRow}"
+                          styleClass="EMA_standardListView"
+                          selectionListener="#{bindings.productList.collectionModel.makeCurrent}"
+                          showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+              <amx:listItem id="li1" showLinkIcon="true" shortDesc="objectives" styleClass="EMA_standardListViewCaret">
+                <amx:panelGroupLayout id="pgl11" layout="vertical">
+                  <amx:tableLayout id="tl11" width="100%">
+                    <amx:rowLayout id="rl14">
+                      <amx:cellFormat id="cf26" columnSpan="2">
+                        <amx:outputText value="#{row.name}" id="ot21"/>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl15">
+                      <amx:cellFormat id="cf27">
+                        <amx:image id="i8" shortDesc="Recurring" rendered="#{row.recurring}"
+                                   source="/resources/images/menu_recurring_16_full.png"/>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf28" halign="end">
+                        <amx:outputText value="#{row.amount}" id="ot22"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertNumber id="cn2" type="currency" currencySymbol="$" integerOnly="true"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:listItem>
+            </amx:listView>
+          </amx:panelGroupLayout>
+        </amx:panelLabelAndMessage>
+      </amx:panelFormLayout>
+    </amx:panelGroupLayout>
+  </amx:panelPage>
+</amx:view>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="CaptureNoteFlow">
+    <default-activity>CaptureNote</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name>CaptureBean</managed-bean-name>
+      <managed-bean-class>oracle.apps.mafkit.shell.capture.CaptureBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="CaptureNote">
+      <page>/oracle/apps/mafkit/shell/capture/CaptureNote.amx</page>
+    </view>
+    <task-flow-return id="returnToCallingFeature">
+      <outcome>
+        <name>returnToCallingFeature</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>CaptureNote</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>return</from-outcome>
+        <to-activity-id>returnToCallingFeature</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

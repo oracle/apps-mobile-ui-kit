@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="Mobile RDK"
+                   id="com.oraclecorp.internal.ent2.oracle.apps.mafkit.AppsCloudMAFKit"
+                   appControllerFolder="ApplicationController"
+                   listener-class="oracle.apps.mafkit.application.LifeCycleListenerImpl">
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.login" id="fr1" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.home" id="fr2"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.springboard" id="fr3" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.sales.commissions" id="fr10"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.sales.opportunities" id="fr5"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.hcm.expenses" id="fr11"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.hcm.hiring" id="fr6"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.hcm.timecard" id="fr12"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.erp.procurement" id="fr7"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.erp.shipments" id="fr13"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.notifications" id="fr4"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.about" id="fr8" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.settings" id="fr9" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:featureReference refId="oracle.apps.mafkit.shell.capture" id="fr14" showOnNavigationBar="false"
+                          showOnSpringboard="false"/>
+  <adfmf:navigation>
+    <adfmf:navigationBar enabled="false"/>
+    <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"
+                       width="250">
+      <adfmf:springboardFeatureReference refId="oracle.apps.mafkit.shell.springboard" id="sfr1"/>
+    </adfmf:springboard>
+  </adfmf:navigation>
+  <adfmf:configuration>
+    <adfmf:launchScreen url="resources/launchscreen/maf-launch-screen.html"/>
+  </adfmf:configuration>
+</adfmf:application>

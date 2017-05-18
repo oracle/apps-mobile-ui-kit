@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.22" id="OpportunitiesPageDef"
+                Package="oracle.apps.mafkit.sales.opportunities">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="OpportunitiesData" id="OpportunitiesDataIterator"/>
+    <accessorIterator MasterBinding="OpportunitiesDataIterator" Binds="opportunityList" RangeSize="25"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.Opportunity"
+                      id="opportunityListIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="toggleSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="toggleSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="opportunityListIterator" id="opportunityList">
+      <nodeDefinition DefName="oracle.apps.mafkit.sales.data.Opportunity" Name="opportunityList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="amount"/>
+          <Item Value="closeDate"/>
+          <Item Value="forcastCriteria"/>
+          <Item Value="name"/>
+          <Item Value="opportunityAmount"/>
+          <Item Value="opportunityStage"/>
+          <Item Value="organization"/>
+          <Item Value="primaryCompetitor"/>
+          <Item Value="quarter"/>
+          <Item Value="status"/>
+          <Item Value="winProbability"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="account"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="oracle.apps.mafkit.sales.data.Account" Name="opportunityList1">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

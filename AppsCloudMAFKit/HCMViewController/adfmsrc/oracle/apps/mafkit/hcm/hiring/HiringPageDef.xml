@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.22" id="HiringPageDef"
+                Package="oracle.apps.mafkit.hcm.hiring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HiringData" id="HiringDataIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="filteredRequisitionsList" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Requisition"
+                      id="filteredRequisitionsListIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="filteredCandidatesList" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Candidate"
+                      id="filteredCandidatesListIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="toggleSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="toggleSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <tree IterBinding="filteredRequisitionsListIterator" id="filteredRequisitionsList">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.Requisition" Name="filteredRequisitionsList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="evaluationCount"/>
+          <Item Value="name"/>
+          <Item Value="newCount"/>
+          <Item Value="postingDate"/>
+          <Item Value="reviewCount"/>
+          <Item Value="selectionCount"/>
+          <Item Value="totalCandidateCount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="filteredCandidatesListIterator" id="filteredCandidatesList">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.Candidate" Name="filteredCandidatesList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="name"/>
+          <Item Value="city"/>
+          <Item Value="country"/>
+          <Item Value="job"/>
+          <Item Value="matchPercent"/>
+          <Item Value="photo"/>
+          <Item Value="state"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="filterRequisitionCandidates" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterRequisitionCandidates" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="requisitionId" NDValue="#{pageFlowScope.HiringBean.viewedRequisitionId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="stage" NDValue="#{pageFlowScope.HiringBean.stageSwitcher}" NDType="java.lang.String"/>
+      <NamedData NDName="pageNavigation" NDValue="#{pageFlowScope.HiringBean.pageNavigation}" NDType="boolean"/>
+    </methodAction>
+    <methodAction id="filterCandidatesList" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterCandidatesList" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="searchString" NDValue="#{pageFlowScope.HiringBean.searchString}" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="filterRequisitionsList" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterRequisitionsList" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="searchString" NDValue="#{pageFlowScope.HiringBean.searchString}" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

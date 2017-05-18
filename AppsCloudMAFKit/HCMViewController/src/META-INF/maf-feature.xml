@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="oracle.apps.mafkit.hcm.hiring" name="Hiring" vendor="Human Resources">
+    <adfmf:content id="oracle.apps.mafkit.hcm.hiring.1" image="resources/images/spli_personnew_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/hcm/hiring/HiringFlow.xml#HiringFlow">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="resources/js/CustomSearch.js" id="i1"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+    <adfmf:properties id="p3">
+      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.hcm.expenses" name="Expenses" vendor="Human Resources">
+    <adfmf:content id="oracle.apps.mafkit.hcm.expenses.1" image="resources/images/spli_ledger_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/hcm/expenses/ExpensesFlow.xml#ExpensesFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p1">
+      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.hcm.timecard" name="Timecard" vendor="Human Resources">
+    <adfmf:content id="oracle.apps.mafkit.hcm.timecard.1" image="resources/images/spli_documentclock_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/hcm/timecard/TimecardFlow.xml#TimecardFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p5">
+      <adfmf:property name="iOSWebView" value="legacy" id="p6"/>
+    </adfmf:properties>
+  </adfmf:feature>
+</adfmf:features>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="About Mobile Apps UX RDK" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}"
+                         disabled="#{!bindings.toggleSpringboard.enabled}" id="cb2"
+                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" halign="center">
+      <amx:image id="i1" source="/resources/images/maf_rdk_logo.png"
+                 shortDesc="MAF RDK Logo" inlineStyle="width:100vw;"/>
+    </amx:panelGroupLayout>
+    <amx:outputText value="Welcome to the Oracle Mobile Applications UX Rapid Development Kit" id="ot2"
+                    styleClass="EMA_2XLargeFontSize"/>
+    <amx:outputText value="The RDK is a set of free resources that will help you learn, design and build compelling mobile applications with a modern user experience that is consistent with Oracle Applications Cloud."
+                    id="ot3" styleClass="EMA_text-normal-3"/>
+  </amx:panelPage>
+</amx:view>

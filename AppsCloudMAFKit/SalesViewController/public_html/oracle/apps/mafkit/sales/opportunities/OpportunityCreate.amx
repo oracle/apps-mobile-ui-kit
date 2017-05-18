@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Cancel" action="__back" styleClass="EMA_primaryHeader-button"
+                         shortDesc="Cancel"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" text="Save" action="__back" styleClass="EMA_secondaryHeader-button" shortDesc="Save"/>
+    </amx:facet>
+    <amx:fragment src="/oracle/apps/mafkit/sales/placeholder/Blank.amxf" id="f1"/>
+  </amx:panelPage>
+</amx:view>

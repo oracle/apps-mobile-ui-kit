@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" action="list"
+                         iconPosition="leading" styleClass="EMA_primaryHeader-button" shortDesc="Back"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+        <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
+                               alignId="pp1"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb3" styleClass="EMA_secondaryHeader-button"
+                         icon="/resources/images/func_pencil_24_ena.png" iconPosition="leading" action="edit"
+                         shortDesc="Edit" actionListener="#{pageFlowScope.OpportunitiesBean.cachePreEditValues}"/>
+    </amx:facet>
+    <amx:facet name="footer">
+      <amx:tableLayout id="tl1" width="100%">
+        <amx:rowLayout id="rl1">
+          <amx:cellFormat id="cf1" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
+            <amx:commandLink id="cl1" shortDesc="Summary">
+              <amx:panelGroupLayout id="pgl4" halign="center" scrollPolicy="none"
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Summary' or pageFlowScope.optyFooterTab == '' or pageFlowScope.optyFooterTab == null ? '' : 'EMA_UnselectedTab'}">
+                <amx:image id="i1" styleClass="EMA_FooterTab-icon"
+                           shortDesc="Summary" source="/resources/images/func_summary_24_ena.png"/>
+                <amx:outputText value="Summary" id="ot1"
+                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                <amx:spacer id="s1" height="3"/>
+              </amx:panelGroupLayout>
+              <amx:setPropertyListener id="spl1" from="#{'Summary'}" to="#{pageFlowScope.optyFooterTab}" type="action"/>
+            </amx:commandLink>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf2" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
+            <amx:commandLink id="cl2" shortDesc="Contacts">
+              <amx:panelGroupLayout id="pgl5" scrollPolicy="none" halign="center"
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Contacts' ? '' : 'EMA_UnselectedTab'}">
+                <amx:image id="i2" styleClass="EMA_FooterTab-icon"
+                           shortDesc="Contacts" source="/resources/images/func_contacts_24_ena.png"/>
+                <amx:outputText value="Contacts" id="ot2"
+                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                <amx:spacer id="s2" height="3"/>
+              </amx:panelGroupLayout>
+              <amx:setPropertyListener id="spl2" to="#{pageFlowScope.optyFooterTab}" type="action"
+                                       from="#{'Contacts'}"/>
+            </amx:commandLink>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf3" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
+            <amx:commandLink id="cl3" shortDesc="Team">
+              <amx:panelGroupLayout id="pgl6" halign="center" scrollPolicy="none"
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Team' ? '' : 'EMA_UnselectedTab'}">
+                <amx:image id="i3" styleClass="EMA_FooterTab-icon"
+                           shortDesc="Team" source="/resources/images/func_group_24_ena.png"/>
+                <amx:outputText value="Team" id="ot3"
+                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                <amx:spacer id="s3" height="3"/>
+              </amx:panelGroupLayout>
+              <amx:setPropertyListener id="spl3" to="#{pageFlowScope.optyFooterTab}" type="action" from="#{'Team'}"/>
+            </amx:commandLink>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf4" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
+            <amx:commandLink id="cl4" shortDesc="Activities">
+              <amx:panelGroupLayout id="pgl7" scrollPolicy="none" halign="center"
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Activities' ? '' : 'EMA_UnselectedTab'}">
+                <amx:image id="i4" styleClass="EMA_FooterTab-icon" shortDesc="Activities"
+                           source="/resources/images/func_calendarclipboard_24_ena.png"/>
+                <amx:outputText value="Activities" id="ot4"
+                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                <amx:spacer id="s4" height="3"/>
+              </amx:panelGroupLayout>
+              <amx:setPropertyListener id="spl4" to="#{pageFlowScope.optyFooterTab}" type="action"
+                                       from="#{'Activities'}"/>
+            </amx:commandLink>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf5" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
+            <amx:commandLink id="cl5" shortDesc="Notes">
+              <amx:panelGroupLayout id="pgl8" halign="center" scrollPolicy="none"
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Notes' ? '' : 'EMA_UnselectedTab'}">
+                <amx:image id="i5" styleClass="EMA_FooterTab-icon"
+                           shortDesc="Notes" source="/resources/images/func_note_24_ena.png"/>
+                <amx:outputText value="Notes" id="ot5"
+                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                <amx:spacer id="s5" height="3"/>
+              </amx:panelGroupLayout>
+              <amx:setPropertyListener id="spl5" type="action" to="#{pageFlowScope.optyFooterTab}" from="#{'Notes'}"/>
+            </amx:commandLink>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl9" layout="vertical">
+      <amx:panelFormLayout id="pfl1" styleClass="EMA_SimpleForm EMA_BaseComponentLabel EMA_BaseComponentValue"
+                           labelPosition="topStart" fieldHalign="start">
+        <amx:panelLabelAndMessage id="plam1" label="#{''}" styleClass="EMA_SimpleFieldWrapper">
+          <amx:tableLayout id="tl2" width="100%">
+            <amx:rowLayout id="rl2">
+              <amx:cellFormat id="cf6" valign="top" width="55px">
+                <dvtm:statusMeterGauge id="smg1" orientation="circular" value="#{bindings.winProbability.inputValue}" shortDesc="Win%"
+                                       animationOnDataChange="auto" rendered="#{bindings.winProbability.inputValue lt '35'}"
+                                       color="#cf1515" thresholdDisplay="all" minValue="0" maxValue="100"
+                                       styleClass="EMA_listCircularGaugeSize" readOnly="true">
+                  <dvtm:threshold id="t1" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml1" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg2" orientation="circular"
+                                       rendered="#{bindings.winProbability.inputValue ge '75'}" shortDesc="Win%"
+                                       value="#{bindings.winProbability.inputValue}" color="#0f8038"
+                                       styleClass="EMA_listCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t2" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml2" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg3" orientation="circular"
+                                       rendered="#{bindings.winProbability.inputValue lt '75' and bindings.winProbability.inputValue ge '35'}"
+                                       shortDesc="Win%" value="#{bindings.winProbability.inputValue}" color="#fbce4a"
+                                       styleClass="EMA_listCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t3" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml3" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf7">
+                <amx:panelGroupLayout id="pgl3" layout="vertical">
+                  <amx:outputText value="#{bindings.name.inputValue}" id="ot6"
+                                  styleClass="EMA_XSmallFontSize EMA_truncate"/>
+                  <amx:tableLayout id="tl3" width="100%">
+                    <amx:rowLayout id="rl3">
+                      <amx:cellFormat id="cf8" width="100%">
+                      <amx:outputText value="#{bindings.organization.inputValue}" id="ot7"
+                                      styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf9" width="90px" halign="end">
+                        <amx:outputText value="#{bindings.closeDate.inputValue}" id="ot8"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertDateTime id="cdt1" type="date" pattern="MM/dd/yyyy"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                  <amx:tableLayout id="tl4" width="100%">
+                    <amx:rowLayout id="rl4">
+                      <amx:cellFormat id="cf10" width="50%">
+                        <amx:outputText value="#{bindings.amount.inputValue}" id="ot9"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertNumber id="cn1" type="currency" currencySymbol="$" integerOnly="true"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf11" width="50%" halign="end">
+                        <amx:outputText value="#{bindings.opportunityStage.inputValue}" id="ot10"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{''}" id="plam2" styleClass="EMA_SimpleFieldWrapper EMA_noLabel">
+          <amx:commandLink id="cl6" shortDesc="Account Details">
+            <amx:tableLayout id="tl5" width="100%">
+              <amx:rowLayout id="rl5">
+                <amx:cellFormat id="cf12" width="100%">
+                  <amx:outputText value="Account" id="ot11"
+                                  styleClass="EMA_2XSmallFontSize EMA_text-normal-3"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf13" width="19px" valign="middle" rowSpan="2"
+                                styleClass="EMA_Caret"/>
+              </amx:rowLayout>
+              <amx:rowLayout id="rl6">
+                                <amx:cellFormat id="cf14" width="100%">
+                                    <amx:outputText value="#{bindings.organization.inputValue}"
+                                                    styleClass="EMA_text-normal-1 EMA_truncate EMA_BaseFontSize"
+                                                    id="ot12"/>
+                                </amx:cellFormat>
+              </amx:rowLayout>
+            </amx:tableLayout>
+          </amx:commandLink>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Sales Stage" id="plam3" styleClass="EMA_SimpleFieldWrapper">
+          <amx:fragment src="/oracle/apps/mafkit/sales/common/OrderedChoiceList.amxf" id="f1">
+            <amx:attribute name="list" value="#{bindings.salesStage.items}" id="a1"/>
+            <amx:attribute name="readOnly" value="true" id="a2"/>
+            <amx:attribute name="label" value="Sales Stage" id="a3"/>
+            <amx:attribute name="selectedValue" value="#{bindings.opportunityStage.inputValue}" id="a4"/>
+            <amx:attribute name="simple" value="true" id="a5"/>
+            <amx:attribute name="showRequired" value="false" id="a6"/>
+          </amx:fragment>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{''}" id="plam4" styleClass="EMA_SimpleFieldWrapper">
+          <amx:tableLayout id="tl6" width="100%">
+            <amx:rowLayout id="rl7">
+              <amx:cellFormat id="cf15" height="23px" valign="bottom">
+                <amx:outputText value="Primary Contact" id="ot13"
+                                styleClass="EMA_2XSmallFontSize EMA_text-normal-3"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf16" halign="center" width="50px" rowSpan="2">
+                <amx:commandLink id="cl7" shortDesc="Avatar">
+                  <amx:image id="i6" source="#{bindings.primaryContactImage.inputValue}"
+                             shortDesc="Avatar Image" styleClass="EMA_smallAvatar"/>
+                </amx:commandLink>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf17" width="19px" rowSpan="2">
+                <amx:tableLayout id="tl7">
+                  <amx:rowLayout id="rl8">
+                    <amx:cellFormat id="cf18" styleClass="EMA_Caret"
+                                    inlineStyle="width:20px; height:12px;"/>
+                  </amx:rowLayout>
+                </amx:tableLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl9">
+              <amx:cellFormat id="cf19" valign="top">
+                <amx:outputText value="#{bindings.primaryContactName.inputValue}" id="ot14"
+                                styleClass="EMA_text-normal-1 EMA_truncate EMA_BaseFontSize"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Status" id="plam5" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.status.inputValue}" id="ot15"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Include in Forecast" id="plam6" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.forecastCriteria.inputValue}" id="ot16"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{''}" id="plam7" styleClass="EMA_SimpleFieldWrapper">
+          <amx:tableLayout id="tl8" width="100%">
+            <amx:rowLayout id="rl10">
+              <amx:cellFormat id="cf20" height="23px" valign="bottom">
+                <amx:outputText value="Owner" styleClass="EMA_2XSmallFontSize EMA_text-normal-3" id="ot17"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf21" halign="center" width="50px" rowSpan="2">
+                <amx:commandLink id="cl8" shortDesc="Avatar">
+                  <amx:image id="i7" source="#{bindings.ownerImage.inputValue}"
+                             shortDesc="Avatar Image" styleClass="EMA_smallAvatar"/>
+                </amx:commandLink>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf22" width="19px" rowSpan="2">
+                <amx:tableLayout id="tl9">
+                  <amx:rowLayout id="rl11">
+                    <amx:cellFormat id="cf23" styleClass="EMA_Caret" inlineStyle="width:20px; height:12px;"/>
+                  </amx:rowLayout>
+                </amx:tableLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl12">
+              <amx:cellFormat id="cf24" valign="top">
+                <amx:outputText value="#{bindings.ownerName.inputValue}" id="ot18"
+                                styleClass="EMA_text-normal-1 EMA_truncate EMA_BaseFontSize"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Primary Competitor" id="plam8" styleClass="EMA_SimpleFieldWrapper">
+          <amx:outputText value="#{bindings.primaryCompetitor.inputValue}" id="ot19"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{''}" id="plam9"
+                                  styleClass="EMA_SimpleFieldWrapper EMA_sectionHeader-wrapper">
+          <amx:tableLayout id="tl10" width="100%" styleClass="EMA_subHeader-form">
+            <amx:rowLayout id="rl13">
+              <amx:cellFormat id="cf25" height="32px">
+                <amx:outputText value="Products" id="ot20" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+          <amx:panelGroupLayout id="pgl10" styleClass="EMA_subHeader-form-contents">
+            <amx:listView var="row" value="#{bindings.productList.collectionModel}"
+                          fetchSize="#{bindings.productList.rangeSize}"
+                          selectedRowKeys="#{bindings.productList.collectionModel.selectedRow}"
+                          initialScrollRowKeys="#{bindings.productList.collectionModel.selectedRow}"
+                          styleClass="EMA_standardListView"
+                          selectionListener="#{bindings.productList.collectionModel.makeCurrent}"
+                          showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+              <amx:listItem id="li1" showLinkIcon="true" shortDesc="Products" styleClass="EMA_standardListViewCaret">
+                <amx:panelGroupLayout id="pgl11" layout="vertical">
+                  <amx:tableLayout id="tl11" width="100%">
+                    <amx:rowLayout id="rl14">
+                      <amx:cellFormat id="cf26" columnSpan="2">
+                        <amx:outputText value="#{row.name}" id="ot21"/>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl15">
+                      <amx:cellFormat id="cf27">
+                        <amx:image id="i8" shortDesc="Recurring" rendered="#{row.recurring}"
+                                   source="/resources/images/menu_recurring_16_full.png"/>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf28" halign="end">
+                        <amx:outputText value="#{row.amount}" id="ot22"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertNumber id="cn2" type="currency" currencySymbol="$" integerOnly="true"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:listItem>
+            </amx:listView>
+          </amx:panelGroupLayout>
+        </amx:panelLabelAndMessage>
+      </amx:panelFormLayout>
+    </amx:panelGroupLayout>
+  </amx:panelPage>
+  <amx:popup id="contextMenuPopup" styleClass="EMA_actionsMenuPopup" shortDesc="Contextual Menu Popup"
+             animation="slideUp" autoDismiss="true">
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:panelGroupLayout id="pgl12" styleClass="actionsContainer">
+        <amx:commandButton text="Log a Call" id="cb4" shortDesc="Create">
+          <amx:closePopupBehavior id="cpb1" type="action" popupId="contextMenuPopup"/>
+        </amx:commandButton>
+        <amx:commandButton text="Create Appointment" id="cb5" shortDesc="Filter">
+          <amx:closePopupBehavior id="cpb2" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+        <amx:commandButton text="Estimate Compensation" id="cb7" shortDesc="View in Map">
+          <amx:closePopupBehavior id="cpb3" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+        <amx:commandButton text="Share" id="cb8" shortDesc="Share">
+          <amx:closePopupBehavior id="cpb5" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+      <amx:panelGroupLayout id="pgl2" styleClass="actionsContainer">
+        <amx:commandButton text="Cancel" id="cb6" shortDesc="Cancel">
+          <amx:closePopupBehavior id="cpb4" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:popup>
+</amx:view>

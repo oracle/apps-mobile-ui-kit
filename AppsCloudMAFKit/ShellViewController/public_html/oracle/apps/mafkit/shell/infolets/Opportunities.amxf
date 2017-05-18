@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+  <amx:tableLayout id="tl1" halign="start" width="100%">
+    <amx:rowLayout id="rl1">
+      <amx:cellFormat id="cf1" width="40px" halign="center">
+        <amx:outputText value="12" id="ot1" styleClass="EMA_4XLargeFontSize EMA_text-lightblue"/>
+      </amx:cellFormat>
+      <amx:cellFormat id="cf2" width="100%" halign="start">
+        <amx:outputText value="Open" id="ot2" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+      </amx:cellFormat>
+    </amx:rowLayout>
+    <amx:rowLayout id="rl2">
+      <amx:cellFormat id="cf3" halign="start">
+        <amx:panelGroupLayout id="pgl1" layout="horizontal">
+          <amx:image id="i1" source="/resources/images/arrowUp.png" styleClass="EMA_6XSmallIcon" shortDesc="Up Arrow"/>
+          <amx:outputText value="6" id="ot3" styleClass="EMA_3XSmallFontSize EMA_text-green EMA_horizontalPadding-5"/>
+        </amx:panelGroupLayout>
+      </amx:cellFormat>
+    </amx:rowLayout>
+  </amx:tableLayout>
+  <dvtm:lineChart id="lineChart1" var="row" value="#{bindings.openOpportunitiesList.collectionModel}"
+                  inlineStyle="height:75px;" shortDesc="Opportunities Line Chart">
+    <amx:facet name="dataStamp">
+      <dvtm:chartDataItem id="cdi1" value="#{row.opportunityAmount}" group="#{row.quarter}" series="A"
+                          borderColor="#0f8038" color="#FFFFFF" markerDisplayed="true" markerShape="circle"
+                          markerSize="7" shortDesc="Opportunities Line Chart" borderWidth="1"/>
+    </amx:facet>
+    <amx:facet name="seriesStamp">
+      <dvtm:seriesStyle id="ss1" series="A" color="#0f8038"/>
+    </amx:facet>
+    <dvtm:legend rendered="false" id="l1"/>
+    <dvtm:xAxis id="xa1">
+      <dvtm:axisLine id="al1" rendered="false"/>
+      <dvtm:tickLabel id="tl2" rendered="false"/>
+    </dvtm:xAxis>
+    <dvtm:yAxis id="ya1">
+      <dvtm:axisLine id="al2" rendered="false"/>
+      <dvtm:tickLabel id="tl3" rendered="false"/>
+    </dvtm:yAxis>
+  </dvtm:lineChart>
+</amx:fragmentDef>

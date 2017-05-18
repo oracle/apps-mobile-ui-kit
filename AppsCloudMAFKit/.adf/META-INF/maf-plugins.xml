@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maf-plugins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/adf/mf">
+  <cordova-plugins>
+    <core-cordova-plugin id="c1" pluginId="maf-cordova-plugin-network-access"/>
+    <core-cordova-plugin id="c2" pluginId="cordova-plugin-camera"/>
+  </cordova-plugins>
+</maf-plugins>

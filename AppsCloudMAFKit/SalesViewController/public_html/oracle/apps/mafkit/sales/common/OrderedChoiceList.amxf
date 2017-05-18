@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+        <attribute id="a2">
+            <attribute-name id="a3">list</attribute-name>
+            <attribute-type id="a4">Object</attribute-type>
+        </attribute>
+        <attribute id="a5">
+            <attribute-name id="a6">readOnly</attribute-name>
+            <attribute-type id="a7">Boolean</attribute-type>
+            <default-value id="d1">true</default-value>
+        </attribute>
+        <attribute id="a19">
+            <attribute-name id="a21">label</attribute-name>
+            <attribute-type id="a20">String</attribute-type>
+        </attribute>
+        <attribute id="a10">
+            <attribute-name id="a11">selectedValue</attribute-name>
+            <attribute-type id="a12">String</attribute-type>
+        </attribute>
+        <attribute id="a1">
+            <attribute-name id="a8">simple</attribute-name>
+            <attribute-type id="a9">Boolean</attribute-type>
+            <default-value id="d2">true</default-value>
+        </attribute>
+        <attribute id="a13">
+            <attribute-name id="a14">showRequired</attribute-name>
+            <attribute-type id="a15">Boolean</attribute-type>
+            <default-value id="d3">false</default-value>
+        </attribute>
+    </fragment>
+    <amx:panelGroupLayout id="pgl7" layout="vertical" rendered="#{(empty simple ? true : simple)}">
+        <amx:panelGroupLayout id="pgl4" layout="horizontal" styleClass="EMA_scroll EMA_orderedChoiceList"
+                              rendered="#{!readOnly}">
+            <amx:tableLayout shortDesc="stageComp" id="tl4" width="100%" layout="weighted">
+                <amx:rowLayout id="rl6">
+                    <amx:iterator id="i1" value="#{list}" var="row">
+                        <amx:cellFormat id="cf3" halign="center" valign="middle"
+                                        styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState' : 'EMA_orderedChoiceList-otherState'}"
+                                        height="30px">
+                            <amx:commandLink id="cl1" shortDesc="#{row.value}">
+                                <amx:panelGroupLayout id="pgl2" layout="vertical">
+                                    <amx:outputText value="#{row.label} " id="ot4" styleClass="EMA_truncate"
+                                                    inlineStyle="vertical-align: middle; display: table-cell;  max-width: 200px;"/>
+                                </amx:panelGroupLayout>
+                                <amx:setPropertyListener from="#{row.value}" to="#{selectedValue}" type="action"
+                                                         id="spl1"/>
+                                <amx:clientListener method="handleOrderedChoiceListOnSelection" type="action" id="cl3"/>
+                            </amx:commandLink>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf4" width="24px" height="30px"
+                                        styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState-caret' : 'EMA_orderedChoiceList-otherState-caret'}">
+                            <amx:spacer id="s1" width="24"/>
+                        </amx:cellFormat>
+                    </amx:iterator>
+                </amx:rowLayout>
+            </amx:tableLayout>
+        </amx:panelGroupLayout>
+        <amx:panelGroupLayout id="pgl1" layout="horizontal" styleClass="EMA_scroll EMA_orderedChoiceList-readOnly"
+                              rendered="#{readOnly}">
+            <amx:tableLayout shortDesc="stageComp" id="tl1" width="100%" layout="weighted">
+                <amx:rowLayout id="rl1">
+                    <amx:iterator id="i2" value="#{list}" var="row">
+                        <amx:cellFormat id="cf1" halign="center" valign="middle"
+                                        styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState' : 'EMA_orderedChoiceList-otherState'}"
+                                        height="30px">
+                            <amx:panelGroupLayout id="pgl3" layout="vertical">
+                                <amx:outputText value="#{row.label}" id="ot1" styleClass="EMA_truncate"
+                                                inlineStyle="vertical-align: middle; display: table-cell; max-width: 200px;"/>
+                            </amx:panelGroupLayout>
+                        </amx:cellFormat>
+                        <amx:cellFormat id="cf2" width="24px" height="30px"
+                                        styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState-caret' : 'EMA_orderedChoiceList-otherState-caret'}">
+                            <amx:spacer id="s2" width="24"/>
+                        </amx:cellFormat>
+                    </amx:iterator>
+                </amx:rowLayout>
+            </amx:tableLayout>
+        </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+    <amx:panelLabelAndMessage rendered="#{!(empty simple ? true : simple)}" label="#{label}"
+                              showRequired="#{showRequired}" id="plam1" styleClass="EMA_block">
+        <amx:panelGroupLayout id="pgl5" layout="vertical">
+            <amx:panelGroupLayout id="pgl6" layout="horizontal" styleClass="EMA_scroll EMA_orderedChoiceList"
+                                  rendered="#{!readOnly}">
+                <amx:tableLayout shortDesc="Stage Component" id="tl2" width="100%" layout="weighted">
+                    <amx:rowLayout id="rl2">
+                        <amx:iterator id="i3" value="#{list}" var="row">
+                            <amx:cellFormat id="cf5" halign="center" valign="middle"
+                                            styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState' : 'EMA_orderedChoiceList-otherState'}"
+                                            height="30px">
+                                <amx:commandLink id="cl2" shortDesc="">
+                                    <amx:panelGroupLayout id="pgl8" layout="vertical">
+                                        <amx:outputText value="#{row.label} " id="ot2" styleClass="EMA_truncate"
+                                                        inlineStyle="vertical-align: middle; display: table-cell; max-width: 200px;"/>
+                                    </amx:panelGroupLayout>
+                                    <amx:setPropertyListener from="#{row.value}" to="#{selectedValue}" type="action"
+                                                             id="spl2"/>
+                                    <amx:setPropertyListener from="#{row.value}" to="#{pageFlowScope.selectedValue}"
+                                                             type="action" id="spl22"/>
+                                    <amx:clientListener method="handleOrderedChoiceListOnSelection" type="action"
+                                                        id="cl4"/>
+                                </amx:commandLink>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf6" width="24px" height="30px"
+                                            styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState-caret' : 'EMA_orderedChoiceList-otherState-caret'}">
+                                <amx:spacer id="s3" width="24"/>
+                            </amx:cellFormat>
+                        </amx:iterator>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:panelGroupLayout>
+            <amx:panelGroupLayout id="pgl9" layout="horizontal" styleClass="EMA_scroll EMA_orderedChoiceList-readOnly"
+                                  rendered="#{readOnly}">
+                <amx:tableLayout shortDesc="Stage Component" id="tl3" width="100%" layout="weighted">
+                    <amx:rowLayout id="rl3">
+                        <amx:iterator id="i4" value="#{list}" var="row">
+                            <amx:cellFormat id="cf7" halign="center" valign="middle"
+                                            styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState' : 'EMA_orderedChoiceList-otherState'}"
+                                            height="30px">
+                                <amx:panelGroupLayout id="pgl10" layout="vertical">
+                                    <amx:outputText value="#{row.label} " id="ot3" styleClass="EMA_truncate"
+                                                    inlineStyle="vertical-align: middle; display: table-cell;  max-width: 200px;"/>
+                                </amx:panelGroupLayout>
+                            </amx:cellFormat>
+                            <amx:cellFormat id="cf8" width="24px" height="30px"
+                                            styleClass="#{row.value eq selectedValue ? 'EMA_orderedChoiceList-currentState-caret' : 'EMA_orderedChoiceList-otherState-caret'}">
+                                <amx:spacer id="s4" width="24"/>
+                            </amx:cellFormat>
+                        </amx:iterator>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+    </amx:panelLabelAndMessage>
+    <amx:verbatim id="v1">
+        <![CDATA[
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function(){
+                   try{
+                        handleOrderedChoiceListScroll();
+                    }catch(error){
+                        console.log('problem in scrolling the footer - '+error);
+                    }
+                });
+        
+        </script>
+        ]]>
+    </amx:verbatim>
+</amx:fragmentDef>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Commissions</property>
+      <property
+         name="x">609.09375</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Commissions&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">331.23438</property>
+      <property
+         name="page">/oracle/apps/mafkit/sales/commissions/Commissions.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>

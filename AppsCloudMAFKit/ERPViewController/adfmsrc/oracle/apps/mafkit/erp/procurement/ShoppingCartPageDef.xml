@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="ShoppingCartPageDef"
+                Package="oracle.apps.mafkit.erp.procurement">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProcurementData" id="ProcurementDataIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="requestor" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Person"
+                      id="requestorIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="shoppingCartList" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Product"
+                      id="shoppingCartListIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProcurementDataIterator" id="shoppingCartItemCount">
+      <AttrNames>
+        <Item Value="shoppingCartItemCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="addressLine1">
+      <AttrNames>
+        <Item Value="addressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="addressLine2">
+      <AttrNames>
+        <Item Value="addressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="city">
+      <AttrNames>
+        <Item Value="city"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="state">
+      <AttrNames>
+        <Item Value="state"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="postcode">
+      <AttrNames>
+        <Item Value="postcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProcurementDataIterator" id="shoppingCartAmount">
+      <AttrNames>
+        <Item Value="shoppingCartAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="requestorIterator" id="image">
+      <AttrNames>
+        <Item Value="image"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="shoppingCartListIterator" id="shoppingCartList">
+      <nodeDefinition DefName="oracle.apps.mafkit.erp.data.Product" Name="shoppingCartList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="category"/>
+          <Item Value="description"/>
+          <Item Value="image"/>
+          <Item Value="manufacturer"/>
+          <Item Value="manufacturerPartNumber"/>
+          <Item Value="name"/>
+          <Item Value="quantity"/>
+          <Item Value="supplier"/>
+          <Item Value="supplierItemCode"/>
+          <Item Value="unitPrice"/>
+          <Item Value="price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeFromCart" RequiresUpdateModel="true" Action="invokeMethod" MethodName="removeFromCart"
+                  IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider">
+      <NamedData NDName="productId" NDValue="#{pageFlowScope.ProcurementBean.selectedProductId}" NDType="long"/>
+    </methodAction>
+    <methodAction id="calculateCartAmount" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="calculateCartAmount" IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider"/>
+    <methodAction id="submitCartForApproval" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="submitCartForApproval" IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider"/>
+  </bindings>
+</pageDefinition>

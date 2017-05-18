@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">CaptureNote</property>
+      <property
+         name="x">165.71191</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CaptureNote&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">208.83594</property>
+      <property
+         name="page">/oracle/apps/mafkit/shell/capture/CaptureNote.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">returnToCallingFeature</property>
+      <property
+         name="x">358.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>returnToCallingFeature&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  returnToCallingFeature&lt;/p></property>
+      <property
+         name="y">208.40234</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">return</property>
+      <property
+         name="sdm:polyPoints">R50,206.71191,208.76953,317.0,208.33594,L50</property>
+   </ControlFlowCase>
+</SDM>

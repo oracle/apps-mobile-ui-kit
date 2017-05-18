@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 30">
+<path d="M-3,1H3L17,15,3,29H-3V1Z"
+      style="fill:#D6D6D6;stroke:#D6D6D6;stroke-width:2;stroke-linejoin: miter;"/>
+<path d="M7,1H27V29H7L21,15Z"
+      style="fill:#FFFFFF;stroke:#707070;stroke-width:2;stroke-linejoin: miter;"/>
+</svg>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="OpportunityEditPageDef"
+                Package="oracle.apps.mafkit.sales.opportunities">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="OpportunitiesData" id="OpportunitiesDataIterator"/>
+    <accessorIterator MasterBinding="OpportunitiesDataIterator" Binds="opportunityList" RangeSize="25"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.Opportunity"
+                      id="opportunityListIterator"/>
+    <accessorIterator MasterBinding="opportunityListIterator" Binds="productList" RangeSize="-1"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.Product"
+                      id="productListIterator"/>
+    <accessorIterator MasterBinding="opportunityListIterator" Binds="owner" RangeSize="25"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.Person"
+                      id="ownerIterator"/>
+    <accessorIterator MasterBinding="opportunityListIterator" Binds="primaryContact" RangeSize="25"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.Person"
+                      id="primaryContactIterator"/>
+    <accessorIterator MasterBinding="opportunityListIterator" Binds="salesStageItems" RangeSize="-1"
+                      DataControl="OpportunitiesData" BeanClass="oracle.apps.mafkit.sales.data.OrderedStage"
+                      id="salesStageItemsIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="opportunityListIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="organization">
+      <AttrNames>
+        <Item Value="organization"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="amount">
+      <AttrNames>
+        <Item Value="amount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="productListIterator" id="productList">
+      <nodeDefinition DefName="oracle.apps.mafkit.sales.data.Product" Name="productList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="name"/>
+          <Item Value="amount"/>
+          <Item Value="recurring"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="opportunityListIterator" id="primaryCompetitor">
+      <AttrNames>
+        <Item Value="primaryCompetitor"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ownerIterator" id="ownerName">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="forcastCriteria">
+      <AttrNames>
+        <Item Value="forcastCriteria"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="primaryContactIterator" id="primaryContactName">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="winProbability">
+      <AttrNames>
+        <Item Value="winProbability"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="closeDate">
+      <AttrNames>
+        <Item Value="closeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="opportunityListIterator" id="opportunityAmount">
+      <AttrNames>
+        <Item Value="opportunityAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <list StaticList="false" IterBinding="opportunityListIterator" ListIter="salesStageItemsIterator"
+          id="salesStage">
+      <AttrNames>
+        <Item Value="opportunityStage"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="name"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="opportunityListIterator" id="opportunityStage">
+      <AttrNames>
+        <Item Value="opportunityStage"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

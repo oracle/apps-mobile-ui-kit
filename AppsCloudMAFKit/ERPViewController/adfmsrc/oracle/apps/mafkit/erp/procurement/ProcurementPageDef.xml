@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.22" id="ProcurementPageDef"
+                Package="oracle.apps.mafkit.erp.procurement">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProcurementData" id="ProcurementDataIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="filteredProductList" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Product"
+                      id="filteredProductListIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="fullProductList" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Product"
+                      id="fullProductListIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="recentRequisitions" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Requisition"
+                      id="recentRequisitionsIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="topCategoriesList" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.ProductCategory"
+                      id="topCategoriesListIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="purchasingNews" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="java.lang.String" id="purchasingNewsIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="toggleSpringboard" RequiresUpdateModel="true" Action="invokeMethod" MethodName="toggleSpringboard"
+                  IsViewObjectMethod="false" DataControl="ApplicationFeatures"
+                  InstanceName="data.ApplicationFeatures.dataProvider"/>
+    <attributeValues IterBinding="ProcurementDataIterator" id="shoppingCartItemCount">
+      <AttrNames>
+        <Item Value="shoppingCartItemCount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="recentRequisitionsIterator" id="recentRequisitions">
+      <nodeDefinition DefName="oracle.apps.mafkit.erp.data.Requisition" Name="recentRequisitions0">
+        <AttrNames>
+          <Item Value="number"/>
+          <Item Value="amount"/>
+          <Item Value="date"/>
+          <Item Value="description"/>
+          <Item Value="discount"/>
+          <Item Value="finalAmount"/>
+          <Item Value="image"/>
+          <Item Value="status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="topCategoriesListIterator" id="topCategoriesList">
+      <nodeDefinition DefName="oracle.apps.mafkit.erp.data.ProductCategory" Name="topCategoriesList0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="image"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="purchasingNewsIterator" id="purchasingNews">
+      <nodeDefinition Name="purchasingNews0">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="purchasingNews" Name="purchasingNews0">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="filteredProductListIterator" id="filteredProductList">
+      <nodeDefinition DefName="oracle.apps.mafkit.erp.data.Product" Name="filteredProductList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="category"/>
+          <Item Value="description"/>
+          <Item Value="image"/>
+          <Item Value="manufacturer"/>
+          <Item Value="manufacturerPartNumber"/>
+          <Item Value="name"/>
+          <Item Value="supplier"/>
+          <Item Value="supplierItemCode"/>
+          <Item Value="unitPrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="filterProductList" RequiresUpdateModel="true" Action="invokeMethod" MethodName="filterProductList"
+                  IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider">
+      <NamedData NDName="searchString" NDValue="#{pageFlowScope.ProcurementBean.searchString}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="addToCart" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addToCart"
+                  IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider">
+      <NamedData NDName="productId" NDValue="#{pageFlowScope.ProcurementBean.selectedProductId}" NDType="long"/>
+      <NamedData NDName="quantity" NDValue="#{pageFlowScope.ProcurementBean.orderQuantity}" NDType="int"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

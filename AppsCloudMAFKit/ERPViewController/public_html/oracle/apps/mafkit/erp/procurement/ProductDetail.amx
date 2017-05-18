@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
+                         action="__back" shortDesc="Back" styleClass="EMA_primaryHeader-button"/>
+      <amx:commandButton id="cb101" styleClass="EMA_hide" shortDesc="Hidden Button">
+        <amx:showPopupBehavior id="spb1" popupId="p1" alignId="pfl2" align="overlapTopCenter"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb102" styleClass="EMA_hide" shortDesc="Hidden Button">
+        <amx:closePopupBehavior id="cpb2" popupId="p1"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"
+                         styleClass="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
+                         icon="/resources/images/func_cart_24_ena.png" iconPosition="leading" action="shoppingCart"
+                         text="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : bindings.shoppingCartItemCount.inputValue}"
+                         shortDesc="Shopping Cart"/>
+    </amx:facet>
+    <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
+      <amx:facet name="center">
+        <amx:panelFormLayout id="pfl2" labelPosition="topStart" fieldHalign="start"
+                             styleClass="EMA_SimpleForm  EMA_BaseComponentLabel EMA_BaseComponentValue">
+          <amx:panelLabelAndMessage label="#{''}" id="plam8"
+                                    styleClass="EMA_SimpleFieldWrapper EMA_noLabel">
+            <amx:panelGroupLayout id="pgl1" layout="vertical">
+              <amx:outputText value="#{bindings.name.inputValue}" id="ot1" styleClass="EMA_BoldFont"/>
+              <amx:spacer id="s1" height="10"/>
+              <amx:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+                <amx:image id="i2" source="#{bindings.image.inputValue}" styleClass="EMA_image200"
+                           shortDesc="Product Image"/>
+                <amx:panelGroupLayout id="pgl4" layout="horizontal">
+                  <amx:outputText id="ot3" styleClass="EMA_XSmallFontSize EMA_BoldFont"
+                                  value="#{bindings.unitPrice.inputValue}">
+                    <amx:convertNumber id="cn1" type="currency" currencySymbol="$" groupingUsed="true"
+                                       minFractionDigits="2" maxFractionDigits="2"/>
+                  </amx:outputText>
+                  <amx:spacer id="s2" width="5"/>
+                  <amx:outputText value="each" id="ot4" styleClass="EMA_XSmallFontSize"/>
+                </amx:panelGroupLayout>
+              </amx:panelGroupLayout>
+              <amx:spacer id="s4" height="10"/>
+              <amx:outputText id="ot5" value="#{bindings.description.inputValue}" styleClass="EMA_XSmallFontSize"/>
+              <amx:spacer id="s3" height="10"/>
+            </amx:panelGroupLayout>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="#{''}" id="plam2"
+                                    styleClass="EMA_SimpleFieldWrapper EMA_sectionHeader-wrapper EMA_noLabel">
+            <amx:tableLayout id="tl2" styleClass="EMA_subHeader-form" width="100%">
+              <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf3" height="32px">
+                  <amx:outputText value="Product Information" id="ot6" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+                </amx:cellFormat>
+              </amx:rowLayout>
+            </amx:tableLayout>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="Category" id="plam3" styleClass="EMA_SimpleFieldWrapper">
+            <amx:outputText id="ot7" value="#{bindings.category.inputValue}"/>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="Supplier" id="plam4" styleClass="EMA_SimpleFieldWrapper">
+            <amx:outputText value="#{bindings.supplier.inputValue}" id="ot8"/>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="Supplier Item Code" id="plam5" styleClass="EMA_SimpleFieldWrapper">
+            <amx:outputText value="#{bindings.supplierItemCode.inputValue}" id="ot9"/>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="Manufacturer" id="plam6" styleClass="EMA_SimpleFieldWrapper">
+            <amx:outputText value="#{bindings.manufacturer.inputValue}" id="ot10"/>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="Manufacturer Product Code" id="plam1" styleClass="EMA_SimpleFieldWrapper">
+            <amx:outputText value="#{bindings.manufacturerPartNumber.inputValue}" id="ot11"/>
+          </amx:panelLabelAndMessage>
+          <amx:panelLabelAndMessage label="#{''}" id="plam7"
+                                    styleClass="EMA_SimpleFieldWrapper EMA_sectionHeader-wrapper EMA_noLabel">
+            <amx:tableLayout id="tl3" styleClass="EMA_subHeader-form" width="100%">
+              <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf4" height="32px">
+                  <amx:outputText value="Price Breaks" id="ot12" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+                </amx:cellFormat>
+              </amx:rowLayout>
+            </amx:tableLayout>
+            <amx:panelGroupLayout id="pgl5" styleClass="EMA_subHeader-form-contents">
+              <amx:listView var="row" value="#{bindings.priceBreaks.collectionModel}"
+                            fetchSize="#{bindings.priceBreaks.rangeSize}"
+                            selectedRowKeys="#{bindings.priceBreaks.collectionModel.selectedRow}"
+                            initialScrollRowKeys="#{bindings.priceBreaks.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.priceBreaks.collectionModel.makeCurrent}"
+                            showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1"
+                            styleClass="EMA_standardListView">
+                <amx:listItem id="li1" shortDesc="Price Breaks" showLinkIcon="false">
+                  <amx:panelGroupLayout id="pgl6" layout="vertical" halign="start">
+                    <amx:outputText value="Quantity: #{row.quantity}" id="ot13"
+                                    styleClass="EMA_2XSmallFontSize EMA_text-normal-3"/>
+                    <amx:spacer id="s5" height="3"/>
+                    <amx:panelGroupLayout id="pgl7" layout="horizontal" halign="start">
+                      <amx:outputText value="#{row.newUnitPrice}" id="ot15" styleClass="EMA_2XSmallFontSize EMA_BoldFont">
+                        <amx:convertNumber id="cn2" type="currency" currencySymbol="$" groupingUsed="true"
+                                           minFractionDigits="2" maxFractionDigits="2"/>
+                      </amx:outputText>
+                      <amx:spacer id="s6" width="3"/>
+                      <amx:outputText value="each (#{row.percentDiscount}% discount)" id="ot14" styleClass="EMA_2XSmallFontSize EMA_text-normal-3"/>
+                    </amx:panelGroupLayout>
+                  </amx:panelGroupLayout>
+                </amx:listItem>
+              </amx:listView>
+            </amx:panelGroupLayout>
+          </amx:panelLabelAndMessage>
+        </amx:panelFormLayout>
+      </amx:facet>
+      <amx:facet name="bottom">
+        <amx:panelGroupLayout id="pgl2" styleClass="EMA_bkgd-lightgrey">
+          <amx:tableLayout id="tl4" width="100%">
+            <amx:rowLayout id="rl4">
+              <amx:cellFormat id="cf5" width="75px" halign="end" valign="middle">
+                <amx:commandButton id="cb5" icon="/resources/images/func_circleminus_24_ena.png"
+                                   disabled="#{pageFlowScope.ProcurementBean.orderQuantity le 1}"
+                                   shortDesc="Decrease Quantity">
+                  <amx:setPropertyListener id="spl1" from="#{pageFlowScope.ProcurementBean.orderQuantity - 1}"
+                                           to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
+                </amx:commandButton>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf6" width="55px" halign="center">
+                <amx:inputText id="it1" styleClass="EMA_QuantityCounter-input" inputType="number" simple="true"
+                               value="#{pageFlowScope.ProcurementBean.orderQuantity}" hintText="#{''}"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf7" width="70px" halign="start" valign="middle">
+                <amx:commandButton id="cb6" icon="/resources/images/func_circleplus_24_ena.png"
+                                   shortDesc="Increase Quantity">
+                  <amx:setPropertyListener id="spl2" from="#{pageFlowScope.ProcurementBean.orderQuantity + 1}"
+                                           to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
+                </amx:commandButton>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf8" width="100%" halign="center">
+                <amx:commandButton text="Add to Cart" id="cb7" styleClass="EMA_commandButton-blue"
+                                   shortDesc="Add to Cart"
+                                   actionListener="#{pageFlowScope.ProcurementBean.addProductToCart}"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:facet>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+  <amx:popup id="p1" shortDesc="Notification Popup" styleClass="EMA_notificationPopup" animation="slideDown"
+             autoDismiss="true" backgroundDimming="on">
+    <amx:commandLink id="cl1" shortDesc="Notification Popup">
+      <amx:closePopupBehavior id="cpb1" popupId="p1"/>
+      <amx:tableLayout id="tl1" width="100%">
+        <amx:rowLayout id="rl1">
+          <amx:cellFormat id="cf1" width="40px">
+            <amx:image id="i1" source="/resources/images/menu_checkmark_24_full.png" shortDesc="Added to Cart"/>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf2" width="100%" halign="start">
+            <amx:outputText value="Added to Cart" id="ot2" styleClass="EMA_text-normal-1 EMA_LargeFontSize"/>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:commandLink>
+  </amx:popup>
+</amx:view>

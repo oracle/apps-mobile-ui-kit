@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+    <description id="d1">Action Wheel Fragment</description>
+    <facet id="f2">
+      <facet-name id="f3">actionItem1</facet-name>
+    </facet>
+    <facet id="f4">
+      <facet-name id="f5">actionItem2</facet-name>
+    </facet>
+    <facet id="f6">
+      <facet-name id="f7">actionItem3</facet-name>
+    </facet>
+    <facet id="f8">
+      <facet-name id="f9">actionItem4</facet-name>
+    </facet>
+    <attribute id="a1">
+      <attribute-name id="a2">actionItemCount</attribute-name>
+      <attribute-type id="a3">Integer</attribute-type>
+      <default-value id="d2">3</default-value>
+    </attribute>
+    <attribute id="a4">
+      <attribute-name id="a5">item1StyleClass</attribute-name>
+      <attribute-type id="a6">String</attribute-type>
+    </attribute>
+    <attribute id="a7">
+      <attribute-name id="a8">item2StyleClass</attribute-name>
+      <attribute-type id="a9">String</attribute-type>
+    </attribute>
+    <attribute id="a10">
+      <attribute-name id="a11">item3StyleClass</attribute-name>
+      <attribute-type id="a12">String</attribute-type>
+    </attribute>
+    <attribute id="a13">
+      <attribute-name id="a15">item4StyleClass</attribute-name>
+      <attribute-type id="a14">String</attribute-type>
+    </attribute>
+    <attribute id="a16">
+      <attribute-name id="a17">wheelContextIcon</attribute-name>
+      <attribute-type id="a18">String</attribute-type>
+    </attribute>
+    <attribute id="a19">
+      <attribute-name id="a20">isCapture</attribute-name>
+      <attribute-type id="a21">Boolean</attribute-type>
+      <default-value id="d3">true</default-value>
+    </attribute>
+    <popup id="p1">
+      <popup-id id="p2">actionWheelPopup</popup-id>
+    </popup>
+  </fragment>
+  <amx:popup id="actionWheelPopup" shortDesc="Action Wheel Popup" backgroundDimming="on" autoDismiss="true"
+             animation="pop" styleClass="EMA_popup-transparent EMA_action-wheel">
+    <amx:tableLayout id="tl1" width="100%">
+      <amx:rowLayout id="rl1">
+        <amx:cellFormat id="cf1" height="305px" width="100%" halign="center" valign="middle"
+                        styleClass="EMA_action-wheel-container">
+          <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle"
+                                styleClass="#{isCapture eq true ? 'EMA_capture-ring' : 'EMA_avatar-ring'}">
+            <!-- Item 1 and Item 3 -->
+            <amx:panelGroupLayout id="pgl3" layout="vertical" halign="center" valign="middle">
+              <!-- Item 1 -->
+              <amx:panelGroupLayout id="pgl5" layout="horizontal" halign="center" valign="middle"
+                                    styleClass="EMA_action-wheel-icons #{item1StyleClass} #{isCapture eq true ? (actionItemCount eq 2 ? 'popup-pos-1-2-delay' : 'popup-pos-1-delay') : (actionItemCount eq 2 ? 'popup-pos-1-2' : 'popup-pos-1')}">
+                <amx:facetRef facetName="actionItem1" id="fr1"/>
+              </amx:panelGroupLayout>
+              <!-- Item 3 -->
+              <amx:panelGroupLayout id="pgl6"
+                                    styleClass="EMA_action-wheel-icons #{item3StyleClass} #{isCapture eq true ? (actionItemCount eq 4 ? 'popup-pos-4-delay' : (actionItemCount eq 3 ? 'popup-pos-5-delay' : '')) : (actionItemCount eq 4 ? 'popup-pos-4' : (actionItemCount eq 3 ? 'popup-pos-5' : ''))}"
+                                    rendered="#{(actionItemCount eq 3 || actionItemCount eq 4) ? true : false}"
+                                    layout="horizontal" halign="center" valign="middle">
+                <amx:facetRef facetName="actionItem3" id="fr2"/>
+              </amx:panelGroupLayout>
+            </amx:panelGroupLayout>
+            <!-- Center -->
+            <amx:panelGroupLayout id="pgl4" layout="horizontal" halign="center" valign="middle"
+                                  styleClass="#{isCapture eq true ? 'EMA_capture-central-icon' : 'EMA_avatar-central-icon'} #{empty wheelContextIcon ? 'EMA_capture-central-container' : ''}">
+              <amx:image id="i1" styleClass="EMA_avatar-central-image" rendered="#{!(empty wheelContextIcon)}"
+                         source="#{wheelContextIcon}" shortDesc="Action Wheel Context"/>
+              <amx:image id="i2" shortDesc="Action Wheel Context" styleClass="EMA_capture-central-image"
+                         rendered="#{empty wheelContextIcon}"
+                         source="/resources/images/actn_captureactive_64_achr.png"/>
+            </amx:panelGroupLayout>
+            <!-- Item 2 and Item 4 -->
+            <amx:panelGroupLayout id="pgl2" layout="vertical" halign="center" valign="middle">
+              <!-- Item 2 -->
+              <amx:panelGroupLayout id="pgl7" layout="horizontal" halign="center" valign="middle"
+                                    styleClass="EMA_action-wheel-icons #{item2StyleClass} #{isCapture eq true ? (actionItemCount eq 4 ? 'popup-pos-7-delay' : (actionItemCount eq 3 ? 'popup-pos-9-delay' : 'popup-pos-7-2-delay')) : (actionItemCount eq 4 ? 'popup-pos-7' : (actionItemCount eq 3 ? 'popup-pos-9' : 'popup-pos-7-2'))}">
+                <amx:facetRef facetName="actionItem2" id="fr3"/>
+              </amx:panelGroupLayout>
+              <!-- Item 4 -->
+              <amx:panelGroupLayout id="pgl8" rendered="#{actionItemCount eq 4}" layout="horizontal" halign="center"
+                                    valign="middle"
+                                    styleClass="EMA_action-wheel-icons #{item4StyleClass} #{isCapture eq true ? 'popup-pos-10-delay' : 'popup-pos-10'}"
+                                    inlineStyle="text-align:center;">
+                <amx:facetRef facetName="actionItem4" id="fr4"/>
+              </amx:panelGroupLayout>
+            </amx:panelGroupLayout>
+          </amx:panelGroupLayout>
+        </amx:cellFormat>
+      </amx:rowLayout>
+    </amx:tableLayout>
+  </amx:popup>
+</amx:fragmentDef>

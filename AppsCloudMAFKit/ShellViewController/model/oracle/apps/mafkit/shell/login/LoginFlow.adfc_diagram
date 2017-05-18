@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Login</property>
+      <property
+         name="x">348.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Login&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">203.30078</property>
+      <property
+         name="page">/oracle/apps/mafkit/shell/login/Login.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>

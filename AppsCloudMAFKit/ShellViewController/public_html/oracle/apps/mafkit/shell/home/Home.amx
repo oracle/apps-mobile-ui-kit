@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1"
+                 styleClass="EMA_globalBackground EMA_infoletHomePage #{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight ? 'EMA_hidePageHeader' : ''}">
+    <amx:facet name="header">
+      <amx:outputText value="Home" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png"
+                         styleClass="EMA_primaryHeader-button" shortDesc="Springboard"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton actionListener="#{bindings.navigateToFeature.execute}" id="cb2"
+                         icon="/resources/images/func_bell_24_ena.png" shortDesc="Notifications"
+                         styleClass="EMA_secondaryHeader-button #{applicationScope.ApplicationStateBean.newNotification ? 'EMA_applicationBadge' : ''}">
+        <amx:setPropertyListener id="spl1" to="#{viewScope.navigateToFeature}"
+                                 from="#{'oracle.apps.mafkit.shell.notifications'}" type="action"/>
+        <amx:setPropertyListener id="spl11" to="#{applicationScope.ApplicationStateBean.newNotification}"
+                                 type="action" from="#{false}"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:masonryLayout id="ml1">
+      <amx:masonryLayoutItem id="mli1" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f1">
+          <amx:attribute name="infoletHeader" value="Actual vs. Quota" id="a1"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/ActualVsQuota.amxf"
+                         id="a2"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli2" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f2">
+          <amx:attribute name="infoletHeader" value="Open Pipeline" id="a3"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/OpenPipeline.amxf"
+                         id="a10"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli3" dimension="2x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet2x1.amxf" id="f3">
+          <amx:attribute name="infoletHeader" value="Sales Visits" id="a4"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/SalesVisits.amxf"
+                         id="a11"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli4"
+                             dimension="#{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight ? '3x1' : '2x1'}">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet3x1.amxf" id="f4">
+          <amx:attribute name="infoletHeader" value="Marketing Promotions" id="a5"/>
+          <amx:attribute name="infoletContentFragment"
+                         value="/oracle/apps/mafkit/shell/infolets/MarketingPromotions.amxf" id="a12"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli5" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f5">
+          <amx:attribute name="infoletHeader" value="Expenses" id="a6"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/Expenses.amxf"
+                         id="a13"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli6" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f6">
+          <amx:attribute name="infoletHeader" value="My Team" id="a7"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/MyTeam.amxf" id="a14"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli7" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f7">
+          <amx:attribute name="infoletHeader" value="Opportunities" id="a8"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/Opportunities.amxf"
+                         id="a15"/>
+          <amx:attribute name="infoletNavigation" value="true" id="a21"/>
+          <amx:attribute value="oracle.apps.mafkit.sales.opportunities" name="navigateToFeature" id="a22"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+      <amx:masonryLayoutItem id="mli8" dimension="1x1">
+        <amx:fragment src="/oracle/apps/mafkit/shell/infoletBoxes/Infolet1x1.amxf" id="f8">
+          <amx:attribute name="infoletHeader" value="Leads" id="a9"/>
+          <amx:attribute name="infoletContentFragment" value="/oracle/apps/mafkit/shell/infolets/Leads.amxf" id="a16"/>
+        </amx:fragment>
+      </amx:masonryLayoutItem>
+    </amx:masonryLayout>
+    <amx:commandLink id="cl1" styleClass="EMA_floatContainer #{viewScope.floatMove}" shortDesc="Capture"
+                     rendered="#{applicationScope.ApplicationStateBean.captureEnabled eq null ? true : applicationScope.ApplicationStateBean.captureEnabled}">
+      <amx:setPropertyListener id="spl2" from="EMA_float-move" to="#{viewScope.floatMove}"/>
+      <amx:showPopupBehavior id="spb1" align="overlapMiddleCenter" popupId="actionWheel:actionWheelPopup">
+        <?audit suppress oracle.maf.error-missing-align-id?>
+      </amx:showPopupBehavior>
+      <amx:panelGroupLayout id="pgl1">
+        <amx:image id="i1" source="/resources/images/actn_captureinactive_24_achr.png" shortDesc="Capture Anchor"/>
+      </amx:panelGroupLayout>
+    </amx:commandLink>
+    <amx:fragment src="/oracle/apps/mafkit/shell/actionWheel/ActionWheel.amxf" id="actionWheel">
+      <amx:attribute name="actionItemCount" value="2" id="a17"/>
+      <amx:attribute name="item1StyleClass" value="EMA_capture-notes" id="a18"/>
+      <amx:attribute name="item2StyleClass" value="EMA_capture-audio" id="a19"/>
+      <amx:attribute name="isCapture" value="true" id="a20"/>
+      <amx:facet name="actionItem1">
+        <amx:commandLink id="cl2" actionListener="#{bindings.navigateToFeature.execute}"
+                         shortDesc="Capture Action Item 1">
+          <amx:image id="i2" source="/resources/images/actn_camera_48_achr.png" styleClass="EMA_capture-icon"
+                     shortDesc="Camera"/>
+          <amx:closePopupBehavior id="cpb1" popupId="actionWheel:actionWheelPopup" type="action"/>
+          <amx:setPropertyListener id="spl4" to="#{viewScope.floatMove}" type="action"/>
+          <amx:setPropertyListener id="spl5" from="oracle.apps.mafkit.shell.capture"
+                                   to="#{viewScope.navigateToFeature}" type="action"/>
+          <amx:setPropertyListener id="spl6" from="CAMERA"
+                                   to="#{applicationScope.ApplicationStateBean.captureNavigationParam}" type="action"/>
+          <amx:setPropertyListener id="spl3" from="oracle.apps.mafkit.shell.home"
+                                   to="#{applicationScope.ApplicationStateBean.navigateFromFeatureId}" type="action"/>
+        </amx:commandLink>
+      </amx:facet>
+      <amx:facet name="actionItem2">
+        <amx:commandLink id="cl3" actionListener="#{bindings.navigateToFeature.execute}"
+                         shortDesc="Capture Action Item 2">
+          <amx:image id="i3" source="/resources/images/actn_microphonedocument_48_achr.png"
+                     styleClass="EMA_capture-icon" shortDesc="Note"/>
+          <amx:closePopupBehavior id="cpb2" popupId="actionWheel:actionWheelPopup" type="action"/>
+          <amx:setPropertyListener id="spl8" to="#{viewScope.floatMove}" type="action"/>
+          <amx:setPropertyListener id="spl9" from="oracle.apps.mafkit.shell.capture"
+                                   to="#{viewScope.navigateToFeature}" type="action"/>
+          <amx:setPropertyListener id="spl10" from="NOTE"
+                                   to="#{applicationScope.ApplicationStateBean.captureNavigationParam}" type="action"/>
+          <amx:setPropertyListener id="spl7" from="oracle.apps.mafkit.shell.home"
+                                   to="#{applicationScope.ApplicationStateBean.navigateFromFeatureId}" type="action"/>
+        </amx:commandLink>
+      </amx:facet>
+    </amx:fragment>
+  </amx:panelPage>
+</amx:view>

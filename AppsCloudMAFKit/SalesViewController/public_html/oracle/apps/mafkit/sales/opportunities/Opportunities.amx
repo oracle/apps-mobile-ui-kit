@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Opportunities" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button" iconPosition="leading"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+        <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" align="bottomCenter" alignId="pp1"
+                               decoration="simple" type="action"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb7" icon="/resources/images/func_search_24_ena.png" iconPosition="leading"
+                         shortDesc="Search" styleClass="EMA_secondaryHeader-button"/>
+    </amx:facet>
+    <amx:listView var="row" value="#{bindings.opportunityList.collectionModel}"
+                  fetchSize="#{bindings.opportunityList.rangeSize}"
+                  selectedRowKeys="#{bindings.opportunityList.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.opportunityList.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.opportunityList.collectionModel.makeCurrent}"
+                  showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1" styleClass="EMA_standardListView">
+      <amx:listItem id="li1" action="detail" showLinkIcon="true" styleClass="EMA_standardListViewCaret"
+                    shortDesc="Opportunity">
+        <amx:accessoryLayout id="al1">
+          <amx:tableLayout id="tl1" width="100%">
+            <amx:rowLayout id="rl1">
+              <amx:cellFormat id="cf2" valign="top" width="55px">
+                <dvtm:statusMeterGauge id="smg1" orientation="circular" value="#{row.winProbability}" shortDesc="Win%"
+                                       animationOnDataChange="auto" rendered="#{row.winProbability lt '35'}"
+                                       color="#cf1515" thresholdDisplay="all" minValue="0" maxValue="100"
+                                       styleClass="EMA_listCircularGaugeSize" readOnly="true">
+                  <dvtm:threshold id="t1" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml1" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg2" orientation="circular"
+                                       rendered="#{row.winProbability ge '75'}" shortDesc="Win%"
+                                       value="#{row.winProbability}" color="#0f8038"
+                                       styleClass="EMA_listCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t2" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml2" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+                <dvtm:statusMeterGauge id="smg3" orientation="circular"
+                                       rendered="#{row.winProbability lt '75' and row.winProbability ge '35'}"
+                                       shortDesc="Win%" value="#{row.winProbability}" color="#fbce4a"
+                                       styleClass="EMA_listCircularGaugeSize" animationOnDataChange="auto" minValue="0"
+                                       maxValue="100" thresholdDisplay="all" readOnly="true">
+                  <dvtm:threshold id="t3" maxValue="100" shortDesc="Threshold" color="#d1d1d1" text="B"/>
+                  <dvtm:metricLabel id="ml3" labelStyle="font-size:10px; color:#707070;" textType="percent"/>
+                </dvtm:statusMeterGauge>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf1">
+                <amx:panelGroupLayout id="pgl4" layout="vertical">
+                  <amx:outputText value="#{row.name}" id="ot2" styleClass="EMA_XSmallFontSize EMA_truncate"/>
+                  <amx:tableLayout id="tl2" width="100%">
+                    <amx:rowLayout id="rl2">
+                      <amx:cellFormat id="cf4" width="100%">
+                        <amx:outputText value="#{row.organization}" id="ot3"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf3" width="90px" halign="end">
+                        <amx:outputText value="#{row.closeDate}" id="ot4"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertDateTime id="cdt1" type="date" pattern="MM/dd/yyyy"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                  <amx:tableLayout id="tl3" width="100%">
+                    <amx:rowLayout id="rl3">
+                      <amx:cellFormat id="cf6" width="50%">
+                        <amx:outputText value="#{row.amount}" id="ot5"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize">
+                          <amx:convertNumber id="cn1" type="currency" currencySymbol="$" integerOnly="true"/>
+                        </amx:outputText>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf5" width="50%" halign="end">
+                        <amx:outputText value="#{row.opportunityStage}" id="ot6"
+                                        styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:accessoryLayout>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+  <amx:popup id="contextMenuPopup" styleClass="EMA_actionsMenuPopup" shortDesc="Contextual Menu Popup"
+             animation="slideUp" autoDismiss="true">
+    <amx:panelGroupLayout id="pgl1">
+      <amx:panelGroupLayout id="pgl3" styleClass="actionsContainer">
+        <amx:commandButton text="Create Opportunity" id="cb4" action="create" shortDesc="Create">
+          <amx:closePopupBehavior id="cpb1" type="action" popupId="contextMenuPopup"/>
+        </amx:commandButton>
+        <amx:commandButton text="Filter" id="cb5" shortDesc="Filter">
+          <amx:closePopupBehavior id="cpb2" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+      <amx:panelGroupLayout id="pgl2" styleClass="actionsContainer">
+        <amx:commandButton text="Cancel" id="cb6" shortDesc="Cancel">
+          <amx:closePopupBehavior id="cpb4" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:popup>
+</amx:view>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Notifications" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png" styleClass="EMA_primaryHeader-button"
+                         shortDesc="Springboard"/>
+    </amx:facet>
+    <amx:listView var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1"
+                  value="#{applicationScope.ApplicationStateBean.notificationsList}"
+                  styleClass="EMA_standardListView-accessory">
+      <amx:listItem id="li1" styleClass="EMA_standardListViewCaret" shortDesc="Notification Item" action="detail">
+        <amx:accessoryLayout id="al1">
+          <amx:facet name="start">
+            <amx:commandLink text="Flag" id="cl1" styleClass="EMA_LargeIcon EMA_truncate EMA_bkgd-grey"
+                             inlineStyle="min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"
+                             shortDesc="Flag"/>
+          </amx:facet>
+          <amx:facet name="end">
+            <amx:commandLink text="Dismiss" id="cl3" rendered="#{row.type eq 'FYI'}"
+                             styleClass="EMA_LargeIcon EMA_truncate EMA_bkgd-neutralBlue"
+                             inlineStyle="min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"/>
+            <amx:commandLink text="Approve" id="cl4" rendered="#{row.type eq 'APPROVAL'}"
+                             styleClass="EMA_LargeIcon EMA_truncate EMA_bkgd-green"
+                             inlineStyle="min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"/>
+            <amx:commandLink text="Reject" id="cl2" rendered="#{row.type eq 'APPROVAL'}"
+                             styleClass="EMA_LargeIcon EMA_truncate EMA_bkgd-red"
+                             inlineStyle="min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"/>
+          </amx:facet>
+          <amx:tableLayout id="tl1" width="100%">
+            <amx:rowLayout id="rl2">
+              <amx:cellFormat id="cf2" rowSpan="2" width="35px" halign="center" valign="top">
+                <amx:image id="i2" rendered="#{row.type eq 'APPROVAL'}"
+                           source="/resources/images/menu_documentcheckmark_24_full.png"
+                           shortDesc="Approval Notification"/>
+                <amx:image id="i1" shortDesc="FYI Notification" rendered="#{row.type eq 'FYI'}"
+                           source="/resources/images/menu_information_24_full.png"/>
+                <amx:image id="i4" source="/resources/images/menu_capturecamera_24_mono.png"
+                           rendered="#{row.type eq 'CAPTURED_IMAGE'}"/>
+                <amx:image id="i3" source="/resources/images/menu_capturepencil_24_mono.png"
+                           rendered="#{row.type eq 'CAPTURED_NOTE'}"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf3" width="70%">
+                <amx:outputText value="#{row.subject}" id="ot2" styleClass="EMA_XSmallFontSize EMA_truncate"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf1" width="30%" halign="end">
+                <amx:outputText value="#{row.creationDate}" id="ot3"
+                                styleClass="EMA_XSmallFontSize EMA_text-normal-3 EMA_truncate">
+                  <amx:convertDateTime id="cdt1" pattern="HH:mm aa"/>
+                </amx:outputText>
+              </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl1">
+              <amx:cellFormat id="cf4" columnSpan="2" width="100%">
+                <amx:outputText value="#{row.description}" id="ot4"
+                                styleClass="EMA_XSmallFontSize EMA_text-normal-3 EMA_truncate"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:accessoryLayout>
+        <amx:setPropertyListener id="spl1" type="action" from="#{row.id}"
+                                 to="#{applicationScope.ApplicationStateBean.selectedNotificationId}"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>

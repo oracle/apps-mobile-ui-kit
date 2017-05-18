@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+    <description id="d1">Reusable 1x1 infolet box</description>
+    <attribute id="a1">
+      <attribute-name id="a2">infoletHeader</attribute-name>
+      <attribute-type id="a3">String</attribute-type>
+    </attribute>
+    <attribute id="a4">
+      <attribute-name id="a5">infoletContentFragment</attribute-name>
+      <attribute-type id="a6">String</attribute-type>
+    </attribute>
+    <attribute id="a7">
+      <attribute-name id="a9">infoletNavigation</attribute-name>
+      <attribute-type id="a8">Boolean</attribute-type>
+      <default-value id="d2">false</default-value>
+    </attribute>
+    <attribute id="a10">
+      <attribute-name id="a11">navigateToFeature</attribute-name>
+      <attribute-type id="a12">String</attribute-type>
+    </attribute>
+    <attribute id="a13">
+      <attribute-name id="a14">displayedChild</attribute-name>
+      <attribute-type id="a15">String</attribute-type>
+      <default-value id="d3">infoletFront</default-value>
+    </attribute>
+    <attribute id="a16">
+      <attribute-name id="a17">hasBack</attribute-name>
+      <attribute-type id="a18">Boolean</attribute-type>
+      <default-value id="d4">false</default-value>
+    </attribute>
+    <attribute id="a19">
+      <attribute-name id="a20">flipELExpression</attribute-name>
+      <attribute-type id="a21">javax.el.ValueExpression</attribute-type>
+    </attribute>
+    <attribute id="a22">
+      <attribute-name id="a23">backInfoletHeader</attribute-name>
+      <attribute-type id="a24">String</attribute-type>
+    </attribute>
+    <attribute id="a25">
+      <attribute-name id="a26">backInfoletContentFragment</attribute-name>
+      <attribute-type id="a27">String</attribute-type>
+    </attribute>
+  </fragment>
+  <amx:panelGroupLayout id="pgl1" layout="vertical" valign="middle">
+    <amx:panelGroupLayout id="pgl2">
+      <amx:deck id="d5" displayedChild="#{empty displayedChild ? 'infoletFront' : displayedChild}"
+                shortDesc="Infolet front back deck">
+        <amx:transition triggerType="forwardNavigate" id="t1" transition="flipStart"/>
+        <amx:transition triggerType="backNavigate" id="t2" transition="flipEnd"/>
+        <amx:panelGroupLayout id="infoletFront" styleClass="EMA_bkgd-white EMA_infolet1X1">
+          <amx:panelStretchLayout id="psl1" styleClass="EMA_infolet-content-container">
+            <amx:facet name="top">
+              <amx:panelGroupLayout id="pgl3" layout="horizontal">
+                <amx:spacer id="s1" width="10"/>
+                <amx:commandLink id="cl1" disabled="#{!infoletNavigation}"
+                                 actionListener="#{bindings.navigateToFeature.execute}" shortDesc="#{infoletHeader}">
+                  <amx:panelGroupLayout id="pgl5" layout="vertical">
+                    <amx:outputText value="#{infoletHeader}" id="ot1" styleClass="EMA_XSmallFontSize EMA_gray40"/>
+                  </amx:panelGroupLayout>
+                  <amx:setPropertyListener id="spl1" type="action" from="#{navigateToFeature}"
+                                           to="#{viewScope.navigateToFeature}"/>
+                </amx:commandLink>
+              </amx:panelGroupLayout>
+            </amx:facet>
+            <amx:facet name="center">
+              <amx:panelGroupLayout id="pgl7" styleClass="EMA_infolet-content" layout="vertical">
+                <amx:fragment src="#{infoletContentFragment}" id="f2"/>
+              </amx:panelGroupLayout>
+              <amx:commandLink id="cl3" rendered="#{hasBack}" shortDesc="Flip to see back"
+                               styleClass="EMA_infoletRightFlip_icon">
+                <amx:image id="i1" source="/resources/images/func_cardflip_46_ena.png" shortDesc="Flip to see back"/>
+                <amx:setPropertyListener id="spl3" to="#{flipELExpression}" from="infoletBack" type="action"/>
+              </amx:commandLink>
+            </amx:facet>
+          </amx:panelStretchLayout>
+        </amx:panelGroupLayout>
+        <amx:panelGroupLayout id="infoletBack" styleClass="EMA_bkgd-white EMA_infolet1X1">
+          <amx:panelStretchLayout id="psl2" styleClass="EMA_infolet-content-container">
+            <amx:facet name="top">
+              <amx:panelGroupLayout id="pgl4" layout="horizontal">
+                <amx:spacer id="s2" width="10"/>
+                <amx:commandLink id="cl2" disabled="#{!infoletNavigation}"
+                                 actionListener="#{bindings.navigateToFeature.execute}" shortDesc="#{backInfoletHeader}">
+                  <amx:panelGroupLayout id="pgl6" layout="vertical">
+                    <amx:outputText value="#{backInfoletHeader}" id="ot2" styleClass="EMA_XSmallFontSize EMA_gray40"/>
+                  </amx:panelGroupLayout>
+                  <amx:setPropertyListener id="spl2" type="action" from="#{navigateToFeature}"
+                                           to="#{viewScope.navigateToFeature}"/>
+                </amx:commandLink>
+              </amx:panelGroupLayout>
+            </amx:facet>
+            <amx:facet name="center">
+              <amx:panelGroupLayout id="pgl8" styleClass="EMA_infolet-content" layout="vertical">
+                <amx:fragment src="#{backInfoletContentFragment}" id="f3"/>
+              </amx:panelGroupLayout>
+              <amx:commandLink id="cl4" shortDesc="Flip to see front" styleClass="EMA_infoletLeftFlip_icon">
+                <amx:image id="i2" source="/resources/images/func_cardflipback_46_ena.png"
+                           shortDesc="Flip to see front"/>
+                <amx:setPropertyListener id="spl4" from="infoletFront" to="#{flipELExpression}" type="action"/>
+              </amx:commandLink>
+            </amx:facet>
+          </amx:panelStretchLayout>
+        </amx:panelGroupLayout>
+      </amx:deck>
+    </amx:panelGroupLayout>
+  </amx:panelGroupLayout>
+</amx:fragmentDef>

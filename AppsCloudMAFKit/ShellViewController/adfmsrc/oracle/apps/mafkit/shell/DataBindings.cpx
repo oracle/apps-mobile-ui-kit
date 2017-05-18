@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.22" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.apps.mafkit.shell" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/oracle/apps/mafkit/shell/home/Home.amx" usageId="oracle_apps_mafkit_shell_HomePageDef"/>
+    <page path="/oracle/apps/mafkit/shell/springboard/Springboard.amx"
+          usageId="oracle_apps_mafkit_shell_SpringboardPageDef"/>
+    <page path="/oracle/apps/mafkit/shell/notifications/Notifications.amx"
+          usageId="oracle_apps_mafkit_shell_NotificationsPageDef"/>
+    <page path="/oracle/apps/mafkit/shell/about/About.amx" usageId="oracle_apps_mafkit_shell_AboutPageDef"/>
+    <page path="/oracle/apps/mafkit/shell/settings/Settings.amx" usageId="oracle_apps_mafkit_shell_SettingsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_apps_mafkit_shell_HomePageDef" path="oracle.apps.mafkit.shell.home.HomePageDef"/>
+    <page id="oracle_apps_mafkit_shell_SpringboardPageDef"
+          path="oracle.apps.mafkit.shell.springboard.SpringboardPageDef"/>
+    <page id="oracle_apps_mafkit_shell_NotificationsPageDef"
+          path="oracle.apps.mafkit.shell.notifications.NotificationsPageDef"/>
+    <page id="oracle_apps_mafkit_shell_AboutPageDef" path="oracle.apps.mafkit.shell.about.AboutPageDef"/>
+    <page id="oracle_apps_mafkit_shell_SettingsPageDef" path="oracle.apps.mafkit.shell.settings.SettingsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="InfoletsData" path="oracle.apps.mafkit.shell.InfoletsData"/>
+    <dc id="SpringboardData" path="oracle.apps.mafkit.shell.SpringboardData"/>
+    <dc id="ApplicationFeatures" path="oracle.apps.mafkit.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

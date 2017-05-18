@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="ProcurementFlow">
+    <default-activity>Procurement</default-activity>
+    <managed-bean id="__4">
+      <managed-bean-name>ProcurementBean</managed-bean-name>
+      <managed-bean-class>oracle.apps.mafkit.erp.procurement.ProcurementBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="Procurement">
+      <page>/oracle/apps/mafkit/erp/procurement/Procurement.amx</page>
+    </view>
+    <view id="ProductDetail">
+      <page>/oracle/apps/mafkit/erp/procurement/ProductDetail.amx</page>
+    </view>
+    <view id="ShoppingCart">
+      <page>/oracle/apps/mafkit/erp/procurement/ShoppingCart.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>Procurement</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>productDetail</from-outcome>
+        <to-activity-id>ProductDetail</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>shoppingCart</from-outcome>
+        <to-activity-id>ShoppingCart</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>ProductDetail</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>shoppingCart</from-outcome>
+        <to-activity-id>ShoppingCart</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>ShoppingCart</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>submitted</from-outcome>
+        <to-activity-id>Procurement</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
+  </task-flow-definition>
+</adfc-mobile-config>

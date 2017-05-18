@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfmf-skins xmlns="http://xmlns.oracle.com/adf/mf/skin">
+    <skin id="s1">
+        <id>mafkit-alta</id>
+        <family>mafkit-alta</family>
+        <extends>mobileAlta-v1.5</extends>
+        <style-sheet-name>resources/css/mafkit-alta.css</style-sheet-name>
+    </skin>
+    <skin id="s2">
+        <id>mafkit-alta.iOS</id>
+        <family>mafkit-alta</family>
+        <extends>mafkit-alta</extends>
+        <style-sheet-name>resources/css/mafkit-alta-ios.css</style-sheet-name>
+    </skin>
+    <skin id="s3">
+        <id>mafkit-alta.Android</id>
+        <family>mafkit-alta</family>
+        <extends>mafkit-alta</extends>
+        <style-sheet-name>resources/css/mafkit-alta-skin-android.css</style-sheet-name>
+    </skin>
+    <skin-addition id="s4">
+        <skin-id>mafkit-alta</skin-id>
+        <style-sheet-name>resources/css/mafkit-custom-components.css</style-sheet-name>
+    </skin-addition>
+</adfmf-skins>

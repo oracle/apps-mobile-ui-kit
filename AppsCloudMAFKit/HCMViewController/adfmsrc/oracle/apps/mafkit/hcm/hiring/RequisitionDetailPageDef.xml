@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="RequisitionDetailPageDef"
+                Package="oracle.apps.mafkit.hcm.hiring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HiringData" id="HiringDataIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="filteredRequisitionsList" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Requisition"
+                      id="filteredRequisitionsListIterator"/>
+    <accessorIterator MasterBinding="HiringDataIterator" Binds="filteredCandidatesList" RangeSize="25"
+                      DataControl="HiringData" BeanClass="oracle.apps.mafkit.hcm.data.Candidate"
+                      id="filteredCandidatesListIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="totalCandidateCount">
+      <AttrNames>
+        <Item Value="totalCandidateCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="newCount">
+      <AttrNames>
+        <Item Value="newCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="reviewCount">
+      <AttrNames>
+        <Item Value="reviewCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="evaluationCount">
+      <AttrNames>
+        <Item Value="evaluationCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredRequisitionsListIterator" id="selectionCount">
+      <AttrNames>
+        <Item Value="selectionCount"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="filterRequisitionCandidates" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="filterRequisitionCandidates" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="requisitionId" NDValue="#{pageFlowScope.HiringBean.viewedRequisitionId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="stage" NDValue="#{pageFlowScope.HiringBean.stageSwitcher}" NDType="java.lang.String"/>
+      <NamedData NDName="pageNavigation" NDValue="#{pageFlowScope.HiringBean.pageNavigation}" NDType="boolean"/>
+    </methodAction>
+    <tree IterBinding="filteredCandidatesListIterator" id="filteredCandidatesList">
+      <nodeDefinition DefName="oracle.apps.mafkit.hcm.data.Candidate" Name="filteredCandidatesList0">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="city"/>
+          <Item Value="country"/>
+          <Item Value="job"/>
+          <Item Value="matchPercent"/>
+          <Item Value="name"/>
+          <Item Value="photo"/>
+          <Item Value="state"/>
+          <Item Value="submissionName"/>
+          <Item Value="submissionStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="resetCandidateFilters" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="resetCandidateFilters" IsViewObjectMethod="false" DataControl="HiringData"
+                  InstanceName="data.HiringData.dataProvider"/>
+    <methodAction id="fetchCandidate" RequiresUpdateModel="true" Action="invokeMethod" MethodName="fetchCandidate"
+                  IsViewObjectMethod="false" DataControl="HiringData" InstanceName="data.HiringData.dataProvider">
+      <NamedData NDName="candidateId" NDValue="#{pageFlowScope.HiringBean.selectedCandidateId}" NDType="long"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

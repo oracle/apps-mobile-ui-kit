@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.22" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.apps.mafkit.hcm" ClientType="Generic">
+  <pageMap>
+    <page path="/oracle/apps/mafkit/hcm/hiring/Hiring.amx" usageId="oracle_apps_mafkit_hcm_HiringPageDef"/>
+    <page path="/oracle/apps/mafkit/hcm/expenses/Expenses.amx" usageId="oracle_apps_mafkit_hcm_ExpensesPageDef"/>
+    <page path="/oracle/apps/mafkit/hcm/timecard/Timecard.amx" usageId="oracle_apps_mafkit_hcm_TimecardPageDef"/>
+    <page path="/oracle/apps/mafkit/hcm/hiring/CandidateDetail.amx"
+          usageId="oracle_apps_mafkit_hcm_CandidateDetailPageDef"/>
+    <page path="/oracle/apps/mafkit/hcm/hiring/RequisitionDetail.amx"
+          usageId="oracle_apps_mafkit_hcm_RequisitionDetailPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_apps_mafkit_hcm_HiringPageDef" path="oracle.apps.mafkit.hcm.hiring.HiringPageDef"/>
+    <page id="oracle_apps_mafkit_hcm_ExpensesPageDef" path="oracle.apps.mafkit.hcm.expenses.ExpensesPageDef"/>
+    <page id="oracle_apps_mafkit_hcm_TimecardPageDef" path="oracle.apps.mafkit.hcm.timecard.TimecardPageDef"/>
+    <page id="oracle_apps_mafkit_hcm_CandidateDetailPageDef"
+          path="oracle.apps.mafkit.hcm.hiring.CandidateDetailPageDef"/>
+    <page id="oracle_apps_mafkit_hcm_RequisitionDetailPageDef"
+          path="oracle.apps.mafkit.hcm.hiring.RequisitionDetailPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HiringData" path="oracle.apps.mafkit.hcm.HiringData"/>
+    <dc id="ApplicationFeatures" path="oracle.apps.mafkit.application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

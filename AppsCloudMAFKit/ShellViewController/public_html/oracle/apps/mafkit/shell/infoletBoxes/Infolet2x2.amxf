@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+    <description id="d1">Reusable 2x2 infolet box</description>
+    <attribute id="a1">
+      <attribute-name id="a2">infoletHeader</attribute-name>
+      <attribute-type id="a3">String</attribute-type>
+    </attribute>
+    <attribute id="a4">
+      <attribute-name id="a5">infoletContentFragment</attribute-name>
+      <attribute-type id="a6">String</attribute-type>
+    </attribute>
+  </fragment>
+  <amx:panelGroupLayout id="pgl1" layout="vertical" valign="middle">
+    <amx:panelGroupLayout id="pgl2">
+      <amx:panelGroupLayout id="pgl3" styleClass="EMA_bkgd-white EMA_infolet2X2">
+        <amx:panelStretchLayout id="psl1" styleClass="EMA_infolet-content-container">
+          <amx:facet name="top">
+            <amx:panelGroupLayout id="pgl4" layout="horizontal">
+              <amx:spacer id="s1" width="10"/>
+              <amx:outputText value="#{infoletHeader}" id="ot1" styleClass="EMA_XSmallFontSize EMA_gray40"/>
+            </amx:panelGroupLayout>
+          </amx:facet>
+          <amx:facet name="center">
+            <amx:panelGroupLayout id="pgl5" styleClass="EMA_infolet-content" layout="vertical" scrollPolicy="scroll">
+              <amx:fragment src="#{infoletContentFragment}" id="f2"/>
+            </amx:panelGroupLayout>
+          </amx:facet>
+        </amx:panelStretchLayout>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:panelGroupLayout>
+</amx:fragmentDef>

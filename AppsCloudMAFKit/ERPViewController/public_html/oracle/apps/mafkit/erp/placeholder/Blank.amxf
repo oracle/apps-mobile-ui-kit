@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+  <amx:panelGroupLayout id="pgl2" halign="center">
+    <amx:spacer id="s2" height="25"/>
+    <amx:panelGroupLayout id="pgl1" layout="horizontal">
+      <amx:image id="i1" source="/resources/images/menu_information_24_full.png" shortDesc="Information"/>
+      <amx:outputText value="Intentionally left blank" id="ot1"/>
+    </amx:panelGroupLayout>
+  </amx:panelGroupLayout>
+</amx:fragmentDef>

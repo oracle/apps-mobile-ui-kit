@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1">
+    <attribute id="a1">
+      <attribute-name id="a3">image</attribute-name>
+      <attribute-type id="a2">String</attribute-type>
+    </attribute>
+    <attribute id="a4">
+      <attribute-name id="a6">text</attribute-name>
+      <attribute-type id="a5">String</attribute-type>
+    </attribute>
+    <attribute id="a7">
+      <attribute-name id="a9">type</attribute-name>
+      <attribute-type id="a8">String</attribute-type>
+    </attribute>
+  </fragment>
+  <amx:tableLayout id="tl1" rendered="#{type eq 'TYPE_FEATURELINK'}" width="100%">
+    <amx:rowLayout id="rl1">
+      <amx:cellFormat id="cf1" width="46px" halign="end" valign="middle">
+        <amx:image id="i1" source="#{image}" styleClass="EMA_2XLargeIcon" shortDesc="#{text}"/>
+      </amx:cellFormat>
+      <amx:cellFormat id="cf2" width="10px"/>
+      <amx:cellFormat id="cf3" halign="start" valign="middle" width="100%" height="43px" columnSpan="2">
+        <amx:outputText value="#{text}" id="ot1"
+                        styleClass="EMA_text-white EMA_SmallFontSize EMA_LightFont EMA_truncate"/>
+      </amx:cellFormat>
+    </amx:rowLayout>
+  </amx:tableLayout>
+  <!-- Capture feature code -->
+  <amx:tableLayout id="tl2" rendered="#{type eq 'TYPE_CAPTURE'}" width="100%">
+    <amx:rowLayout id="rl2">
+      <amx:cellFormat id="cf4" width="46px" halign="end" valign="middle">
+        <amx:image id="i2" source="#{image}" shortDesc="#{text}" styleClass="EMA_2XLargeIcon"/>
+      </amx:cellFormat>
+      <amx:cellFormat id="cf5" width="10px"/>
+      <amx:cellFormat id="cf6" halign="start" height="43px" width="100%">
+        <amx:outputText id="ot2"
+                        styleClass="EMA_text-white EMA_SmallFontSize EMA_LightFont EMA_truncate" value="#{text}"/>
+      </amx:cellFormat>
+      <amx:cellFormat id="cf7" halign="end" width="60px">
+        <amx:selectBooleanSwitch id="sbs1" value="#{applicationScope.ApplicationStateBean.captureEnabled}" label="#{''}" simple="true"
+                                 styleClass="EMA_SimpleComponent EMA_shuttleSwitch"/>
+      </amx:cellFormat>
+    </amx:rowLayout>
+  </amx:tableLayout>
+</amx:fragmentDef>

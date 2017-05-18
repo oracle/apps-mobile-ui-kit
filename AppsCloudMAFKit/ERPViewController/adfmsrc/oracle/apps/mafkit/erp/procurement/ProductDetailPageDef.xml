@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10" id="ProductDetailPageDef"
+                Package="oracle.apps.mafkit.erp.procurement">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ProcurementData" id="ProcurementDataIterator"/>
+    <accessorIterator MasterBinding="ProcurementDataIterator" Binds="filteredProductList" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.Product"
+                      id="filteredProductListIterator"/>
+    <accessorIterator MasterBinding="filteredProductListIterator" Binds="priceBreaks" RangeSize="25"
+                      DataControl="ProcurementData" BeanClass="oracle.apps.mafkit.erp.data.PriceBreak"
+                      id="priceBreaksIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProcurementDataIterator" id="shoppingCartItemCount">
+      <AttrNames>
+        <Item Value="shoppingCartItemCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="image">
+      <AttrNames>
+        <Item Value="image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="unitPrice">
+      <AttrNames>
+        <Item Value="unitPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="category">
+      <AttrNames>
+        <Item Value="category"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="supplier">
+      <AttrNames>
+        <Item Value="supplier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="supplierItemCode">
+      <AttrNames>
+        <Item Value="supplierItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="manufacturer">
+      <AttrNames>
+        <Item Value="manufacturer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="filteredProductListIterator" id="manufacturerPartNumber">
+      <AttrNames>
+        <Item Value="manufacturerPartNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="priceBreaksIterator" id="priceBreaks">
+      <nodeDefinition DefName="oracle.apps.mafkit.erp.data.PriceBreak" Name="priceBreaks0">
+        <AttrNames>
+          <Item Value="quantity"/>
+          <Item Value="newUnitPrice"/>
+          <Item Value="percentDiscount"/>
+          <Item Value="unitPrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="addToCart" RequiresUpdateModel="true" Action="invokeMethod" MethodName="addToCart"
+                  IsViewObjectMethod="false" DataControl="ProcurementData"
+                  InstanceName="data.ProcurementData.dataProvider">
+      <NamedData NDName="productId" NDValue="#{pageFlowScope.ProcurementBean.selectedProductId}" NDType="long"/>
+      <NamedData NDName="quantity" NDValue="#{pageFlowScope.ProcurementBean.orderQuantity}" NDType="int"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

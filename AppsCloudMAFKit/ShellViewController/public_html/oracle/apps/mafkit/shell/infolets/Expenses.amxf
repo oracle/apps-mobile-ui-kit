@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+  <amx:panelGroupLayout id="pgl1" layout="vertical">
+    <amx:spacer id="s1" height="10"/>
+    <amx:outputText value="$153.25" id="ot2" styleClass="EMA_text-red EMA_2XLargeFontSize"/>
+    <amx:outputText value="Pending Approval" id="ot1" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+    <amx:spacer id="s2" height="10"/>
+    <amx:outputText value="$74.50" id="ot4" styleClass="EMA_text-green EMA_2XLargeFontSize"/>
+    <amx:outputText value="Approved, 10/21" id="ot3" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+  </amx:panelGroupLayout>
+</amx:fragmentDef>

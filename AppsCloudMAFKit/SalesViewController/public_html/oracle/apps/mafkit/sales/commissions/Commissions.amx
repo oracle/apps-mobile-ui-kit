@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Commissions" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button"/>
+    </amx:facet>
+    <amx:fragment src="/oracle/apps/mafkit/sales/placeholder/Blank.amxf" id="f1"/>
+  </amx:panelPage>
+</amx:view>

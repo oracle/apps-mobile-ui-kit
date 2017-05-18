@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="New Image" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Cancel" action="return" shortDesc="Cancel"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb101" shortDesc="Hidden Button" styleClass="EMA_hide">
+        <amx:showPopupBehavior id="spb1" popupId="p1" align="overlapTopCenter" alignId="s1"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb102" shortDesc="Hidden Button" styleClass="EMA_hide">
+        <amx:closePopupBehavior id="cpb2" popupId="p1"/>
+      </amx:commandButton>
+      <amx:commandButton id="cb103" action="return" shortDesc="Hidden Button" styleClass="EMA_hide"/>
+      <amx:commandButton id="cb2" text="Save"
+                         actionListener="#{pageFlowScope.CaptureBean.createNotification}" shortDesc="Save"/>
+    </amx:facet>
+    <amx:spacer id="s1" height="20"/>
+    <amx:panelGroupLayout id="pgl1" halign="center">
+      <amx:image id="i1" source="#{pageFlowScope.CaptureBean.capturedImage}" shortDesc="Captured Image"
+                 inlineStyle="width:70vw;"/>
+    </amx:panelGroupLayout>
+    <amx:spacer id="s2" height="20"/>
+    <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start"
+                         styleClass="EMA_SimpleForm EMA_BaseComponentLabel EMA_BaseComponentValue">
+      <amx:panelLabelAndMessage label="Name" id="plam2">
+        <amx:panelGroupLayout id="pgl2">
+          <amx:inputText label="#{''}" id="it1" value="#{pageFlowScope.CaptureBean.newNotification.subject}"
+                         hintText="Tap to enter" showClear="on" simple="true"/>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="Description" id="plam3">
+        <amx:panelGroupLayout id="pgl3">
+          <amx:inputText label="#{''}" id="it2" value="#{pageFlowScope.CaptureBean.newNotification.description}"
+                         hintText="Tap to enter" rows="4" simple="true"/>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="Date" id="plam1">
+        <amx:panelGroupLayout id="pgl4">
+          <amx:outputText value="#{pageFlowScope.CaptureBean.newNotification.creationDate}" id="ot2">
+            <amx:convertDateTime id="cdt1" pattern="dd-MMM-yyyy HH:MM a"/>
+          </amx:outputText>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+    </amx:panelFormLayout>
+  </amx:panelPage>
+  <amx:popup id="p1" shortDesc="Confirmation Popup" styleClass="EMA_notificationPopup" animation="slideDown"
+             autoDismiss="true" backgroundDimming="on">
+    <amx:commandLink id="cl1" shortDesc="Confirmation Popup">
+      <amx:closePopupBehavior id="cpb1" popupId="p1"/>
+      <amx:tableLayout id="tl1" width="100%">
+        <amx:rowLayout id="rl1">
+          <amx:cellFormat id="cf1" width="40px">
+            <amx:image id="i2" source="/resources/images/menu_checkmark_24_full.png" shortDesc="Saved"/>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf2" width="100%" halign="start">
+            <amx:outputText value="#{pageFlowScope.CaptureBean.confirmationMessage}" id="ot3"
+                            styleClass="EMA_text-normal-1 EMA_LargeFontSize"/>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:commandLink>
+  </amx:popup>
+</amx:view>

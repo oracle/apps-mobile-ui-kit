@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="oracle.apps.mafkit.shell.login" name="Login" vendor="COM">
+    <adfmf:content id="oracle.apps.mafkit.shell.login.1">
+      <adfmf:amx file="oracle/apps/mafkit/shell/login/LoginFlow.xml#LoginFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p5">
+      <adfmf:property name="iOSWebView" value="legacy" id="p6"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.home" name="Home" vendor="COM_HEADER">
+    <adfmf:content id="oracle.apps.mafkit.shell.home.1" image="resources/images/spli_home_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/shell/home/HomeFlow.xml#HomeFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p11">
+      <adfmf:property name="iOSWebView" value="legacy" id="p12"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.springboard" name="Springboard" vendor="COM">
+    <adfmf:content id="oracle.apps.mafkit.shell.springboard.1">
+      <adfmf:amx file="oracle/apps/mafkit/shell/springboard/SpringboardFlow.xml#SpringboardFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p3">
+      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.notifications" name="Notifications" vendor="COM_HEADER">
+    <adfmf:content id="oracle.apps.mafkit.shell.notifications.1" image="resources/images/spli_bell_24_achr.png">
+      <adfmf:amx file="oracle/apps/mafkit/shell/notifications/NotificationsFlow.xml#NotificationsFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p7">
+      <adfmf:property name="iOSWebView" value="legacy" id="p8"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.about" name="About" vendor="COM">
+    <adfmf:content id="oracle.apps.mafkit.shell.about.1">
+      <adfmf:amx file="oracle/apps/mafkit/shell/about/About.amx"/>
+    </adfmf:content>
+    <adfmf:properties id="p9">
+      <adfmf:property name="iOSWebView" value="legacy" id="p10"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.settings" name="Settings" vendor="COM">
+    <adfmf:content id="oracle.apps.mafkit.shell.settings.1">
+      <adfmf:amx file="oracle/apps/mafkit/shell/settings/SettingsFlow.xml#SettingsFlow"/>
+    </adfmf:content>
+    <adfmf:properties id="p1">
+      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="oracle.apps.mafkit.shell.capture" name="Capture" vendor="COM">
+    <adfmf:content id="oracle.apps.mafkit.shell.capture.1">
+      <adfmf:amx file="oracle/apps/mafkit/shell/capture/CaptureMasterFlow.xml#CaptureMasterFlow">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="resources/js/AutoDismissPopup.js" id="i1"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

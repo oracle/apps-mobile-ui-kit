@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+  <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+    <amx:spacer id="s1" height="5"/>
+    <dvtm:statusMeterGauge id="statusMeterGauge1"
+                           value="#{(bindings.wonOpportunityAmount.inputValue / (bindings.remainingOpportunityAmount.inputValue + bindings.wonOpportunityAmount.inputValue)) * 100}"
+                           orientation="circular" shortDesc="Actual vs Quota" animationOnDisplay="auto"
+                           borderColor="rgba(255, 255, 255, 0)" color="rgb(0, 175, 70)" innerRadius="0.9"
+                           thresholdDisplay="all" inlineStyle="width:90px; height:90px;">
+      <dvtm:threshold id="t1" maxValue="100" shortDesc="Actual vs Quota" borderColor="rgba(255, 255, 255, 0)"
+                      color="rgb(255,192,0)"/>
+      <dvtm:metricLabel id="ml1" labelStyle="color:#707070; font-size:15px;"
+                        text="$#{bindings.remainingOpportunityAmount.inputValue + bindings.wonOpportunityAmount.inputValue}M"
+                        position="center" textType="number"/>
+    </dvtm:statusMeterGauge>
+    <amx:tableLayout id="tl1" width="100%">
+      <amx:rowLayout id="rl2">
+        <amx:cellFormat id="cf2" halign="center" width="50%">
+          <amx:panelGroupLayout id="pgl2" styleClass="EMA_indicatorDot-yellow"/>
+        </amx:cellFormat>
+        <amx:cellFormat id="cf1" halign="center" width="50%">
+          <amx:panelGroupLayout id="pgl3" styleClass="EMA_indicatorDot-green"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      <amx:rowLayout id="rl3">
+        <amx:cellFormat id="cf4" halign="center" styleClass="EMA_4XSmallFontSize">
+          <amx:outputText value="Remaining" id="ot1" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+        </amx:cellFormat>
+        <amx:cellFormat id="cf3" halign="center" styleClass="EMA_4XSmallFontSize">
+          <amx:outputText value="Won" id="ot2" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+      <amx:rowLayout id="rl1">
+        <amx:cellFormat id="cf6" halign="center" styleClass="EMA_4XSmallFontSize">
+          <amx:outputText value="$#{bindings.remainingOpportunityAmount.inputValue}M" id="ot3" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+        </amx:cellFormat>
+        <amx:cellFormat id="cf5" halign="center" styleClass="EMA_4XSmallFontSize">
+          <amx:outputText value="$#{bindings.wonOpportunityAmount.inputValue}M" id="ot4" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+        </amx:cellFormat>
+      </amx:rowLayout>
+    </amx:tableLayout>
+  </amx:panelGroupLayout>
+</amx:fragmentDef>

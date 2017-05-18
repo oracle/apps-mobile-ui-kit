@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt" xmlns:custom="http://xmlns.example.com/custom">
+  <amx:panelPage id="pp1" styleClass="EMA_header-selectOneChoice">
+    <amx:facet name="header">
+      <amx:commandButton id="cb5" styleClass="EMA_headerFilter EMA_text-white EMA_PageHeader"
+                         shortDesc="Hiring Context Switcher" text="#{pageFlowScope.HiringBean.contextSwitcher}"
+                         iconPosition="trailing" icon="/resources/images/func_arrowheaddown_20_ena.png"/>
+      <amx:selectOneChoice label="#{''}" id="soc1" value="#{pageFlowScope.HiringBean.contextSwitcher}" simple="true"
+                           styleClass="EMA_PageHeader">
+        <amx:selectItem id="si1" label="Requisitions" value="Requisitions"/>
+        <amx:selectItem label="Candidates" id="si2" value="Candidates"/>
+      </amx:selectOneChoice>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
+                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+        <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
+                               alignId="pp1"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl4" layout="vertical" halign="start" valign="top">
+      <amx:panelGroupLayout id="pgl5" layout="horizontal"
+                            styleClass="EMA_pickerSearchContainer EMA_mapSearchContainer">
+        <custom:csearch id="customSearchBox1" value="#{pageFlowScope.HiringBean.searchString}"
+                        valueChangeListener="#{pageFlowScope.HiringBean.filterHiringList}" 
+                        hintText="Search" controlType="search" width="calc(100vw - 20px)">
+          <?audit suppress oracle.ide.xml.validation-warning?>
+        </custom:csearch>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+    <amx:listView var="row" value="#{bindings.filteredRequisitionsList.collectionModel}"
+                  fetchSize="#{bindings.filteredRequisitionsList.rangeSize}"
+                  selectedRowKeys="#{bindings.filteredRequisitionsList.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.filteredRequisitionsList.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.filteredRequisitionsList.collectionModel.makeCurrent}"
+                  showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1"
+                  rendered="#{pageFlowScope.HiringBean.contextSwitcher eq 'Requisitions'}"
+                  styleClass="EMA_NoListDividers EMA_cardListView">
+      <amx:listItem id="li1" showLinkIcon="false" shortDesc="Requisitions" action="requisition"
+                    actionListener="#{bindings.filterRequisitionCandidates.execute}">
+        <amx:panelGroupLayout id="pgl6" layout="vertical" styleClass="EMA_cardListContent">
+          <amx:panelGroupLayout id="pgl8" layout="vertical"
+                                styleClass="EMA_bkgd-normal-1 EMA_roundTopCorners5 EMA_padding10">
+            <amx:outputText value="#{row.name}" id="ot12" styleClass="EMA_text-viking EMA_BaseFontSize EMA_BoldFont"/>
+            <amx:tableLayout id="tl1" width="100%">
+              <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" width="70%" halign="start">
+                  <amx:panelGroupLayout id="pgl9" layout="horizontal">
+                    <amx:outputText value="Posted on" id="ot3" styleClass="EMA_text-white"/>
+                    <amx:spacer id="s1" width="5"/>
+                    <amx:outputText value="#{row.postingDate}" id="ot4" styleClass="EMA_text-white">
+                      <amx:convertDateTime id="cdt1" pattern="MMM dd, yyyy"/>
+                    </amx:outputText>
+                  </amx:panelGroupLayout>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf2" width="30%" halign="end">
+                  <amx:outputText value="#{row.id}" id="ot1" styleClass="EMA_text-white"/>
+                </amx:cellFormat>
+              </amx:rowLayout>
+            </amx:tableLayout>
+          </amx:panelGroupLayout>
+          <amx:panelGroupLayout id="pgl7" layout="horizontal" halign="center"
+                                styleClass="EMA_bkgd-normal-3 EMA_roundBottomCorners5 EMA_padding10">
+            <amx:panelGroupLayout id="pgl11" layout="vertical" halign="center">
+              <amx:outputText value="#{row.newCount}" id="ot13"
+                              styleClass="#{row.newCount gt 0 ? 'EMA_text-viking' : 'EMA_text-white'} EMA_4XLargeFontSize"/>
+              <amx:outputText value="New" id="ot5" styleClass="EMA_text-white"/>
+            </amx:panelGroupLayout>
+            <amx:image id="i2" source="/resources/images/func_arrowheadright_16_onb.png" shortDesc="Separator"
+                       styleClass="EMA_hiringCardArrow"/>
+            <amx:panelGroupLayout id="pgl12" layout="vertical" halign="center">
+              <amx:outputText value="#{row.reviewCount}" id="ot14"
+                              styleClass="#{row.reviewCount gt 0 ? 'EMA_text-viking' : 'EMA_text-white'} EMA_4XLargeFontSize"/>
+              <amx:outputText value="Review" id="ot6" styleClass="EMA_text-white"/>
+            </amx:panelGroupLayout>
+            <amx:image id="i3" source="/resources/images/func_arrowheadright_16_onb.png" shortDesc="Separator"
+                       styleClass="EMA_hiringCardArrow"/>
+            <amx:panelGroupLayout id="pgl13" layout="vertical" halign="center">
+              <amx:outputText value="#{row.evaluationCount}" id="ot15"
+                              styleClass="#{row.evaluationCount gt 0 ? 'EMA_text-viking' : 'EMA_text-white'} EMA_4XLargeFontSize"/>
+              <amx:outputText value="Evaluation" id="ot7" styleClass="EMA_text-white"/>
+            </amx:panelGroupLayout>
+            <amx:image id="i1" source="/resources/images/func_arrowheadright_16_onb.png" shortDesc="Separator"
+                       styleClass="EMA_hiringCardArrow"/>
+            <amx:panelGroupLayout id="pgl10" layout="vertical" halign="center">
+              <amx:outputText value="#{row.selectionCount}" id="ot16"
+                              styleClass="#{row.selectionCount gt 0 ? 'EMA_text-viking' : 'EMA_text-white'} EMA_4XLargeFontSize"/>
+              <amx:outputText value="Selection" id="ot8" styleClass="EMA_text-white"/>
+            </amx:panelGroupLayout>
+          </amx:panelGroupLayout>
+        </amx:panelGroupLayout>
+        <amx:setPropertyListener id="spl1" type="action" from="#{'All'}"
+                                 to="#{pageFlowScope.HiringBean.stageSwitcher}"/>
+        <amx:setPropertyListener id="spl2" type="action" to="#{pageFlowScope.HiringBean.viewedRequisitionId}"
+                                 from="#{row.id}"/>
+      </amx:listItem>
+    </amx:listView>
+    <amx:listView var="row" value="#{bindings.filteredCandidatesList.collectionModel}"
+                  fetchSize="#{bindings.filteredCandidatesList.rangeSize}"
+                  selectedRowKeys="#{bindings.filteredCandidatesList.collectionModel.selectedRow}"
+                  initialScrollRowKeys="#{bindings.filteredCandidatesList.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.filteredCandidatesList.collectionModel.makeCurrent}"
+                  showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv2"
+                  rendered="#{pageFlowScope.HiringBean.contextSwitcher eq 'Candidates'}"
+                  styleClass="EMA_standardListView">
+      <amx:listItem id="li2" shortDesc="#{row.name}" styleClass="EMA_standardListViewCaret" action="candidate">
+        <amx:tableLayout id="tl2" width="100%">
+          <amx:rowLayout id="rl2">
+            <amx:cellFormat id="cf3" rowSpan="3" halign="center" valign="top" width="65px">
+              <amx:image id="i4" source="#{row.photo}" shortDesc="Candidate Photo"
+                         styleClass="EMA_smallAvatar_inactive"/>
+            </amx:cellFormat>
+            <amx:cellFormat id="cf4" halign="start" valign="middle" width="100%">
+              <amx:outputText value="#{row.name}" id="ot2" styleClass="EMA_XSmallFontSize EMA_truncate"/>
+            </amx:cellFormat>
+            <amx:cellFormat id="cf5" rowSpan="3" halign="end" valign="bottom" width="70px">
+              <amx:outputText value="#{row.matchPercent}%" id="ot9"
+                              styleClass="EMA_text-normal-3 EMA_truncate EMA_4XLargeFontSize"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl3">
+            <amx:cellFormat id="cf6" halign="start" valign="middle">
+              <amx:outputText value="#{row.job}" id="ot10"
+                              styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+          <amx:rowLayout id="rl4">
+            <amx:cellFormat id="cf7" halign="start" valign="middle">
+              <amx:outputText value="#{row.city}, #{row.state}, #{row.country}" id="ot11"
+                              styleClass="EMA_text-normal-3 EMA_truncate EMA_XSmallFontSize"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+  <amx:popup id="contextMenuPopup" shortDesc="Contextual Menu Popup" styleClass="EMA_actionsMenuPopup"
+             animation="slideUp" autoDismiss="true">
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:panelGroupLayout id="pgl3" styleClass="actionsContainer">
+        <amx:commandButton text="Filter" id="cb4" shortDesc="Filter">
+          <amx:closePopupBehavior id="cpb1" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+        <amx:commandButton text="Mass Update" id="cb3" shortDesc="Mass Update">
+          <amx:closePopupBehavior id="cpb2" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+      <amx:panelGroupLayout id="pgl2" styleClass="actionsContainer">
+        <amx:commandButton text="Cancel" id="cb6" shortDesc="Cancel">
+          <amx:closePopupBehavior id="cpb3" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:popup>
+</amx:view>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="pressed_boolean_switch_on" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="53px" height="36px" viewBox="0 0 53 36" enable-background="new 0 0 53 36" xml:space="preserve">
+<path id="base" fill-rule="evenodd" clip-rule="evenodd" fill="#0572CE" d="M15.5,3.01h20c8.56,0,15.5,6.57,15.5,15.13
+	s-6.94,14.88-15.5,14.88h-20C6.94,33.02,0,26.71,0,18.14S6.94,3.01,15.5,3.01z"/>
+<circle fill-rule="evenodd" clip-rule="evenodd" fill="#DAEAF8" cx="35" cy="18" r="18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#C1D0DF" d="M52.96,18.02c0,9.94-8.06,18-18,18c-9.94,0-18-8.06-18-18
+	c0-9.94,8.06-18,18-18C44.91,0.02,52.96,8.08,52.96,18.02z M34.96,1.02c-9.39,0-17,7.61-17,17c0,9.39,7.61,17,17,17
+	c9.39,0,17-7.61,17-17C51.96,8.63,44.35,1.02,34.96,1.02z"/>
+</svg>

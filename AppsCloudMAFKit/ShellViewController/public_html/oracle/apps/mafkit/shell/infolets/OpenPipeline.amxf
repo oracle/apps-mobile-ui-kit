@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:fragmentDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                 xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <fragment xmlns="http://xmlns.oracle.com/adf/mf/amx/fragment" id="f1"/>
+  <amx:outputText value="Current and Next Quarter" id="ot1" styleClass="EMA_text-normal-3 EMA_4XSmallFontSize"/>
+  <amx:spacer id="s1" height="10"/>
+  <amx:outputText value="$6.65M" id="ot2" styleClass="EMA_text-lightblue"/>
+  <dvtm:barChart id="barChart1" var="row" value="#{bindings.openPipelineList.collectionModel}" barGapRatio="0.3"
+                 animationOnDisplay="auto" shortDesc="Open Pipeline Chart" inlineStyle="height:80px;">
+    <amx:facet name="dataStamp">
+      <dvtm:chartDataItem id="cdi1" value="#{row.pipelineValue}" group="#{row.pipelineGroup}" series="A"
+                          shortDesc="Bar Chart" color="#{viewScope.HomeBean.barChartColors[row.rowKey]}"/>
+    </amx:facet>
+    <dvtm:legend rendered="false" id="l1"/>
+    <dvtm:xAxis id="xa1">
+      <dvtm:axisLine id="al1" rendered="false"/>
+      <dvtm:tickLabel id="tl1" rendered="false"/>
+    </dvtm:xAxis>
+    <dvtm:yAxis id="ya1">
+      <dvtm:axisLine id="al2" rendered="false"/>
+      <dvtm:tickLabel id="tl2" rendered="false"/>
+    </dvtm:yAxis>
+  </dvtm:barChart>
+</amx:fragmentDef>

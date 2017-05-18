@@ -1,0 +1,2111 @@
+/*
+ * Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+ * Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+ */
+
+/*********************************
+***********FONT COLOR*************
+*********************************/
+.EMA_text-normal-1, .EMA_text-normal-1.amx-outputText {
+    color: #333333;
+}
+
+.EMA_text-normal-2, .EMA_text-normal-2.amx-outputText {
+    color: #505050;
+}
+
+.EMA_text-normal-3, .EMA_text-normal-3.amx-outputText {
+    color: #707070;
+}
+
+.EMA_text-red, .EMA_text-red.amx-outputText {
+    color: #cf1515;
+}
+
+.EMA_text-orange, .EMA_text-orange.amx-outputText {
+    color: #c74200;
+}
+
+.EMA_text-olive, .EMA_text-olive.amx-outputText {
+    color: #737300;
+}
+
+.EMA_text-green, .EMA_text-green.amx-outputText {
+    color: #0f8038;
+}
+
+.EMA_text-lightblue, .EMA_text-lightblue.amx-outputText {
+    color: #0471b2;
+}
+
+.EMA_text-lavender, .EMA_text-lavender.amx-outputText {
+    color: #8156d6;
+}
+
+.EMA_text-plum, .EMA_text-plum.amx-outputText {
+    color: #a51f7e;
+}
+
+.EMA_text-maroon, .EMA_text-maroon.amx-outputText {
+    color: #953734;
+}
+
+.EMA_text-brown, .EMA_text-brown.amx-outputText {
+    color: #ab5b00;
+}
+
+.EMA_text-yellowgreen, .EMA_text-yellowgreen.amx-outputText {
+    color: #4b7d06;
+}
+
+.EMA_text-darkgreen, .EMA_text-darkgreen.amx-outputText {
+    color: #026136;
+}
+
+.EMA_text-sapphire, .EMA_text-sapphire.amx-outputText {
+    color: #005cb1;
+}
+
+.EMA_text-purple, .EMA_text-purple.amx-outputText {
+    color: #a349b8;
+}
+
+.EMA_text-pink, .EMA_text-pink.amx-outputText {
+    color: #c93472;
+}
+
+.EMA_text-brick, .EMA_text-brick.amx-outputText {
+    color: #ad2622;
+}
+
+.EMA_text-gold, .EMA_text-gold.amx-outputText {
+    color: #8c6900;
+}
+
+.EMA_text-seagreen, .EMA_text-seagreen.amx-outputText {
+    color: #357644;
+}
+
+.EMA_text-turquoise, .EMA_text-turquoise.amx-outputText {
+    color: #006a6d;
+}
+
+.EMA_text-blueviolet, .EMA_text-blueviolet.amx-outputText {
+    color: #5563bc;
+}
+
+.EMA_text-violet, .EMA_text-violet.amx-outputText {
+    color: #8a0093;
+}
+
+.EMA_text-olive, .EMA_text-olive.amx-outputText {
+    color: #737300;
+}
+
+.EMA_text-white, 
+.EMA_text-white.amx-outputText, 
+.amx-panelSplitter_contentContainer .EMA_text-white.amx-outputText, 
+.EMA_text-white.amx-commandButton .amx-commandButton-label, 
+.EMA_text-white.amx-commandButton .amx-commandButton-label {
+    color: #FFFFFF;
+}
+
+.EMA_standardLink, .EMA_standardLink.amx-outputText {
+    color: #0572CE;
+}
+
+.EMA_gray40, 
+.EMA_gray40.amx-outputText {
+    color: #666666;
+}
+
+.EMA_lightgray, 
+.EMA_lightgray.amx-outputText {
+    color: #999999;
+}
+
+.EMA_lightergray, 
+.EMA_lightergray.amx-outputText {
+    color: #d9d9d9;
+}
+
+.EMA_text-darkblue, 
+.EMA_text-darkblue.amx-outputText {
+    color: #184fa3;
+}
+
+.EMA_text-viking, 
+.EMA_text-viking.amx-outputText {
+    color: #60B6CE;
+}
+
+/*********************************
+*********FONT COLOR END***********
+*********************************/
+
+/*********************************
+********BACKGROUND COLOR**********
+*********************************/
+.EMA_bkgd-normal-1, .EMA_bkgd-normal-1.amx-outputText {
+    background-color: #333333;
+}
+
+.EMA_bkgd-normal-2, .EMA_bkgd-normal-2.amx-outputText {
+    background-color: #505050;
+}
+
+.EMA_bkgd-normal-3, .EMA_bkgd-normal-3.amx-outputText {
+    background-color: #707070;
+}
+
+.EMA_bkgd-red, .EMA_bkgd-red.amx-outputText {
+    background-color: #cf1515;
+}
+
+.EMA_bkgd-orange, .EMA_bkgd-orange.amx-outputText {
+    background-color: #c74200;
+}
+
+.EMA_bkgd-olive, .EMA_bkgd-olive.amx-outputText {
+    background-color: #737300;
+}
+
+.EMA_bkgd-green, .EMA_bkgd-green.amx-outputText {
+    background-color: #0f8038;
+}
+
+.EMA_bkgd-lightblue, .EMA_bkgd-lightblue.amx-outputText {
+    background-color: #0471b2;
+}
+
+.EMA_bkgd-lavender, .EMA_bkgd-lavender.amx-outputText {
+    background-color: #8156d6;
+}
+
+.EMA_bkgd-plum, .EMA_bkgd-plum.amx-outputText {
+    background-color: #a51f7e;
+}
+
+.EMA_bkgd-maroon, .EMA_bkgd-maroon.amx-outputText {
+    background-color: #953734;
+}
+
+.EMA_bkgd-brown, .EMA_bkgd-brown.amx-outputText {
+    background-color: #ab5b00;
+}
+
+.EMA_bkgd-dark-yellow, .EMA_bkgd-dark-yellow.amx-outputText {
+    background-color: #fdf67c;
+}
+
+.EMA_bkgd-yellowgreen, .EMA_bkgd-yellowgreen.amx-outputText {
+    background-color: #4b7d06;
+}
+
+.EMA_bkgd-darkgreen, .EMA_bkgd-darkgreen.amx-outputText {
+    background-color: #026136;
+}
+
+.EMA_bkgd-sapphire, .EMA_bkgd-sapphire.amx-outputText {
+    background-color: #005cb1;
+}
+
+.EMA_bkgd-purple, .EMA_bkgd-purple.amx-outputText {
+    background-color: #a349b8;
+}
+
+.EMA_bkgd-pink, .EMA_bkgd-pink.amx-outputText {
+    background-color: #c93472;
+}
+
+.EMA_bkgd-brick, .EMA_bkgd-brick.amx-outputText {
+    background-color: #ad2622;
+}
+
+.EMA_bkgd-gold, .EMA_bkgd-gold.amx-outputText {
+    background-color: #8c6900;
+}
+
+.EMA_bkgd-seagreen, .EMA_bkgd-seagreen.amx-outputText {
+    background-color: #357644;
+}
+
+.EMA_bkgd-turquoise, .EMA_bkgd-turquoise.amx-outputText {
+    background-color: #006a6d;
+}
+
+.EMA_bkgd-blueviolet, .EMA_bkgd-blueviolet.amx-outputText {
+    background-color: #5563bc;
+}
+
+.EMA_bkgd-violet, .EMA_bkgd-violet.amx-outputText {
+    background-color: #8a0093;
+}
+
+.EMA_bkgd-olive, .EMA_bkgd-olive.amx-outputText {
+    background-color: #737300;
+}
+
+.EMA_bkgd-grey, .EMA_bkgd-grey.amx-outputText {
+    background-color: #aeb4b8;
+}
+
+.EMA_bkgd-lightgrey, .EMA_bkgd-lightgrey.amx-outputText {
+    background-color: #D1D2D4;
+}
+
+.EMA_bkgd-darkblue, .EMA_bkgd-darkblue.amx-outputText {
+    background-color: #184fa3;
+}
+
+.EMA_bkgd-white, .EMA_bkgd-white.amx-outputText {
+    background-color: #FFFFFF;
+}
+/*********************************
+******BACKGROUND COLOR END********
+*********************************/
+
+/*********************************
+************FONT SIZE*************
+*********************************/
+.EMA_6XLargeFontSize, .EMA_6XLargeFontSize.amx-outputText {
+    font-size: 54px;
+}
+
+.EMA_5XLargeFontSize, .EMA_5XLargeFontSize.amx-outputText {
+    font-size: 38px;
+}
+
+.EMA_4XLargeFontSize, .EMA_4XLargeFontSize.amx-outputText {
+    font-size: 30px;
+}
+
+.EMA_3XLargeFontSize, .EMA_3XLargeFontSize.amx-outputText {
+    font-size: 26px;
+}
+
+.EMA_2XLargeFontSize, .EMA_2XLargeFontSize.amx-outputText {
+    font-size: 24px;
+}
+
+.EMA_XLargeFontSize, .EMA_XLargeFontSize.amx-outputText {
+    font-size: 20px;
+}
+
+.EMA_LargeFontSize, .EMA_LargeFontSize.amx-outputText {
+    font-size: 18px;
+}
+
+.EMA_BaseFontSize, .EMA_BaseFontSize.amx-outputText {
+    font-size: 17px;
+}
+
+.EMA_SmallFontSize, .EMA_SmallFontSize.amx-outputText {
+    font-size: 16px;
+}
+
+.EMA_XSmallFontSize, .EMA_XSmallFontSize.amx-outputText {
+    font-size: 15px;
+}
+
+.EMA_2XSmallFontSize, .EMA_2XSmallFontSize.amx-outputText, .amx-panelFormLayout .field-value > .EMA_2XSmallFontSize.amx-outputText {
+    font-size: 14px;
+}
+
+.EMA_3XSmallFontSize, .EMA_3XSmallFontSize.amx-outputText {
+    font-size: 13px;
+}
+
+.EMA_4XSmallFontSize, .EMA_4XSmallFontSize.amx-outputText {
+    font-size: 12px;
+}
+
+.EMA_5XSmallFontSize, .EMA_5XSmallFontSize.amx-outputText {
+    font-size: 11px;
+}
+
+.EMA_6XSmallFontSize, .EMA_6XSmallFontSize.amx-outputText {
+    font-size: 10px;
+}
+/*********************************
+**********FONT SIZE END***********
+*********************************/
+
+/*********************************
+************IMAGE SIZE************
+*********************************/
+.EMA_5XLargeIcon.amx-image, .EMA_5XLargeIcon.amx-commandButton .amx-commandButton-icon {
+    height: 48px;
+    width: 48px;
+}
+
+.EMA_2XLargeIcon.amx-image, .EMA_2XLargeIcon.amx-commandButton .amx-commandButton-icon {
+    height: 32px;
+    width: 32px;
+}
+
+.EMA_LargeIcon.amx-image, .EMA_LargeIcon.amx-commandButton .amx-commandButton-icon {
+    height: 28px;
+    width: 28px;
+}
+
+.EMA_StandardIcon.amx-image, .EMA_StandardIcon.amx-commandButton .amx-commandButton-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.EMA_SmallIcon.amx-image, .EMA_SmallIcon.amx-commandButton .amx-commandButton-icon {
+    height: 22px;
+    width: 22px;
+}
+
+.EMA_2XSmallIcon.amx-image, .EMA_2XSmallIcon.amx-commandButton .amx-commandButton-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.EMA_6XSmallIcon.amx-image, .EMA_6XSmallIcon.amx-commandButton .amx-commandButton-icon {
+    height: 12px;
+    width: 12px;
+}
+/*********************************
+**********IMAGE SIZE END**********
+*********************************/
+
+/*********************************
+*********TEXT DECORATION**********
+*********************************/
+.EMA_text-selected, .EMA_text-selected.amx-outputText {
+    text-decoration: underline;
+}
+
+.EMA_BoldFont, .EMA_BoldFont.amx-outputText {
+    font-weight: bold;
+}
+
+.EMA_ItalicFont {
+    font-style: italic;
+}
+
+.EMA_breakWord, .EMA_breakWord.amx-outputText {
+    word-wrap: break-word;
+}
+
+.EMA_lineHeight10 {
+    line-height: 10px;
+}
+
+.EMA_inlineBlock {
+    display: inline-block;
+}
+
+.EMA_inline {
+    display: inline;
+}
+
+.EMA_compactText, .EMA_compactText.amx-outputText {
+    line-height: 1.1;
+}
+
+.EMA_noWrap, .EMA_noWrap.amx-outputText {
+    white-space: nowrap;
+}
+
+.EMA_horizontalPadding-5{
+    padding: 0px 5px;
+}
+
+.EMA_LightFont{
+    font-weight: lighter;
+}
+/*********************************
+*******TEXT DECORATION END********
+*********************************/
+
+/**************************
+*******CUSTOM CSS*********
+**************************/
+.EMA_globalBackground.amx-panelPage {
+    background-color: rgb(66, 67, 69);
+}
+
+.EMA_block{
+   display:block;
+}
+
+.EMA_hide {
+    display: none;
+}
+
+.EMA_hideVisibility {
+    visibility: hidden;
+}
+
+html[dir=ltr] .EMA_Caret {
+    background-position: right center;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAw0lEQVR42qXUMQoCMRCFYUFYWLASBGFB8BKCB1lvmEoQtrIVPICVYCUIHsAbxDfg+qYQZ4Yp/jQhHyQkmdRav+36fooKOqCGc3YaadAe1U9DBNPIQCSOCdKiowbiGKETqhlMhiRGSGPnOEYoiRFKYoTyGKE89hsiNvNiXJjDigeao8sf5IU2FrLwINZhL9HVg0gpxLqQHboZyNZ6IoLc/QjTyCqOsBFZo0ccYeN2nhlE4n9tIInPn4gb0piBmJDGChF/b1g2T6rFGc2MAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+}
+
+html[dir=rtl] .EMA_Caret {
+    background-position: left center;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAt0lEQVR42qXUwQZCQRjF8YghWkXEJXqJ6EFubziriFm1jR6gVbSK6AF6g+kMHWaRe+Z2Fv9vM5/f6jOTnHNz+74P6IgimtZvY5GE8rcDCgKSCEvEHISd0MxB2JmQjZR9B7kQKdkIsxFmI8xG2Bhk/guooegihLboPQBd0UJCGK3YUkGt2A2tBGRgA5e9E9gddQJqxh7EasjB1jXkYE+0IeRiL9SVZRdLKAhEYPrz11iNEPoHi0TYB4sKT6pjfEGoAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+}
+
+.EMA_truncate, .EMA_truncate.amx-outputText {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}
+
+.EMA_EULA-text {
+    font-size: 14px;
+    text-align: justify;
+    padding: 0px 20px;
+}
+
+.EMA_roundBorder {
+    border-radius: 50%;
+}
+
+.EMA_scroll {
+    overflow: auto;
+}
+
+.EMA_truncate-multiLine, .EMA_truncate-multiLine.amx-outputText {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal !important;
+    word-break: break-all;
+}
+
+.EMA_textAlign-center {
+    text-align: center;
+}
+/****HEADER****/
+.EMA_hidePageHeader.amx-panelPage .amx-panelPage-header {
+    height: 0px;
+}
+/****POPUP****/
+.EMA_popup-transparent {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    width: 100%;
+}
+/**************************
+*****CUSTOM CSS END*******
+**************************/
+
+/**************************
+*******GENERIC CSS*********
+**************************/
+
+/****LINKS****/
+.amx-commandLink, a:-webkit-any-link, .amx-commandLink {
+    text-decoration: none;
+}
+
+.amx-commandLink:active, .amx-goLink:active {
+background-color: transparent;
+opacity: 0.7;
+}
+
+/****HEADER / FOOTER****/
+.amx-panelPage-header {
+    background-color: rgb(66, 67, 69);
+}
+
+.amx-panelPage-footer {
+    background-color: rgba(66, 67, 69, 0.85);
+}
+
+.amx-panelPage-header {
+    border-bottom: 1px solid rgb(66, 67, 69);
+}
+
+.amx-panelPage-footer {
+    border-top: 1px solid transparent;
+}
+
+.amx-panelPage-facet-secondary .amx-commandButton-label, .amx-panelPage-facet-primary .amx-commandButton-label, .amx-panelPage-facet-header .amx-outputText, .amx-panelPage-footer .amx-commandButton-label, .amx-panelPage-footer .amx-outputText {
+    color: #FFFFFF;
+}
+/***************************
+*****GENERIC CSS ENDS*******
+***************************/
+
+/******************************************
+************infolet styleClasses***********
+******************************************/
+
+/****INFOLET SIZE****/
+.EMA_infoletHomePage .amx-masonryLayoutItem-size-2x2 {
+/*  width: 352px;
+    height: 352px;  */
+    width: calc(100vw - 23px);
+    height: calc(100vw - 23px);
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color:transparent;
+}
+
+.EMA_infoletHomePage .amx-masonryLayoutItem-size-2x1 {
+/*  width: 352px;
+    height: 170px;  */
+    width: calc(100vw - 23px);
+    height: calc(50vw - 17px);
+    max-height: 170px;
+    max-width: 354px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color:transparent;
+}
+
+.EMA_infoletHomePage .amx-masonryLayoutItem-size-3x1 {
+/*  width: 534px;
+    height: 170px;  */
+    width: calc(150vw - 28px);
+    height: calc(50vw - 17px);
+    max-height: 170px;
+    max-width: 536px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color:transparent;
+}
+
+.EMA_infoletHomePage .amx-masonryLayoutItem-dragging {
+    -webkit-transform: scale(1, 1);
+}
+
+.EMA_infoletHomePage .amx-masonryLayoutItem-size-1x1 {
+/*  width: 170px;
+    height: 170px;  */
+    width: calc(50vw - 17px);
+    height: calc(50vw - 17px);
+    max-width: 170px;
+    max-height: 170px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color:transparent;
+}
+
+.EMA_infolet1X1 {
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+}
+
+.EMA_infolet2X1 {
+    width: 352px;
+    height: 170px;
+}
+
+.EMA_infolet2X2 {
+    width: 352px;
+    height: 352px;
+}
+@media only screen and (orientation:portrait) {
+    .EMA_infoletHomePage .amx-masonryLayout {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .EMA_infolet3X1 {
+        width: 352px;
+        height: 170px;
+    }
+}
+
+@media only screen and (orientation:landscape) {
+    /*.EMA_infoletHomePage .amx-masonryLayout {
+        height: 364px;
+        margin-top: 6px;
+        margin-bottom: auto;
+        display: inline-block;
+        margin-left: 6px;
+        width: 1550px;
+    }*/
+    .EMA_infolet3X1 {
+        width: 538px;
+        height: 170px;
+    }
+}
+
+/****INFOLET LAYOUT****/
+.EMA_infolet-content {
+    padding: 0px 10px;
+}
+
+.EMA_infolet-content-container {
+    padding: 5px 0px 0px 0px;
+}
+/****INFOLET ICON****/
+.EMA_infoletRightFlip_icon {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    right: 0px;
+}
+
+.EMA_infoletLeftFlip_icon {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+}
+
+.EMA_infoletRightFlip_icon.amx-commandLink:active, .EMA_infoletLeftFlip_icon.amx-commandLink:active {
+    opacity: .6;
+    background-color: transparent;
+}
+/******************************************
+**********infolet styleClasses END*********
+******************************************/
+
+/*********************************
+***********AMX HEADER*************
+*********************************/
+.amx-panelPage-facet-primary .amx-commandButton.amx-label-no-text.EMA_primaryHeader-button,
+.amx-panelPage-facet-secondary .amx-commandButton.amx-label-no-text.EMA_secondaryHeader-button{
+  padding: 0px;
+}
+
+.amx-panelPage-facet-primary .EMA_primaryHeader-button.amx-fragment,
+.amx-panelPage-facet-secondary .EMA_secondaryHeader-button.amx-fragment{
+  padding: 0px;
+}
+
+.amx-panelPage-facet-primary .amx-commandButton.amx-label-no-text.EMA_primaryHeader-button .amx-commandButton-icon,
+.amx-panelPage-facet-secondary .amx-commandButton.amx-label-no-text.EMA_secondaryHeader-button .amx-commandButton-icon{
+ height:32px;
+ width:32px;
+}
+
+.amx-panelPage-header .amx-panelPage-bar{
+    margin-top: 20px !important;
+}
+
+.amx-panelPage-facet-header > .amx-outputText, 
+.amx-panelPage-facet-footer > .amx-outputText{
+    font-weight: normal;
+}
+
+html[dir=ltr] .amx-panelPage-facet-primary .amx-commandButton-back:before,
+html[dir=rtl] .amx-panelPage-facet-primary .amx-commandButton-back:after{
+    background-image:none;
+}
+
+.amx-panelPage-facet-primary,
+.amx-panelPage-facet-secondary{
+    height:44px;
+}
+
+.EMA_headerFilter.amx-commandButton .amx-commandButton-icon{
+    height: 10px;
+    width: 10px;
+}
+
+.EMA_headerFilter.amx-commandButton .amx-commandButton-label{
+    font-size: 18px;
+}
+
+.EMA_headerFilter.amx-commandButton .amx-commandButton-label{
+    max-width: 200px;
+}
+
+.amx-panelPage-facet-primary .amx-commandButton-label{
+    padding-left: 4px;
+}
+
+.EMA_hidePageHeader.amx-panelPage .amx-panelPage-header{
+    height: 0px;
+}
+
+.EMA_falseHeaderContainer.amx-panelGroupLayout{
+    overflow: hidden;
+    opacity: .95;
+    height: 44px;
+    background-color: #F6F6F7;
+    border-bottom: 1px solid #D1D1D3;
+    z-index: 1;
+}
+
+.EMA_falseHeader-text.amx-outputText{
+    margin: 10px auto 0 auto;
+    display: block;
+    font-size: 18px;
+    max-width: 250px;
+}
+
+/*Header with Select One Choice as filter*/
+.EMA_header-selectOneChoice.amx-panelPage .amx-panelPage-facet-header{
+    z-index: 5;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.EMA_header-selectOneChoice.amx-panelPage .amx-panelPage-facet-header .amx-selectOneChoice {
+    position: absolute;
+    top: 10px;
+    width: 230px;
+    z-index: 5;
+}
+
+.EMA_header-selectOneChoice.amx-panelPage .amx-panelPage-facet-header .amx-selectOneChoice .field-value{
+    padding: 0px;
+}
+.EMA_header-selectOneChoice.amx-panelPage .amx-panelPage-facet-header .amx-selectOneChoice .field-value .selectItemsContainer{
+    color: transparent;
+    border: transparent;
+}
+
+.EMA_header-selectOneChoice.amx-panelPage .amx-panelPage-facet-header .amx-selectOneChoice .field-value:after{
+    content: none;
+}
+
+.EMA_header-selectOneChoice .EMA_detailSearch-container.amx-panelGroupLayout{
+    margin-top: 3px;
+    margin-left: -70px;
+    margin-right: -70px;
+}/*double check from Rohit*/
+/*Header with Select One Choice as filter END*/
+
+/*SERACH*/
+.EMA_EnableSearchMode.amx-panelPage .amx-panelPage-facet-secondary,
+.EMA_EnableSearchMode.amx-panelPage .EMA_PageHeader,
+.amx-panelPage .EMA_SearchField{
+    display: none;
+}
+
+.EMA_EnableSearchMode.amx-panelPage .amx-panelPage-facet-header{
+    z-index: 5;
+    margin-left: 45px;
+}
+
+.EMA_EnableSearchMode.amx-panelPage .amx-panelPage-facet-header .EMA_SearchField{
+    display: block;
+    padding: 0px;
+}
+
+/*DETAIL SEARCH*/
+.EMA_detailSearch.amx-panelPage .amx-panelPage-header{
+    height: 85px;
+}
+
+.EMA_detailSearch-container.amx-panelGroupLayout{
+    margin-top: 44px;
+}
+
+.EMA_EnableSearchMode.EMA_listFilter.amx-panelPage .amx-panelPage-header{
+    height: 86px;
+    border: none;
+}
+
+.EMA_EnableSearchMode.EMA_listFilter.amx-panelPage .amx-panelPage-header .EMA_listFilter-container{
+    display: block;
+    margin-left: -45px;
+    margin-right: 0px;
+}
+/*DETAIL SEARCH END*/
+/*SERACH END*/
+
+.EMA_listFilter.amx-panelPage .amx-panelPage-header{
+    height: 75px;
+    border: none;
+}
+
+.EMA_listFilter-container{
+    display: none;
+}
+
+.EMA_listFilter.amx-panelPage .amx-panelPage-header .EMA_listFilter-container{
+    display: block;
+    margin-left: -70px;
+    margin-right: -70px;
+}
+
+
+.EMA_instantSearch-container{
+    display: none;
+}
+
+.EMA_EnableSearchMode.EMA_EnableSearchMode-withInstant .EMA_instantSearch-container{
+    display: block;
+}
+
+.EMA_EnableSearchMode.EMA_EnableSearchMode-withInstant.amx-panelPage .amx-panelPage-header{
+    height: 99px;
+    border: none;
+}
+
+.EMA_instantSearch-container.amx-panelGroupLayout{
+    background-color: #FFFFFF;
+    border-bottom: 11px solid #CCCCCC;
+    padding: 0px 10px;
+    margin-left: -45px;
+}
+/*********************************
+*********AMX HEADER END***********
+*********************************/
+
+/*********************************
+***********AMX FOOTER*************
+*********************************/
+
+/*
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterText,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterText.amx-outputText{
+    padding:0px 3px;
+}
+
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterIcon,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterIcon.amx-image{
+    margin-bottom: -4px;
+}
+
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_UnselecetdTab.amx-panelGroupLayout{
+    opacity : 0.5;
+}
+*/
+
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterText,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_FooterText.amx-outputText{
+    padding:0px 3px;
+    line-height: 1;
+}
+
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_UnselectedTab.amx-panelGroupLayout{
+    opacity : 0.5;
+}
+
+.EMA_FixedFooter.amx-cellFormat {
+    position: fixed;
+    left:10px;
+    bottom:0px;
+}
+
+.EMA_FooterCard {
+    border:1px solid #FFFFFF;
+    border-radius:5px;
+    padding:2px 0px 2px 5px;
+}
+
+.EMA_NoScrollFooter.amx-panelPage .amx-panelPage-facet-footer{
+   overflow:hidden ;    
+}
+
+.EMA_footerButton-primary .amx-commandButton-label{
+    font-size: 19px;
+}
+
+
+.EMA_FooterTab-icon.amx-image{
+    height: 32px;
+    width: 32px;
+}
+
+.EMA_FooterTab.amx-panelGroupLayout{
+    font-size: 0px;
+}
+
+/*********************************
+******AMX FOOTER : GENERIC********
+*********************************/
+.amx-panelPage-facet-footer.amx-panelPage-bar{
+    overflow-y:hidden;
+}
+
+.amx-panelPage-facet-footer.amx-panelPage-bar > *{
+    padding-left:0px;
+    padding-right:0px;
+}
+/*********************************
+******AMX FOOTER : GENERIC********
+*********************************/
+
+/*********************************
+*********AMX FOOTER END***********
+*********************************/
+
+/*********************************
+*************SHUTTLE***********
+*********************************/
+.EMA_shuttleList.amx-listView .amx-listView-nonCollapsibleDivider.amx-listView-dividerText{
+    text-align: start;
+}
+
+.EMA_shuttleList.amx-listView .amx-listItem,
+.EMA_shuttleList.amx-listView .amx-listItem:last-child,
+.EMA_shuttleList.amx-listView .amx-listItem.amx-listItem-selected, 
+.EMA_shuttleList.amx-listView .amx-listItem:active{
+    background-image: none;
+}
+
+.EMA_shuttleList.amx-listView .amx-listItem:active{
+    opacity: 0.5;
+}
+
+.EMA_shuttleList.amx-listView .amx-listView-header, 
+.EMA_shuttleList.amx-listView .amx-listView-footer{
+    background-color: transparent;
+}
+
+.EMA_shuttleList.amx-listView > .amx-listView-main:after{
+	height: 2px;
+    background-color: rgba(255, 255, 255, 0.12);
+    margin: 0px 10px;
+    content: '';
+    display: block;
+    margin-top:5px;
+}
+
+.EMA_shuttleList.amx-listView .amx-listView-group .amx-listView-divider.amx-listView-nonCollapsibleDivider{
+    height: 22px;
+    background-color: rgba(255, 255, 255, 0.08);    
+}
+
+.EMA_shuttleList.amx-listView .amx-listView-group .amx-listView-divider.amx-listView-nonCollapsibleDivider .amx-listView-dividerText{
+    margin-top: 2px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    text-shadow: none;
+}
+
+.EMA_shuttleList-multiVendor.amx-listView .amx-listView-group > .amx-listView-divider.amx-listView-nonCollapsibleDivider{
+    display: none;
+}
+
+.EMA_shuttleList-multiVendor.amx-listView .amx-listView-group:before{
+	height: 2px;
+    background-color: rgba(255, 255, 255, 0.12);
+    margin: 0px 10px;
+    content: '';
+    display: block;
+    margin-top:5px;
+}
+
+/*shuttle css */
+.shuttleBackGround {
+    background-color: #333333;
+    opacity: 0.95;
+}
+
+.shuttleList .amx-listView-divider {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.shuttleList .amx-listView-dividerText {
+    text-shadow: none;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1px;
+}
+.shuttleList  .amx-listItem:last-child{
+    background-image:none;
+}
+.shuttleList .amx-listItem.amx-listItem-selected, .shuttleList.amx-listView, .shuttleList .amx-listItem {
+    background-color: transparent;
+    border: none !important;
+    background-image: none;
+    border-bottom: none;
+}
+
+.shuttleList .amx-listItem:active {
+    margin-bottom: 0px;
+    opacity: 0.7;
+}
+
+.shuttleList .amx-listItem {
+    border-top: none;
+    margin-bottom: 0px;
+}
+
+.shuttlePersonImage_Connected {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid #FBCE4A;
+}
+
+.shuttlePersonImage_Disconnected {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid #CCCCCC;
+}
+
+.shuttleUserName {
+    color: #FFFFFF;
+    font-family: Helvetica Neue;
+    size: 18px;
+}
+
+.shuttleUserStatus {
+    color: #FFFFFF;
+    font-family: Helvetica Neue;
+    opacity: 0.6;
+    font-size: 11px
+}
+
+.shuttleListItem {
+    color: #FFFFFF;
+    font-family: Helvetica Neue;
+    font-weight: light;
+    /*font-size: 11px;*/
+    /*concered about size of the font*/
+}
+
+.shuttleBadge {
+    height: 21px;
+    min-width: 9px;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    color: #FF0000;
+    font-family: Helvetica Neue;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block !important;
+    margin-right: 15px;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-top: 2px;
+}
+
+.shuttleSwitch .field-value {
+    padding: 0px !important;
+}
+
+.shuttleLogo {
+    width: 90px;
+}
+
+.shuttleHeader {
+    color: white;
+    font-weight: 200;
+    font-size: 200%;
+    margin: 10px 20px;
+}
+
+.shuttleFooter {
+    background: -webkit-linear-gradient(left, rgb(29, 99, 145) 96%, rgb(0, 72, 100) 100%);
+}
+
+.EMA_shuttleBackground{
+    background-color: rgba(51,51,51, 0.95);
+}
+
+.EMA_shuttleSwitch.field.amx-simple .field-value{
+    padding: 0px;
+} 
+
+.field-value{
+    padding: 0px;
+}
+
+/*********************************
+***********SHUTTLE END*********
+*********************************/
+
+/***********************************************************************
+*************************CORE COMPONENT STYLING*************************
+***********************************************************************/
+
+/*********************************
+***********INPUT TEXT*************
+*********************************/
+.EMA_inputText .amx-inputText-content {
+    color: #0572CE;
+}
+
+.EMA_QuantityCounter-input.amx-inputText .field-value{
+    padding: 0px;
+}
+
+.EMA_QuantityCounter-input.amx-inputText .field-value .amx-inputText-content{
+    height: 22px;
+    border-radius: 0px;
+    text-align: end;
+    padding: 5px;
+}
+
+.EMA_QuantityCounter-input-border.amx-inputText .field-value{
+    padding: 0px !important;
+}
+
+.EMA_QuantityCounter-input-border.amx-inputText .field-value .amx-inputText-content{
+    height: 27px;
+    border-radius: 0px;
+    text-align: end;
+    padding: 5px;
+    border: 1px solid #d1d1d1;
+}
+
+/*********************************
+*********INPUT TEXT END***********
+*********************************/
+
+/*********************************
+***********INPUT DATE*************
+*********************************/
+.EMA_inputDate .amx-inputDate-content {
+    border-color: transparent;
+}
+
+.EMA_inputDate .amx-inputDate-content:after, .EMA_inputDate .amx-inputDate-content:focus:after {
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAw0lEQVR42qXUMQoCMRCFYUFYWLASBGFB8BKCB1lvmEoQtrIVPICVYCUIHsAbxDfg+qYQZ4Yp/jQhHyQkmdRav+36fooKOqCGc3YaadAe1U9DBNPIQCSOCdKiowbiGKETqhlMhiRGSGPnOEYoiRFKYoTyGKE89hsiNvNiXJjDigeao8sf5IU2FrLwINZhL9HVg0gpxLqQHboZyNZ6IoLc/QjTyCqOsBFZo0ccYeN2nhlE4n9tIInPn4gb0piBmJDGChF/b1g2T6rFGc2MAAAAAElFTkSuQmCC');
+    background-size: 9px 13px;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(90deg);
+    display: block;
+}
+/*********************************
+*********INPUT DATE END**********
+*********************************/
+
+/*********************************
+********SELECT ONE CHOICE*********
+*********************************/
+.EMA_selectOneChoice.amx-selectOneChoice .selectItemsContainer {
+    border-color: transparent;
+}
+
+.EMA_selectOneChoice.amx-selectOneChoice .field-value:after {
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAw0lEQVR42qXUMQoCMRCFYUFYWLASBGFB8BKCB1lvmEoQtrIVPICVYCUIHsAbxDfg+qYQZ4Yp/jQhHyQkmdRav+36fooKOqCGc3YaadAe1U9DBNPIQCSOCdKiowbiGKETqhlMhiRGSGPnOEYoiRFKYoTyGKE89hsiNvNiXJjDigeao8sf5IU2FrLwINZhL9HVg0gpxLqQHboZyNZ6IoLc/QjTyCqOsBFZo0ccYeN2nhlE4n9tIInPn4gb0piBmJDGChF/b1g2T6rFGc2MAAAAAElFTkSuQmCC');
+    background-size: 9px 13px;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(90deg);
+}
+/*********************************
+******SELECT ONE CHOICE END*******
+*********************************/
+
+/*********************************
+*******ACCESSORY : GENERIC********
+*********************************/
+.amx-accessoryLayout .amx-accessoryLayout_end .amx-commandLink, .amx-accessoryLayout .amx-accessoryLayout_start .amx-commandLink {
+    padding: 0px 5px;
+    max-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*********************************
+*****ACCESSORY : GENERIC END******
+*********************************/
+
+/*********************************
+*******LIST VIEW : GENERIC********
+*********************************/
+.amx-listItem.amx-listItem-selected, .amx-listItem:active {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXV3+8aLew4AAAACklEQVQIHWNgAAAAAgABz8g15QAAAABJRU5ErkJggg==);
+    background-size: 100% 1px;
+}
+
+.amx-listItem:last-child {
+    border-bottom: 0px solid transparent;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXV3+8aLew4AAAACklEQVQIHWNgAAAAAgABz8g15QAAAABJRU5ErkJggg==);
+    background-size: 100% 1px;
+}
+
+html[dir=ltr] .amx-listItem > .amx-fragment, html[dir=ltr] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment, html[dir=ltr] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-tableLayout {
+    margin-right: 30px;
+}
+
+html[dir=ltr] .amx-listItem > .amx-fragment .amx-accessoryLayout.amx-active, html[dir=ltr] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment .amx-accessoryLayout.amx-active {
+    margin-right: -30px;
+}
+
+html[dir=rtl] .amx-listItem > .amx-fragment, html[dir=rtl] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment, html[dir=rtl] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-tableLayout {
+    margin-left: 30px;
+}
+
+html[dir=rtl] .amx-listItem > .amx-fragment .amx-accessoryLayout.amx-active, html[dir=rtl] .amx-listItem > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment .amx-accessoryLayout.amx-active {
+    margin-left: -30px;
+}
+
+html[dir=ltr] .amx-listItem.amx-listItem-noCaret > .amx-fragment, html[dir=ltr] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment, html[dir=ltr] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-tableLayout, html[dir=ltr] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-panelGroupLayout {
+    margin-right: 10px;
+}
+
+html[dir=rtl] .amx-listItem.amx-listItem-noCaret > .amx-fragment, html[dir=rtl] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-fragment, html[dir=rtl] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-tableLayout, html[dir=rtl] .amx-listItem.amx-listItem-noCaret > .amx-accessoryLayout > .amx-accessoryLayout_content > .amx-panelGroupLayout {
+    margin-left: 10px;
+}
+/*********************************
+*****LIST VIEW : GENERIC END******
+*********************************/
+
+/*********************************
+************LIST VIEW*************
+*********************************/
+.EMA_NoListDividers.amx-listView .amx-listItem, .EMA_NoListDividers.amx-listView .amx-listItem:active {
+    background-image: none;
+}
+
+.EMA_AddSelectionState.amx-listView .amx-listItem.amx-listItem-selected {
+    background-color: #DCDCDE;
+}
+
+.EMA_standardListView.amx-listView .amx-listItem {
+    padding: 5px 0px 5px 10px;
+    min-height: 43px;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout_content {
+    padding: 5px 0px 5px 10px;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink {
+    display: none;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(1), .EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(2) {
+    display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(3):nth-last-child(2) {
+    display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:last-child.EMA_standardListView-accessoryButton-more {
+    display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(1):last-child.EMA_standardListView-accessoryButton-more, .EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(2):last-child.EMA_standardListView-accessoryButton-more, .EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(3):last-child.EMA_standardListView-accessoryButton-more, .EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(4):last-child.EMA_standardListView-accessoryButton-more {
+    display: none;
+}
+
+.EMA_listViewSearch-watermark {
+    margin-top: 40%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.EMA_listViewSearch-watermark-image {
+    width: 125px;
+    height: 125px;
+}
+
+html[dir=ltr] .EMA_standardListViewCaret.amx-listItem .amx-listItem-caret{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAw0lEQVR42qXUMQoCMRCFYUFYWLASBGFB8BKCB1lvmEoQtrIVPICVYCUIHsAbxDfg+qYQZ4Yp/jQhHyQkmdRav+36fooKOqCGc3YaadAe1U9DBNPIQCSOCdKiowbiGKETqhlMhiRGSGPnOEYoiRFKYoTyGKE89hsiNvNiXJjDigeao8sf5IU2FrLwINZhL9HVg0gpxLqQHboZyNZ6IoLc/QjTyCqOsBFZo0ccYeN2nhlE4n9tIInPn4gb0piBmJDGChF/b1g2T6rFGc2MAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+    right: 10px;
+    background-position: center;
+}
+
+html[dir=rtl] .EMA_standardListViewCaret.amx-listItem .amx-listItem-caret{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAt0lEQVR42qXUwQZCQRjF8YghWkXEJXqJ6EFubziriFm1jR6gVbSK6AF6g+kMHWaRe+Z2Fv9vM5/f6jOTnHNz+74P6IgimtZvY5GE8rcDCgKSCEvEHISd0MxB2JmQjZR9B7kQKdkIsxFmI8xG2Bhk/guooegihLboPQBd0UJCGK3YUkGt2A2tBGRgA5e9E9gddQJqxh7EasjB1jXkYE+0IeRiL9SVZRdLKAhEYPrz11iNEPoHi0TYB4sKT6pjfEGoAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+    left: 10px;
+    background-position: center;
+}
+
+.amx-panelFormLayout .EMA_standardListViewCaret.amx-listItem:last-child{
+    background-image: none;
+}
+
+/*********************************
+**********LIST VIEW END***********
+*********************************/
+
+/*********************************
+********PANEL FORM LYAYOUT********
+*********************************/
+.EMA_BaseComponentLabel.amx-panelFormLayout .field .field-label, .EMA_BaseComponentLabel .field .field-label {
+    color: #707070;
+    font-size: 14px;
+}
+
+.EMA_BaseComponentValue.amx-panelFormLayout .field.amx-panelLabelAndMessage .field-value > .amx-outputText, .EMA_BaseComponentValue.amx-panelFormLayout .field.amx-inputText .field-value > .wrap .readOnlyLabel, .EMA_BaseComponentValue.amx-panelFormLayout .field.amx-inputDate .field-value > .amx-inputDate-content, .EMA_BaseComponentValue.amx-panelFormLayout .field.amx-inputDate .amx-inputDate-text, .EMA_BaseComponentValue .field.amx-inputDate .amx-inputDate-text {
+    color: #333333;
+    font-size: 17px;
+}
+
+.EMA_LargeComponentLabel.field.amx-selectOneChoice .field-label {
+    color: #707070;
+    font-size: 17px;
+}
+
+.EMA_LargeComponentValue.field.amx-selectOneChoice .field-value .selectItemsContainer {
+    color: #333333;
+    font-size: 20px;
+    height: 30px;
+}
+
+.EMA_LargeComponentValue.field.amx-selectOneChoice .field-value:after {
+    height: 30px;
+    background-position-y: 10px;
+}
+
+.EMA_SimpleForm.amx-panelFormLayout {
+    border: none;
+    margin: 0px;
+}
+
+.EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-inputText.amx-simple .field-label, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectBooleanSwitch.amx-simple .field-label, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectOneChoice.amx-simple .field-label, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-inputDate.amx-simple .field-label, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectOneButton.amx-simple .field-label {
+    display: none;
+}
+
+.EMA_SimpleComponent.amx-inputText.amx-simple .field-value, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectBooleanSwitch.amx-simple .field-value, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectOneChoice.amx-simple .field-value, .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-inputDate.amx-simple .field-value {
+    padding-bottom: 0px;
+}
+
+.EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.EMA_operatorComponent.amx-selectOneButton.amx-simple {
+    margin: 0px;
+}
+
+.EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.EMA_operatorComponent.amx-selectOneButton.amx-simple .field-value {
+    padding: 0px;
+}
+
+.EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.EMA_operatorComponent.amx-selectOneButton.amx-simple .selectItemsContainer {
+    margin: 0px;
+}
+
+html[dir="ltr"] .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectOneChoice.amx-simple .selectItemsContainer, html[dir="ltr"] .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-inputDate.amx-simple .amx-inputDate_content {
+    padding-left: 0px;
+}
+
+html[dir="rtl"] .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-selectOneChoice.amx-simple .selectItemsContainer, html[dir="rtl"] .EMA_SimpleForm.amx-panelFormLayout .EMA_SimpleFieldWrapper.amx-panelLabelAndMessage .EMA_SimpleComponent.amx-inputDate.amx-simple .amx-inputDate_content {
+    padding-right: 0px;
+}
+/*Section Header*/
+.EMA_sectionHeader {
+    background-color: #F2F2F2;
+    padding: 5px;
+    z-index: 1;
+}
+
+html[dir=ltr] .EMA_sectionHeader:before {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px 0px 0px -15px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    color: transparent;
+}
+
+html[dir=rtl] .EMA_sectionHeader:after {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px -15px 0px 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    color: transparent;
+}
+
+.EMA_sectionHeader-text {
+    color: #707070;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.EMA_sectionHeaderButton.amx-commandButton .amx-commandButton-icon{
+    margin-left: 2px;
+    margin-right: 2px
+}
+
+html[dir="ltr"] .amx-panelFormLayout .EMA_subHeader-form{
+    padding: 5px;
+    background-color: #F2F2F2;
+    height: 32px;
+    padding-right: 0px;
+}
+
+html[dir="rtl"] .amx-panelFormLayout .EMA_subHeader-form{
+    padding: 5px;
+    background-color: #F2F2F2;
+    height: 32px;
+    padding-left: 0px;
+}
+
+html[dir=ltr] .amx-panelFormLayout .EMA_subHeader-form:before {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px 0px 0px -15px;
+    height: 42px;
+    width: 100%;
+    color: transparent;
+}
+
+html[dir=rtl] .amx-panelFormLayout .EMA_subHeader-form:before {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px -15px 0px 0px;
+    height: 42px;
+    width: 100%;
+    color: transparent;
+}
+
+html[dir=ltr] .EMA_sectionHeader:before {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px 0px 0px -15px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    color: transparent;
+}
+
+html[dir=rtl] .EMA_sectionHeader:before {
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: -5px -15px 0px 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    color: transparent;
+}
+
+.amx-panelFormLayout .EMA_subHeader-form-contents{
+    border-top: 1px solid #D5DFD5;
+}
+
+html[dir="ltr"] .amx-panelFormLayout .EMA_subHeader-form-contents > *{
+    margin-left: -10px;
+}
+
+html[dir="rtl"] .amx-panelFormLayout .EMA_subHeader-form-contents > *{
+    margin-right: -10px;
+}
+
+.amx-panelFormLayout .EMA_subHeader-form-contents:empty{
+    display:none;
+}
+
+/*section header wrapped inside panelLabelAndMessage*/
+.amx-panelFormLayout.amx-label-position-topStart .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage .field-label{
+    display: none;
+}
+
+
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topStart .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage .field-value,
+html[dir="rtl"] .amx-panelFormLayout.amx-label-position-topStart .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage .field-value{
+    padding: 0px;
+}/*both ltr and rtl is required to override*/
+
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topStart .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage:before{
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: 0px 0px 0px -15px;
+    height: 42px;
+    width: 100%;
+    color: transparent;
+}
+
+html[dir="rtl"] .amx-panelFormLayout.amx-label-position-topStart .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage:before{
+    content: '';
+    position: absolute;
+    background-color: #F2F2F2;
+    margin: 0px -15px 0px 0px;
+    height: 42px;
+    width: 100%;
+    color: transparent;
+}
+
+html[dir="ltr"] .amx-panelFormLayout .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage .EMA_subHeader-form{
+    padding-left: 0px;
+}
+
+
+html[dir="rtl"] .amx-panelFormLayout .EMA_SimpleFieldWrapper.EMA_sectionHeader-wrapper.amx-panelLabelAndMessage .EMA_subHeader-form{
+    padding-right: 0px;
+}
+/*Section Header END*/
+
+/*********************************
+******PANEL FORM LYAYOUT END******
+*********************************/
+
+/*********************************
+***************AVATAR*************
+*********************************/
+.EMA_smallAvatar_inactive {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.EMA_smallAvatar {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #CCCCCC;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.EMA_largeAvatar_inactive {
+    width: 72px;
+    height: 72px;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 34px;
+    line-height: 72px;
+    text-align: center;
+}
+
+.EMA_largeAvatar {
+    width: 72px;
+    height: 72px;
+    border: 2px solid #CCCCCC;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 34px;
+    line-height: 72px;
+    text-align: center;
+}
+
+.EMA_shuttleAvatar_disconnected {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #CCCCCC;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.EMA_shuttleAvatar_connected {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #FBCE4A;
+    border-radius: 50%;
+    display: block;
+    color: #707070;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+}
+/*********************************
+*************AVATAR END***********
+*********************************/
+
+/*********************************
+********STATUS METER GAUGE********
+*********************************/
+.EMA_detailCircularGaugeSize.dvtm-statusMeterGauge {
+    height: 72px;
+    width: 72px;
+}
+
+.EMA_listCircularGaugeSize.dvtm-statusMeterGauge {
+    height: 48px;
+    width: 48px;
+}
+/*********************************
+******STATUS METER GAUGE END******
+*********************************/
+
+/*********************************
+******SELECT BOOLEAN CHOISE*******
+*********************************/
+.amx-selectBooleanSwitch .switch {
+    margin-top: 7px;
+}
+
+.amx-selectBooleanSwitch.on .field-value .switch:active {
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+/*********************************
+****SELECT BOOLEAN CHOISE END*****
+*********************************/
+
+/*********************************
+********ACTIONS MENU POPUP********
+*********************************/
+.EMA_actionsMenuPopup.amx-popup {
+    width: 100%;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.EMA_actionsMenuPopup.amx-popup .actionsContainer.amx-panelGroupLayout {
+    margin: 8px 0px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 0px 8px;
+}
+
+.EMA_actionsMenuPopup.amx-popup .actionsContainer.amx-panelGroupLayout .amx-commandButton {
+    min-height: 36px;
+    line-height: 36px;
+    width: 100%;
+    border-bottom: 1px solid #D5DFE5;
+    margin: 0px;
+}
+
+.EMA_actionsMenuPopup.amx-popup .actionsContainer.amx-panelGroupLayout > div:last-child > .amx-commandButton {
+    border-color: transparent;
+}
+/*********************************
+******ACTIONS MENU POPUP END******
+*********************************/
+
+/*********************************
+***********ANCHORED CARDS*********
+*********************************/
+.EMA_ArrowBox {
+    position: relative;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
+
+.EMA_ArrowBox:after, .EMA_ArrowBox:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.EMA_ArrowBox:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: White;
+    border-width: 6px;
+    margin-top: -6px;
+}
+
+.EMA_ArrowBox:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-right-color: #DDDDDD;
+    border-width: 7px;
+    margin-top: -7px;
+}
+/*********************************
+*********ANCHORED CARDS ENDS*******
+*********************************/
+
+/*********************************
+**************POPUP***************
+*********************************/
+.EMA_warningPopupTitle, .EMA_warningPopupTitle.amx-outputText {
+    font-size: 20px;
+    color: #333333;
+    padding-bottom: 8px;
+    display: block;
+}
+
+.EMA_warningText, .EMA_warningText.amx-outputText {
+    font-size: 16px;
+    color: #333333;
+}
+
+.EMA_warningLink {
+    font-size: 18px;
+    color: #0572ce;
+}
+
+.EMA_warningPopupContent {
+    padding: 15px;
+    min-height: 70px;
+    overflow: auto;
+    max-height: 300px;
+}
+
+.EMA_notificationPopup.amx-popup {
+   background-color: rgba(171,231,132, 0.92);
+   border: 2px solid #9ee471;
+   border-radius:0px;
+}
+
+/*********************************
+************POPUP END*************
+*********************************/
+
+/*********************************
+*******PANEL GROUP LAYOUT*********
+*********************************/
+.EMA_translucentFormWrapper.amx-panelGroupLayout {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.30);
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.EMA_translucentFormWrapper.amx-panelGroupLayout .EMA_translucentForm-inputRow {
+    margin-bottom: 10px;
+}
+
+.EMA_translucentFormWrapper.amx-panelGroupLayout .EMA_translucentForm-inputRow .wrap {
+    border-radius: 3px;
+}
+
+.EMA_translucentFormWrapper.amx-panelGroupLayout .EMA_translucentForm-inputRow .amx-inputText-content {
+    padding: 0px 5px;
+}
+
+.EMA_translucentFormWrapper.amx-panelGroupLayout .EMA_translucentForm-button.amx-commandButton {
+    background-color: rgb(255, 0, 0);
+    height: 40px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    min-width: 110px;
+    max-width: 200px;
+}
+
+.EMA_translucentFormWrapper.amx-panelGroupLayout .EMA_translucentForm-button.amx-commandButton .amx-commandButton-label {
+    color: #FFFFFF;
+}
+/*********************************
+*****PANEL GROUP LAYOUT END*******
+*********************************/
+
+/*********************************
+********ORDERED CHOISE LIST*******
+*********************************/
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState{
+    background-color: #1059a4;
+    min-width: 120px;
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState .amx-outputText,
+.EMA_orderedChoiceList .EMA_orderedChoiceList-otherState .amx-outputText{
+    color: #FFFFFF;
+    font-size: 13px;
+    height: 26px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState:before{
+    background: url("../images/ocl_ena-past_cur.svg");
+    content: '';
+    width:24px;
+    height:30px;
+    position: absolute;
+    top: 0px;
+    left: -24px
+}
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState-caret{
+    background: url("../images/ocl_cur_ena-future.svg");
+    background-size: 24px 30px;
+    background-repeat: no-repeat;
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-otherState{
+    min-width: 120px;
+    background-color: rgb(70, 114, 159);
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-otherState-caret{
+    background: url("../images/ocl_ena-past_past.svg");
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret ~ .EMA_orderedChoiceList-otherState{
+    border-top: 2px solid #1059a4;
+    border-bottom: 2px solid #1059a4;
+    display: block;
+    height: 26px;
+    background-color: #FFFFFF;
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret ~ .EMA_orderedChoiceList-otherState .amx-outputText{
+    font-size: 13px;
+    color: #1059A4;
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret ~ .EMA_orderedChoiceList-otherState-caret{
+    background: url("../images/ocl_ena-future_future-past.svg");
+}
+
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret ~ .EMA_orderedChoiceList-otherState-caret:last-child,
+.EMA_orderedChoiceList .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret:last-child{
+    display: none;
+}
+
+html[dir="ltr"] .EMA_orderedChoiceList .amx-rowLayout{
+    border-right: 2px solid #1059a4;
+}
+
+html[dir="rtl"] .EMA_orderedChoiceList .amx-rowLayout{
+    border-left: 2px solid #1059a4;
+}
+
+
+.EMA_orderedChoiceList-readOnly .amx-tableLayout .EMA_orderedChoiceList-currentState.amx-cellFormat{
+    min-width: 120px;
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid #707070;
+    display: block;
+    height: 26px;
+}
+
+html[dir="ltr"] .EMA_orderedChoiceList-readOnly .amx-tableLayout .EMA_orderedChoiceList-currentState.amx-cellFormat{
+    border-left: 2px solid #707070;
+}
+
+html[dir="rtl"] .EMA_orderedChoiceList-readOnly .amx-tableLayout .EMA_orderedChoiceList-currentState.amx-cellFormat{
+    border-right: 2px solid #707070;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState .amx-outputText{
+    color: #707070;
+    font-size: 13px;
+    font-weight:bold;
+    height:26px;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-otherState .amx-outputText{
+    color: #FFFFFF;
+    font-size: 13px;
+    height: 26px;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState:first-child:before{
+    display: none;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState:before{
+    background: url("../images/ocl_dis-past_cur.svg");
+    content: '';
+    width:24px;
+    height:30px;
+    position: absolute;
+    top: -2px;
+    left: -24px;
+    background-color: #FFFFFF;
+}
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState-caret{
+    background: url("../images/ocl_cur_dis-future.svg");
+    background-size: 24px 30px;
+    background-repeat: no-repeat;
+}
+
+html[dir="ltr"] .EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState:nth-last-child(2){
+    border-right: 2px solid #707070 !important;
+}
+
+html[dir="rtl"] .EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState:nth-last-child(2){
+    border-left: 2px solid #707070 !important;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-otherState{
+    min-width: 120px;
+    background-color: #D6D6D6;
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-otherState-caret{
+    background: url("../images/ocl_dis-past_past.svg");
+}
+
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret ~ .EMA_orderedChoiceList-otherState-caret:last-child,
+.EMA_orderedChoiceList-readOnly .EMA_orderedChoiceList-currentState + .EMA_orderedChoiceList-currentState-caret:last-child{
+    display:none;
+}
+/*********************************
+******ORDERED CHOISE LIST END*****
+*********************************/
+
+/***********************************************************************
+***********************CORE COMPONENT STYLING END***********************
+***********************************************************************/
+
+/*****************************
+************LOGIN*************
+*****************************/
+.EMA_loginContainer {
+    width: 290px;
+    height: 245px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.EMA_loginError {
+                text-align: start;
+                background-color: #ffd7d7;
+                border-radius: 10px;
+                border: 1px solid #ffb5b5;
+                margin-top: -10px;
+                font-size: 12px;
+                color: #333333;
+                padding: 1px 0px;
+                display: block;
+                margin-bottom: 5px;
+}
+
+.EMA_loginError:before {
+                content: 'aaa';
+                background: url("../images/menu_alert_12_full.png");
+                background-size: 12px;
+                background-repeat: no-repeat;
+                color: transparent;
+                margin: 2px;
+                background-position: 3px;
+}
+
+.EMA_inputText-login.amx-inputText .field-value {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.EMA_inputText-login.amx-inputText .wrap {
+    border-radius: 5px;
+}
+
+.EMA_inputText-login.amx-inputText .wrap .amx-inputText-content {
+    padding: 0px 5px;
+}
+
+.EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch .field-label {
+    color: #FFFFFF;
+}
+
+.EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch .field-value {
+    width: 100px;
+}
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.off .switch-button, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.off .switch-button {
+    background-image: url(../images/select_boolean_switch_off_enabled.svg);
+}
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button {
+    background-image: url(../images/select_boolean_switch_on_enabled.svg);
+}
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button:active, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button:active {
+    background-image: url(../images/select_boolean_switch_on_pressed.svg);
+}
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.off .switch-button:active, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.off .switch-button:active {
+    background-image: url(../images/select_boolean_switch_off_pressed.svg);
+}
+
+.EMA_commandButton-login.amx-commandButton {
+    color: #000000;
+    background-color: #ffc801;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 100px;
+    min-height: 35px;
+}
+
+.EMA-commandButton-login-settings.amx-commandButton {
+    position: absolute;
+    right: 0px;
+    bottom: -5px;
+}
+/*****************************
+**********LOGIN END***********
+*****************************/
+
+/*****************************
+***********INDICATOR**********
+*****************************/
+.EMA_indicatorDot-green{
+    width:8px; 
+    height:8px; 
+    display: block; 
+    border-radius: 50%; 
+    background-color: rgb(0, 175, 70);
+}
+
+.EMA_indicatorDot-yellow{
+    width:8px; 
+    height:8px; 
+    display: block; 
+    border-radius: 50%; 
+    background-color: rgb(255,192,0);
+}
+
+.EMA_indicatorLine-red{
+    height:16px;
+    width:5px;
+    background-color: rgb(252, 49, 29); 
+    border-radius: 10%;
+    margin: 0px 5px;
+}
+
+.EMA_indicatorLine-yellow{
+    height:16px;
+    width:5px;
+    background-color: rgb(255,192,0); 
+    border-radius: 10%;
+    margin: 0px 5px;
+}
+
+.EMA_indicatorLine-cyan{
+    height:16px;
+    width:5px;
+    background-color: rgb(58, 202, 202); 
+    border-radius: 10%;
+    margin: 0px 5px;
+}
+
+/**********************************
+***********INDICATOR END **********
+**********************************/
+
+/**********************************
+***********OPPORTUNITY*************
+**********************************/
+
+.EMA_mapPoint-callout-container{
+    background-color: #FFFFFF; 
+    padding: 5px; 
+    height: 90px;
+}
+
+.EMA_mapPoint-callout-box{
+    background-color: rgba(0,0,0,0.1); 
+    padding: 15px; 
+    height: 60px;
+}
+
+/**********************************
+*********OPPORTUNITY END***********
+**********************************/

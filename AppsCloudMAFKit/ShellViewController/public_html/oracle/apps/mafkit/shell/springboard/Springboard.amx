@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1" styleClass="EMA_shuttleBackground">
+    <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
+      <amx:facet name="top">
+        <amx:spacer id="s1" height="15" rendered="#{! (deviceScope.device.os eq 'Android')}"/>
+      </amx:facet>
+      <amx:facet name="center">
+        <amx:panelGroupLayout id="pgl2" layout="vertical" halign="center">
+          <amx:spacer id="s2" height="30"/>
+          <amx:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+            <amx:image id="i2" source="/resources/images/headshot04.png" shortDesc="User Photo"
+                       styleClass="EMA_shuttleAvatar_connected"/>
+            <amx:spacer id="s3" height="10"/>
+            <amx:outputText value="Lisa Jones" id="ot1" styleClass="EMA_text-white EMA_LargeFontSize"/>
+          </amx:panelGroupLayout>
+          <amx:spacer id="s4" height="20"/>
+          <amx:listView var="row" value="#{bindings.springboardFeaturesList.collectionModel}"
+                        selectionListener="#{bindings.springboardFeaturesList.collectionModel.makeCurrent}" id="lv1" dividerAttribute="dividerText"
+                        styleClass="EMA_shuttleList #{bindings.multipleVendors.inputValue ? '' : 'EMA_shuttleList-multiVendor'}"
+                        showMoreStrategy="autoScroll" bufferStrategy="viewport">
+            <amx:facet name="header">
+              <amx:listView var="row" value="#{bindings.springboardCommonHeaderList.collectionModel}"
+                            selectionListener="#{bindings.springboardCommonHeaderList.collectionModel.makeCurrent}"
+                            id="lv2" showMoreStrategy="autoScroll" bufferStrategy="viewport">
+                <amx:listItem id="li2" showLinkIcon="false" shortDesc="Header Item"
+                              actionListener="#{bindings.processItemSelectionHeader.execute}">
+                  <amx:fragment src="/oracle/apps/mafkit/shell/springboard/SpringboardItem.amxf" id="f2">
+                    <amx:attribute name="image" value="#{row.image}" id="a4"/>
+                    <amx:attribute name="text" value="#{row.name}" id="a5"/>
+                    <amx:attribute name="type" value="#{row.springboardItemType}" id="a6"/>
+                  </amx:fragment>
+                </amx:listItem>
+              </amx:listView>
+            </amx:facet>
+            <amx:listItem id="li1" showLinkIcon="false" shortDesc="Feature Item"
+                          actionListener="#{bindings.processItemSelection.execute}">
+              <amx:fragment src="/oracle/apps/mafkit/shell/springboard/SpringboardItem.amxf" id="f1">
+                <amx:attribute name="image" value="#{row.image}" id="a1"/>
+                <amx:attribute name="text" value="#{row.name}" id="a2"/>
+                <amx:attribute name="type" value="#{row.springboardItemType}" id="a3"/>
+              </amx:fragment>
+            </amx:listItem>
+            <amx:facet name="footer">
+              <amx:listView var="row" value="#{bindings.springboardCommonFooterList.collectionModel}"
+                            selectionListener="#{bindings.springboardCommonFooterList.collectionModel.makeCurrent}"
+                            showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv3">
+                <amx:listItem id="li3" showLinkIcon="false" shortDesc="Footer Item"
+                              actionListener="#{bindings.processItemSelectionFooter.execute}">
+                  <amx:fragment src="/oracle/apps/mafkit/shell/springboard/SpringboardItem.amxf" id="f3">
+                    <amx:attribute name="image" value="#{row.image}" id="a7"/>
+                    <amx:attribute name="text" value="#{row.name}" id="a9"/>
+                    <amx:attribute name="type" value="#{row.springboardItemType}" id="a8"/>
+                  </amx:fragment>
+                </amx:listItem>
+              </amx:listView>
+            </amx:facet>
+          </amx:listView>
+          <amx:spacer id="s6" height="15"/>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="bottom">
+        <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+          <amx:image id="i1" source="/resources/images/oracleLogoTrans.png" shortDesc="Oracle Logo"/>
+          <amx:spacer id="s5" height="10"/>
+        </amx:panelGroupLayout>
+      </amx:facet>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+</amx:view>

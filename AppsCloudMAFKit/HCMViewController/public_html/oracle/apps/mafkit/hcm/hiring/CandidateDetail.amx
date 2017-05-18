@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+-->
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1" rendered="false"/>
+      <amx:outputText value="#{bindings.name.inputValue}" id="ot2"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
+                         action="__back" shortDesc="Back" styleClass="EMA_primaryHeader-button"
+                         actionListener="#{pageFlowScope.HiringBean.handleReturnFromCandidateDetail}">
+        <amx:setPropertyListener id="spl3" from="#{true}" type="action"
+                                 to="#{pageFlowScope.HiringBean.pageNavigation}"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+        <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
+                               alignId="pp1"/>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1"
+                         rendered="#{deviceScope.hardware.screen.availableWidth lt deviceScope.hardware.screen.availableHeight}"
+                         styleClass="EMA_SimpleForm EMA_BaseComponentLabel EMA_BaseComponentValue"
+                         labelPosition="topStart" fieldHalign="start">
+      <amx:panelLabelAndMessage label="#{''}" id="plam2"
+                                styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper"
+                                inlineStyle="border-top: 1px solid #D5DFD5;">
+        <amx:tableLayout id="tl1" width="100%" styleClass="EMA_subHeader-form">
+          <amx:rowLayout id="rl1">
+            <amx:cellFormat id="cf1" height="32px">
+              <amx:outputText value="Metrics" id="ot3" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl5" styleClass="EMA_subHeader-form-contents">
+          <amx:tableLayout id="tl2" styleClass="EMA_padding10" width="100%">
+            <amx:rowLayout id="rl2">
+              <amx:cellFormat id="cf3" width="33%" halign="center">
+                <amx:outputText value="1" id="ot4" styleClass="EMA_4XLargeFontSize EMA_text-lightblue"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf4" rowSpan="2" styleClass="EMA_dottedLine"/>
+              <amx:cellFormat id="cf5" width="33%" halign="center">
+                <amx:outputText value="3" id="ot5" styleClass="EMA_4XLargeFontSize EMA_text-lightblue"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf6" rowSpan="2" styleClass="EMA_dottedLine"/>
+              <amx:cellFormat id="cf2" width="33%" halign="center">
+                <amx:outputText value="Master's Degree" id="ot6" styleClass="EMA_SmallFontSize EMA_text-lightblue"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl3">
+              <amx:cellFormat id="cf8" halign="center">
+                <amx:outputText value="Years at Current Company" id="ot7" styleClass="EMA_5XSmallFontSize"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf9" halign="center">
+                <amx:outputText value="Total Years Work Experience" id="ot8" styleClass="EMA_5XSmallFontSize"/>
+              </amx:cellFormat>
+              <amx:cellFormat id="cf7" halign="center">
+                <amx:outputText value="Most Advanced Education" id="ot9" styleClass="EMA_5XSmallFontSize"/>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{''}" id="plam3"
+                                styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper">
+        <amx:tableLayout id="tl3" styleClass="EMA_subHeader-form" width="100%">
+          <amx:rowLayout id="rl4">
+            <amx:cellFormat id="cf10" height="32px">
+              <amx:outputText value="Attachments" id="ot10" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl6" styleClass="EMA_subHeader-form-contents">
+          <amx:tableLayout id="tl4" styleClass="EMA_padding10" width="100%">
+            <amx:rowLayout id="rl5">
+              <amx:cellFormat id="cf11" width="100%" halign="center">
+                <amx:commandLink text="Resume" id="cl1" shortDesc="Resume"
+                                 actionListener="#{pageFlowScope.HiringBean.showDocument}">
+                  <amx:setPropertyListener id="spl1" from="#{'Resume'}" to="#{pageFlowScope.HiringBean.docToShow}"
+                                           type="action"/>
+                </amx:commandLink>
+              </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl6">
+              <amx:cellFormat id="cf12" width="100%" halign="center">
+                <amx:commandLink text="Cover Letter" id="cl2" shortDesc="Cover Letter"
+                                 actionListener="#{pageFlowScope.HiringBean.showDocument}">
+                  <amx:setPropertyListener id="spl2" from="#{'CoverLetter'}"
+                                           to="#{pageFlowScope.HiringBean.docToShow}" type="action"/>
+                </amx:commandLink>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{''}" id="plam5"
+                                styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper">
+        <amx:tableLayout id="tl5" width="100%" styleClass="EMA_subHeader-form">
+          <amx:rowLayout id="rl7">
+            <amx:cellFormat id="cf13" height="32px">
+              <amx:outputText value="External Profiles" id="ot11" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl7" styleClass="EMA_subHeader-form-contents">
+          <amx:tableLayout id="tl7" styleClass="EMA_padding10" width="100%">
+            <amx:rowLayout id="rl9">
+              <amx:cellFormat id="cf15" halign="center" width="100%">
+                <amx:panelGroupLayout id="pgl8" layout="horizontal" valign="middle">
+                  <amx:goLink id="gl1" url="https://www.linkedin.com/company/oracle">
+                    <amx:image id="i1" source="/resources/images/linkedin_logo_65.jpeg" styleClass="EMA_image25"/>
+                  </amx:goLink>
+                  <amx:spacer id="s1" width="10"/>
+                  <amx:goLink text="See LinkedIn Profile" id="gl2" url="https://www.linkedin.com/company/oracle"/>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{''}" id="plam4"
+                                styleClass="EMA_SimpleFieldWrapper EMA_noLabel EMA_sectionHeader-wrapper">
+        <amx:tableLayout id="tl6" styleClass="EMA_subHeader-form" width="100%">
+          <amx:rowLayout id="rl8">
+            <amx:cellFormat id="cf14" height="32px">
+              <amx:outputText value="All Submissions" id="ot12" styleClass="EMA_sectionHeader-text EMA_truncate"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:panelGroupLayout id="pgl9" styleClass="EMA_subHeader-form-contents" layout="vertical">
+          <amx:spacer id="s2" height="10"/>
+          <amx:filmStrip id="fs1" value="#{bindings.submissions.collectionModel}"
+                         var="row" itemsPerPage="1" pageControlPosition="bottom" shortDesc="Submissions"
+                         halign="center" valign="top" orientation="horizontal">
+            <amx:filmStripItem id="fsi1" shortDesc="Submission Item"
+                               styleClass="EMA_candidateSubmission">
+              <amx:panelGroupLayout id="pgl11" styleClass="EMA_padding10 EMA_bkgd-grey">
+                <amx:tableLayout id="tl8" width="100%">
+                  <amx:rowLayout id="rl11">
+                    <amx:cellFormat id="cf16" columnSpan="2" width="100%">
+                      <amx:outputText value="#{row.reqName}" id="ot13" styleClass="EMA_BoldFont" truncateAt="35"/>
+                    </amx:cellFormat>
+                  </amx:rowLayout>
+                  <amx:rowLayout id="rl10">
+                    <amx:cellFormat id="cf18" width="25%" halign="start">
+                      <amx:outputText value="#{row.reqId}" id="ot14"
+                                      styleClass="EMA_text-normal-2 EMA_3XSmallFontSize"/>
+                    </amx:cellFormat>
+                    <amx:cellFormat id="cf17" width="75%" halign="end">
+                      <amx:outputText value="#{row.reqCity}, #{row.reqState}, #{row.reqCountry}" id="ot15"
+                                      styleClass="EMA_text-normal-2 EMA_3XSmallFontSize EMA_noWrap"/>
+                    </amx:cellFormat>
+                  </amx:rowLayout>
+                </amx:tableLayout>
+              </amx:panelGroupLayout>
+              <amx:panelGroupLayout id="pgl10" styleClass="EMA_padding10">
+                <amx:tableLayout id="tl9" width="100%">
+                  <amx:rowLayout id="rl12">
+                    <amx:cellFormat id="cf19" width="100%" halign="start">
+                      <amx:outputText value="#{row.candidateStatus}" id="ot16"/>
+                    </amx:cellFormat>
+                  </amx:rowLayout>
+                </amx:tableLayout>
+              </amx:panelGroupLayout>
+            </amx:filmStripItem>
+          </amx:filmStrip>
+        </amx:panelGroupLayout>
+      </amx:panelLabelAndMessage>
+    </amx:panelFormLayout>
+    <amx:panelStretchLayout id="psl1"
+                            rendered="#{deviceScope.hardware.screen.availableWidth gt deviceScope.hardware.screen.availableHeight}">
+      <amx:facet name="center">
+        <dvtm:timeline startTime="2013-07-01" endTime="2016-10-31" id="t1" shortDesc="Time Line"
+                       orientation="horizontal" itemSelection="single">
+          <dvtm:timeAxis scale="months" id="ta1" type="minor"/>
+          <dvtm:timeAxis id="ta2" scale="years" type="major"/>
+          <dvtm:overview id="o1" rendered="true" inlineStyle="height:50px;"/>
+          <dvtm:timelineSeries id="ts1" value="#{bindings.educationData.collectionModel}" var="evt">
+            <dvtm:timelineItem startTime="#{evt.startDate}" id="ti1" endTime="#{evt.endDate}"
+                               description="#{evt.description}" title="#{evt.title}"/>
+          </dvtm:timelineSeries>
+          <dvtm:timelineSeries id="ts2" value="#{bindings.workExperienceData.collectionModel}" var="evt">
+            <dvtm:timelineItem startTime="#{evt.startDate}" id="ti2" endTime="#{evt.endDate}"
+                               description="#{evt.description}" title="#{evt.title}"/>
+          </dvtm:timelineSeries>
+        </dvtm:timeline>
+      </amx:facet>
+    </amx:panelStretchLayout>
+  </amx:panelPage>
+  <amx:popup id="contextMenuPopup" shortDesc="Contextual Menu Popup" styleClass="EMA_actionsMenuPopup"
+             animation="slideUp" autoDismiss="true">
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:panelGroupLayout id="pgl3" styleClass="actionsContainer">
+        <amx:commandButton text="Send EMail" id="cb4" shortDesc="Send EMail">
+          <amx:closePopupBehavior id="cpb1" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+        <amx:commandButton text="End SMS" id="cb3" shortDesc="End SMS">
+          <amx:closePopupBehavior id="cpb2" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+      <amx:panelGroupLayout id="pgl2" styleClass="actionsContainer">
+        <amx:commandButton text="Cancel" id="cb5" shortDesc="Cancel">
+          <amx:closePopupBehavior id="cpb3" popupId="contextMenuPopup" type="action"/>
+        </amx:commandButton>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:popup>
+</amx:view>
