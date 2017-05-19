@@ -1,11 +1,20 @@
 Oracle Mobile Applications User Experience RDK
 =====
+<<<<<<< HEAD
 The Oracle Mobile Applications User Experience Rapid Development Kit (RDK) 
 is a set of free resources that will help you learn faster, design simpler 
 and build better.
 
 Use the RDK to leverage the PaaS for SaaS advantage and accelerate your 
 delivery of sleek, modern SaaS integrations and custom PaaS applications 
+=======
+The Oracle Mobile Applications User Experience Rapid Development Kit (RDK)
+is a set of free resources that will help you learn faster, design simpler
+and build better.
+
+Use the RDK to leverage the PaaS for SaaS advantage and accelerate your
+delivery of sleek, modern SaaS integrations and custom PaaS applications
+>>>>>>> origin/master
 solutions to win customers and delight users in the Oracle Cloud.
 
 This Rapid Development Kit (RDK) is intended as a Partner Training Kit
