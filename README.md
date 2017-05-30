@@ -15,9 +15,9 @@ Oracle Applications Cloud.
 
 [Learn more about Oracle Applications Cloud UX RDK](http://www.oracle.com/webfolder/ux/applications/successStories/oracleApplicationsCloudRDK.html)
 
-Instructions for using RDK
+Instructions for using the RDK
 =====
-Find below instructions for using the MAF RDK with JDeveloper.
+Read the included Technical eBook to understand how the RDK code is organized and how to run the sample application on an iOS Simulator from within JDeveloper.
 
 ## Pre-Requisites
 JDeveloper 12.2.1.0.0 or later
