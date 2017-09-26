@@ -10,8 +10,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
       <amx:outputText value="Shopping Cart (#{bindings.shoppingCartItemCount.inputValue} #{bindings.shoppingCartItemCount.inputValue eq 1 ? 'Item' : 'Items'})" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
-                         action="__back" styleClass="EMA_primaryHeader-button" shortDesc="Back"/>
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft.svg" iconPosition="leading"
+                         action="__back" styleClass="EMA_primaryHeader-button" shortDesc="Back"
+                         iconDelivery="fetchAndInline"/>
       <amx:commandButton id="cb101" shortDesc="Hidden Button" styleClass="EMA_hide">
         <amx:showPopupBehavior id="spb2" popupId="p2" align="overlapTopCenter" alignId="pfl1"/>
       </amx:commandButton>
@@ -170,30 +171,27 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           </amx:panelLabelAndMessage>
         </amx:panelFormLayout>
       </amx:facet>
-      <amx:facet name="bottom">
-        <amx:panelGroupLayout id="pgl2" styleClass="EMA_bkgd-lightgrey">
-          <amx:tableLayout id="tl1" width="100%">
-            <amx:rowLayout id="rl1">
-              <amx:cellFormat id="cf1" width="50%" halign="center">
-                <amx:panelGroupLayout id="pgl3" layout="horizontal">
-                  <amx:outputText value="Total" id="ot6" styleClass="EMA_BoldFont"/>
-                  <amx:spacer id="s1" width="5"/>
-                  <amx:outputText id="ot7" styleClass="EMA_BoldFont" value="#{bindings.shoppingCartAmount.inputValue}">
-                    <amx:convertNumber id="cn1" type="currency" currencySymbol="$" groupingUsed="true"
-                                       minFractionDigits="2" maxFractionDigits="2"/>
-                  </amx:outputText>
-                </amx:panelGroupLayout>
-              </amx:cellFormat>
-              <amx:cellFormat id="cf2" width="50%" halign="center">
-                <amx:commandButton text="Submit" id="cb2" shortDesc="Submit Requisition"
-                                   styleClass="EMA_commandButton-blue"
-                                   actionListener="#{pageFlowScope.ProcurementBean.submitCart}"/>
-              </amx:cellFormat>
-            </amx:rowLayout>
-          </amx:tableLayout>
-        </amx:panelGroupLayout>
-      </amx:facet>
     </amx:panelStretchLayout>
+    <amx:facet name="footer">
+      <amx:tableLayout id="tl1" width="100%">
+        <amx:rowLayout id="rl1">
+          <amx:cellFormat id="cf1" width="50%" halign="center">
+            <amx:panelGroupLayout id="pgl3" layout="horizontal">
+              <amx:outputText value="Total" id="ot6" styleClass="EMA_BoldFont"/>
+              <amx:spacer id="s1" width="5"/>
+              <amx:outputText id="ot7" styleClass="EMA_BoldFont" value="#{bindings.shoppingCartAmount.inputValue}">
+                <amx:convertNumber id="cn1" type="currency" currencySymbol="$" groupingUsed="true" minFractionDigits="2"
+                                   maxFractionDigits="2"/>
+              </amx:outputText>
+            </amx:panelGroupLayout>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf2" width="50%" halign="center">
+            <amx:commandButton text="Submit" id="cb2" shortDesc="Submit Requisition" styleClass="EMA_commandButton"
+                               actionListener="#{pageFlowScope.ProcurementBean.submitCart}"/>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:facet>
   </amx:panelPage>
   <amx:popup id="p1" shortDesc="Address Popup" animation="zoom" autoDismiss="true" backgroundDimming="off">
     <amx:panelGroupLayout id="pgl1" layout="vertical" halign="start">

@@ -103,7 +103,7 @@ public class LifeCycleListenerImpl implements LifeCycleListener {
    */
   public void activate() {
     //Set color of the items in phone status bar at the top for iOS only
-    AdfmfContainerUtilities.setStatusBarStyle(AdfmfContainerUtilities.STATUS_BAR_STYLE.LIGHT);
+    AdfmfContainerUtilities.setStatusBarStyle(AdfmfContainerUtilities.STATUS_BAR_STYLE.DARK);
   }//activate
 
   /**

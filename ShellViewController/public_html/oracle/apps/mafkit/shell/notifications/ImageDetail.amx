@@ -10,8 +10,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
       <amx:outputText value="#{pageFlowScope.NotificationsBean.selectedNotification.subject}" id="ot1"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" action="__back"
-                         styleClass="EMA_primaryHeader-button" shortDesc="Back" iconPosition="leading"/>
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft.svg" action="__back"
+                         styleClass="EMA_primaryHeader-button" shortDesc="Back" iconPosition="leading"
+                         iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:spacer id="s1" height="20"/>
     <amx:panelGroupLayout id="pgl1" halign="center">

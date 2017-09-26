@@ -11,16 +11,17 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
       <amx:outputText value="#{bindings.name.inputValue}" id="ot2"/>
     </amx:facet>
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft.svg" iconPosition="leading"
                          action="__back" shortDesc="Back" styleClass="EMA_primaryHeader-button"
-                         actionListener="#{pageFlowScope.HiringBean.handleReturnFromCandidateDetail}">
+                         actionListener="#{pageFlowScope.HiringBean.handleReturnFromCandidateDetail}"
+                         iconDelivery="fetchAndInline">
         <amx:setPropertyListener id="spl3" from="#{true}" type="action"
                                  to="#{pageFlowScope.HiringBean.pageNavigation}"/>
       </amx:commandButton>
     </amx:facet>
     <amx:facet name="secondary">
-      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
-                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipses.svg" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button" iconDelivery="fetchAndInline">
         <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
                                alignId="pp1"/>
       </amx:commandButton>

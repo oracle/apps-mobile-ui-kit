@@ -12,13 +12,14 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png"
-                         styleClass="EMA_primaryHeader-button" shortDesc="Springboard"/>
+                         icon="/resources/images/func_springboard.svg"
+                         styleClass="EMA_primaryHeader-button" shortDesc="Springboard" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:facet name="secondary">
       <amx:commandButton actionListener="#{bindings.navigateToFeature.execute}" id="cb2"
-                         icon="/resources/images/func_bell_24_ena.png" shortDesc="Notifications"
-                         styleClass="EMA_secondaryHeader-button #{applicationScope.ApplicationStateBean.newNotification ? 'EMA_applicationBadge' : ''}">
+                         icon="/resources/images/func_bell.svg" shortDesc="Notifications"
+                         styleClass="EMA_secondaryHeader-button #{applicationScope.ApplicationStateBean.newNotification ? 'EMA_applicationBadge' : ''}"
+                         iconDelivery="fetchAndInline">
         <amx:setPropertyListener id="spl1" to="#{viewScope.navigateToFeature}"
                                  from="#{'oracle.apps.mafkit.shell.notifications'}" type="action"/>
         <amx:setPropertyListener id="spl11" to="#{applicationScope.ApplicationStateBean.newNotification}"

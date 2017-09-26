@@ -11,8 +11,8 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png" styleClass="EMA_primaryHeader-button"
-                         shortDesc="Springboard"/>
+                         icon="/resources/images/func_springboard.svg" styleClass="EMA_primaryHeader-button"
+                         shortDesc="Springboard" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:listView var="row" showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1"
                   value="#{applicationScope.ApplicationStateBean.notificationsList}"
@@ -25,7 +25,7 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
                              shortDesc="Flag"/>
           </amx:facet>
           <amx:facet name="end">
-            <amx:commandLink text="Dismiss" id="cl3" rendered="#{row.type eq 'FYI'}"
+            <amx:commandLink text="Dismiss" id="cl3" rendered="#{row.type ne 'APPROVAL'}"
                              styleClass="EMA_LargeIcon EMA_truncate EMA_bkgd-neutralBlue"
                              inlineStyle="min-width:#{deviceScope.hardware.screen.availableWidth * 0.25}px;"/>
             <amx:commandLink text="Approve" id="cl4" rendered="#{row.type eq 'APPROVAL'}"

@@ -11,17 +11,17 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
-                         styleClass="EMA_primaryHeader-button" iconPosition="leading"/>
+                         icon="/resources/images/func_springboard.svg" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button" iconPosition="leading" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:facet name="secondary">
-      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
-                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipses.svg" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button" iconDelivery="fetchAndInline">
         <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" align="bottomCenter" alignId="pp1"
                                decoration="simple" type="action"/>
       </amx:commandButton>
-      <amx:commandButton id="cb7" icon="/resources/images/func_search_24_ena.png" iconPosition="leading"
-                         shortDesc="Search" styleClass="EMA_secondaryHeader-button"/>
+      <amx:commandButton id="cb7" icon="/resources/images/func_search.svg" iconPosition="leading"
+                         shortDesc="Search" styleClass="EMA_secondaryHeader-button" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:listView var="row" value="#{bindings.opportunityList.collectionModel}"
                   fetchSize="#{bindings.opportunityList.rangeSize}"

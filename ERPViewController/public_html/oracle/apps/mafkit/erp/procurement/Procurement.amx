@@ -11,14 +11,15 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
+                         icon="/resources/images/func_springboard.svg" shortDesc="Springboard"
                          styleClass="EMA_primaryHeader-button"
                          rendered="#{pageFlowScope.ProcurementBean.searchPerformed == true ? false : true}"
-                         iconPosition="leading"/>
-      <amx:commandButton id="cb2" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
+                         iconPosition="leading" iconDelivery="fetchAndInline"/>
+      <amx:commandButton id="cb2" icon="/resources/images/func_caretleft.svg" iconPosition="leading"
                          shortDesc="Back" styleClass="EMA_primaryHeader-button"
                          rendered="#{pageFlowScope.ProcurementBean.searchPerformed == true ? true : false}"
-                         actionListener="#{pageFlowScope.ProcurementBean.resetProductFilters}">
+                         actionListener="#{pageFlowScope.ProcurementBean.resetProductFilters}"
+                         iconDelivery="fetchAndInline">
         <amx:setPropertyListener id="spl1" from="#{''}" to="#{pageFlowScope.ProcurementBean.searchString}"
                                  type="action"/>
       </amx:commandButton>
@@ -32,20 +33,23 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     <amx:facet name="secondary">
       <amx:commandButton id="cb7" shortDesc="Card View"
                          rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'list' &amp;&amp; pageFlowScope.ProcurementBean.searchPerformed eq true}"
-                         icon="/resources/images/func_grid_24_ena.png" styleClass="EMA_secondaryHeader-button">
+                         icon="/resources/images/func_grid.svg" styleClass="EMA_secondaryHeader-button"
+                         iconDelivery="fetchAndInline">
         <amx:setPropertyListener id="spl2" from="#{'card'}" to="#{pageFlowScope.ProcurementBean.resultsViewMode}"
                                  type="action"/>
       </amx:commandButton>
       <amx:commandButton id="cb6" shortDesc="List View"
                          rendered="#{pageFlowScope.ProcurementBean.resultsViewMode eq 'card' &amp;&amp; pageFlowScope.ProcurementBean.searchPerformed eq true}"
-                         icon="/resources/images/func_list_24_ena.png" styleClass="EMA_secondaryHeader-button">
+                         icon="/resources/images/func_list.svg" styleClass="EMA_secondaryHeader-button"
+                         iconDelivery="fetchAndInline">
         <amx:setPropertyListener id="spl3" from="#{'list'}" to="#{pageFlowScope.ProcurementBean.resultsViewMode}"
                                  type="action"/>
       </amx:commandButton>
       <amx:commandButton id="cb5" shortDesc="Shopping Cart"
-                         styleClass="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
-                         action="shoppingCart" icon="/resources/images/func_cart_24_ena.png"
-                         text="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : bindings.shoppingCartItemCount.inputValue}"/>
+                         styleClass="EMA_secondaryHeader-button #{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
+                         action="shoppingCart" icon="/resources/images/func_cart.svg"
+                         text="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : bindings.shoppingCartItemCount.inputValue}"
+                         iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:panelGroupLayout id="pgl1" layout="vertical" halign="start" valign="top">
       <amx:panelGroupLayout id="pgl2" layout="horizontal"

@@ -7,8 +7,9 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" iconPosition="leading"
-                         action="__back" shortDesc="Back" styleClass="EMA_primaryHeader-button"/>
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft.svg" iconPosition="leading"
+                         action="__back" shortDesc="Back" styleClass="EMA_primaryHeader-button"
+                         iconDelivery="fetchAndInline"/>
       <amx:commandButton id="cb101" styleClass="EMA_hide" shortDesc="Hidden Button">
         <amx:showPopupBehavior id="spb1" popupId="p1" alignId="pfl2" align="overlapTopCenter"/>
       </amx:commandButton>
@@ -18,10 +19,10 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="secondary">
       <amx:commandButton id="cb2"
-                         styleClass="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
-                         icon="/resources/images/func_cart_24_ena.png" iconPosition="leading" action="shoppingCart"
+                         styleClass="EMA_secondaryHeader-button #{bindings.shoppingCartItemCount.inputValue == 0 ? '' : 'EMA_applicationBadge'}"
+                         icon="/resources/images/func_cart.svg" iconPosition="leading" action="shoppingCart"
                          text="#{bindings.shoppingCartItemCount.inputValue == 0 ? '' : bindings.shoppingCartItemCount.inputValue}"
-                         shortDesc="Shopping Cart"/>
+                         shortDesc="Shopping Cart" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
       <amx:facet name="center">
@@ -112,39 +113,36 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           </amx:panelLabelAndMessage>
         </amx:panelFormLayout>
       </amx:facet>
-      <amx:facet name="bottom">
-        <amx:panelGroupLayout id="pgl2" styleClass="EMA_bkgd-lightgrey">
-          <amx:tableLayout id="tl4" width="100%">
-            <amx:rowLayout id="rl4">
-              <amx:cellFormat id="cf5" width="75px" halign="end" valign="middle">
-                <amx:commandButton id="cb5" icon="/resources/images/func_circleminus_24_ena.png"
-                                   disabled="#{pageFlowScope.ProcurementBean.orderQuantity le 1}"
-                                   shortDesc="Decrease Quantity">
-                  <amx:setPropertyListener id="spl1" from="#{pageFlowScope.ProcurementBean.orderQuantity - 1}"
-                                           to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
-                </amx:commandButton>
-              </amx:cellFormat>
-              <amx:cellFormat id="cf6" width="55px" halign="center">
-                <amx:inputText id="it1" styleClass="EMA_QuantityCounter-input" inputType="number" simple="true"
-                               value="#{pageFlowScope.ProcurementBean.orderQuantity}" hintText="#{''}"/>
-              </amx:cellFormat>
-              <amx:cellFormat id="cf7" width="70px" halign="start" valign="middle">
-                <amx:commandButton id="cb6" icon="/resources/images/func_circleplus_24_ena.png"
-                                   shortDesc="Increase Quantity">
-                  <amx:setPropertyListener id="spl2" from="#{pageFlowScope.ProcurementBean.orderQuantity + 1}"
-                                           to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
-                </amx:commandButton>
-              </amx:cellFormat>
-              <amx:cellFormat id="cf8" width="100%" halign="center">
-                <amx:commandButton text="Add to Cart" id="cb7" styleClass="EMA_commandButton-blue"
-                                   shortDesc="Add to Cart"
-                                   actionListener="#{pageFlowScope.ProcurementBean.addProductToCart}"/>
-              </amx:cellFormat>
-            </amx:rowLayout>
-          </amx:tableLayout>
-        </amx:panelGroupLayout>
-      </amx:facet>
     </amx:panelStretchLayout>
+    <amx:facet name="footer">
+      <amx:tableLayout id="tl4" width="100%">
+        <amx:rowLayout id="rl4">
+          <amx:cellFormat id="cf5" width="75px" halign="end" valign="middle">
+            <amx:commandButton id="cb5" icon="/resources/images/func_circleminus_24_ena.png"
+                               disabled="#{pageFlowScope.ProcurementBean.orderQuantity le 1}"
+                               shortDesc="Decrease Quantity">
+              <amx:setPropertyListener id="spl1" from="#{pageFlowScope.ProcurementBean.orderQuantity - 1}"
+                                       to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
+            </amx:commandButton>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf6" width="55px" halign="center">
+            <amx:inputText id="it1" styleClass="EMA_QuantityCounter-input" inputType="number" simple="true"
+                           value="#{pageFlowScope.ProcurementBean.orderQuantity}" hintText="#{''}"/>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf7" width="70px" halign="start" valign="middle">
+            <amx:commandButton id="cb6" icon="/resources/images/func_circleplus_24_ena.png"
+                               shortDesc="Increase Quantity">
+              <amx:setPropertyListener id="spl2" from="#{pageFlowScope.ProcurementBean.orderQuantity + 1}"
+                                       to="#{pageFlowScope.ProcurementBean.orderQuantity}" type="action"/>
+            </amx:commandButton>
+          </amx:cellFormat>
+          <amx:cellFormat id="cf8" width="100%" halign="center">
+            <amx:commandButton text="Add to Cart" id="cb7" styleClass="EMA_commandButton" shortDesc="Add to Cart"
+                               actionListener="#{pageFlowScope.ProcurementBean.addProductToCart}"/>
+          </amx:cellFormat>
+        </amx:rowLayout>
+      </amx:tableLayout>
+    </amx:facet>
   </amx:panelPage>
   <amx:popup id="p1" shortDesc="Notification Popup" styleClass="EMA_notificationPopup" animation="slideDown"
              autoDismiss="true" backgroundDimming="on">

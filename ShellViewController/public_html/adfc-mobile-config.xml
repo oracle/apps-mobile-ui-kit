@@ -3,4 +3,10 @@
 Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
 Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
 -->
-<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0"></adfc-mobile-config>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <managed-bean id="__1">
+    <managed-bean-name>ThemesBean</managed-bean-name>
+    <managed-bean-class>oracle.apps.mafkit.application.ThemesBean</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+  </managed-bean>
+</adfc-mobile-config>

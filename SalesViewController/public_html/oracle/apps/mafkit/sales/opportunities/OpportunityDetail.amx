@@ -7,18 +7,20 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="primary">
-      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft_24_ena.png" action="list"
-                         iconPosition="leading" styleClass="EMA_primaryHeader-button" shortDesc="Back"/>
+      <amx:commandButton id="cb1" icon="/resources/images/func_caretleft.svg" action="list"
+                         iconPosition="leading" styleClass="EMA_primaryHeader-button" shortDesc="Back"
+                         iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:facet name="secondary">
-      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
-                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipses.svg" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button" iconDelivery="fetchAndInline">
         <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
                                alignId="pp1"/>
       </amx:commandButton>
       <amx:commandButton id="cb3" styleClass="EMA_secondaryHeader-button"
-                         icon="/resources/images/func_pencil_24_ena.png" iconPosition="leading" action="edit"
-                         shortDesc="Edit" actionListener="#{pageFlowScope.OpportunitiesBean.cachePreEditValues}"/>
+                         icon="/resources/images/func_pencil.svg" iconPosition="leading" action="edit"
+                         shortDesc="Edit" actionListener="#{pageFlowScope.OpportunitiesBean.cachePreEditValues}"
+                         iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:facet name="footer">
       <amx:tableLayout id="tl1" width="100%">
@@ -26,11 +28,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           <amx:cellFormat id="cf1" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
             <amx:commandLink id="cl1" shortDesc="Summary">
               <amx:panelGroupLayout id="pgl4" halign="center" scrollPolicy="none"
-                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Summary' or pageFlowScope.optyFooterTab == '' or pageFlowScope.optyFooterTab == null ? '' : 'EMA_UnselectedTab'}">
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Summary' or pageFlowScope.optyFooterTab == '' or pageFlowScope.optyFooterTab == null ? 'EMA_selectedTab-Footer' : 'EMA_unSelected-Footer'}">
                 <amx:image id="i1" styleClass="EMA_FooterTab-icon"
-                           shortDesc="Summary" source="/resources/images/func_summary_24_ena.png"/>
+                           shortDesc="Summary" source="/resources/images/func_summary.svg"
+                           sourceDelivery="fetchAndInline"/>
+                <amx:spacer id="s10" height="3"/>
                 <amx:outputText value="Summary" id="ot1"
-                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                                styleClass="EMA_truncate  EMA_2XSmallFontSize #{pageFlowScope.optyFooterTab == 'Summary' or pageFlowScope.optyFooterTab == '' or pageFlowScope.optyFooterTab == null ? '' : 'EMA_unSelected-FooterText'}"/>
                 <amx:spacer id="s1" height="3"/>
               </amx:panelGroupLayout>
               <amx:setPropertyListener id="spl1" from="#{'Summary'}" to="#{pageFlowScope.optyFooterTab}" type="action"/>
@@ -39,11 +43,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           <amx:cellFormat id="cf2" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
             <amx:commandLink id="cl2" shortDesc="Contacts">
               <amx:panelGroupLayout id="pgl5" scrollPolicy="none" halign="center"
-                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Contacts' ? '' : 'EMA_UnselectedTab'}">
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Contacts' ? 'EMA_selectedTab-Footer' : 'EMA_unSelected-Footer'}">
                 <amx:image id="i2" styleClass="EMA_FooterTab-icon"
-                           shortDesc="Contacts" source="/resources/images/func_contacts_24_ena.png"/>
+                           shortDesc="Contacts" source="/resources/images/func_contacts.svg"
+                           sourceDelivery="fetchAndInline"/>
+                <amx:spacer id="s9" height="3"/>
                 <amx:outputText value="Contacts" id="ot2"
-                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                                styleClass="EMA_truncate  EMA_2XSmallFontSize  #{pageFlowScope.optyFooterTab == 'Contacts' ? '' : 'EMA_unSelected-FooterText'}"/>
                 <amx:spacer id="s2" height="3"/>
               </amx:panelGroupLayout>
               <amx:setPropertyListener id="spl2" to="#{pageFlowScope.optyFooterTab}" type="action"
@@ -53,11 +59,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           <amx:cellFormat id="cf3" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
             <amx:commandLink id="cl3" shortDesc="Team">
               <amx:panelGroupLayout id="pgl6" halign="center" scrollPolicy="none"
-                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Team' ? '' : 'EMA_UnselectedTab'}">
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Team' ? 'EMA_selectedTab-Footer' : 'EMA_unSelected-Footer'}">
                 <amx:image id="i3" styleClass="EMA_FooterTab-icon"
-                           shortDesc="Team" source="/resources/images/func_group_24_ena.png"/>
+                           shortDesc="Team" source="/resources/images/func_team.svg"
+                           sourceDelivery="fetchAndInline"/>
+                <amx:spacer id="s8" height="3"/>
                 <amx:outputText value="Team" id="ot3"
-                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                                styleClass="EMA_truncate  EMA_2XSmallFontSize  #{pageFlowScope.optyFooterTab == 'Team' ? '' : 'EMA_unSelected-FooterText'}"/>
                 <amx:spacer id="s3" height="3"/>
               </amx:panelGroupLayout>
               <amx:setPropertyListener id="spl3" to="#{pageFlowScope.optyFooterTab}" type="action" from="#{'Team'}"/>
@@ -66,11 +74,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           <amx:cellFormat id="cf4" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
             <amx:commandLink id="cl4" shortDesc="Activities">
               <amx:panelGroupLayout id="pgl7" scrollPolicy="none" halign="center"
-                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Activities' ? '' : 'EMA_UnselectedTab'}">
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Activities' ? 'EMA_selectedTab-Footer' : 'EMA_unSelected-Footer'}">
                 <amx:image id="i4" styleClass="EMA_FooterTab-icon" shortDesc="Activities"
-                           source="/resources/images/func_calendarclipboard_24_ena.png"/>
+                           source="/resources/images/func_activities.svg"
+                           sourceDelivery="fetchAndInline"/>
+                <amx:spacer id="s7" height="3"/>
                 <amx:outputText value="Activities" id="ot4"
-                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                                styleClass="EMA_truncate  EMA_2XSmallFontSize  #{pageFlowScope.optyFooterTab == 'Activities' ? '' : 'EMA_unSelected-FooterText'}"/>
                 <amx:spacer id="s4" height="3"/>
               </amx:panelGroupLayout>
               <amx:setPropertyListener id="spl4" to="#{pageFlowScope.optyFooterTab}" type="action"
@@ -80,11 +90,13 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           <amx:cellFormat id="cf5" halign="center" width="#{deviceScope.hardware.screen.availableWidth * 0.2}px">
             <amx:commandLink id="cl5" shortDesc="Notes">
               <amx:panelGroupLayout id="pgl8" halign="center" scrollPolicy="none"
-                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Notes' ? '' : 'EMA_UnselectedTab'}">
+                                    styleClass="EMA_FooterTab #{pageFlowScope.optyFooterTab == 'Notes' ? 'EMA_selectedTab-Footer' : 'EMA_unSelected-Footer'}">
                 <amx:image id="i5" styleClass="EMA_FooterTab-icon"
-                           shortDesc="Notes" source="/resources/images/func_note_24_ena.png"/>
+                           shortDesc="Notes" source="/resources/images/func_notes.svg"
+                           sourceDelivery="fetchAndInline"/>
+                <amx:spacer id="s6" height="3"/>
                 <amx:outputText value="Notes" id="ot5"
-                                styleClass="EMA_truncate EMA_FooterText EMA_2XSmallFontSize"/>
+                                styleClass="EMA_truncate  EMA_2XSmallFontSize  #{pageFlowScope.optyFooterTab == 'Notes' ? '' : 'EMA_unSelected-FooterText'}"/>
                 <amx:spacer id="s5" height="3"/>
               </amx:panelGroupLayout>
               <amx:setPropertyListener id="spl5" type="action" to="#{pageFlowScope.optyFooterTab}" from="#{'Notes'}"/>

@@ -1,0 +1,267 @@
+/*
+ * Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+ * Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+ */
+
+/* Generic Theme Css */
+
+.EMA_themeBackground{
+    background-color: var(--GLOBAL_BACKGROUND_COLOR);
+}
+
+.EMA_globalBackground.amx-panelPage {
+    background-color: var(--GLOBAL_BACKGROUND_COLOR);
+    background-image: url("../images/bkgd_watermarkdandelions.png");
+    background-size: cover;
+}
+
+/* header css */
+.amx-panelPage-header, .headerBackGround {
+    background-color: var(--GLOBAL_BACKGROUND_COLOR);
+    background-image: var(--WATERMARK_NAME);
+    background-repeat: var(--BANNER_IMAGE);
+    background-size: cover;
+    border-color:var(--GLOBAL_BACKGROUND_COLOR);
+}
+
+.amx-panelPage-facet-secondary .amx-commandButton-label,
+.amx-panelPage-facet-primary .amx-commandButton-label,
+.amx-panelPage-facet-header .amx-outputText,
+.EMA_popup-slider.amx-popup > .amx-panelStretchLayout .amx-panelStretchLayout_top .amx-commandButton-label,
+.EMA_popup-slider.amx-popup > .amx-panelStretchLayout .amx-panelStretchLayout_bottom .amx-commandButton-label{
+    color: var(--GLOBAL_REGION_LABEL_COLOR);
+}
+
+.amx-commandLink, .amx-goLink {
+    color: var(--PAGE_LINK_COLOR);
+}
+
+.EMA_compactHeaderText.amx-outputText {
+    color: var(--HEADER_LABEL_COLOR);
+}
+
+/* Primary and Secondary Header */
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon01,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon02,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon03,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon04,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon05,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon06,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon07,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon08,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon09,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon10,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon11,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon12,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon13,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon14,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon15,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon16,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon17,
+.amx-panelPage-header .EMA_primaryHeader-button .svg-icon18,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon01,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon02, 
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon03,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon04,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon05,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon06,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon07,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon08,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon09,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon10,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon11,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon12,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon13,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon14,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon15,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon16,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon17,
+.amx-panelPage-header .EMA_secondaryHeader-button .svg-icon18 {
+    fill: var(--GLOBAL_REGION_LABEL_COLOR);
+}
+
+/* sub header css */
+
+.EMA_subHeaderColor {
+    background-color: var(--GLOBAL_BACKGROUND_COLOR);
+    background-image: var(--WATERMARK_NAME);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -64px;
+}
+
+
+/* popup slider css for tablet */
+
+.EMA_popup-slider.amx-popup > .amx-panelStretchLayout .amx-panelStretchLayout_top,
+.EMA_popup-slider.amx-popup > .amx-panelStretchLayout .amx-panelStretchLayout_bottom .amx-panelGroupLayout {
+    background-color: var(--GLOBAL_BACKGROUND_COLOR);
+}
+
+/* Generic for Svg */
+.svg-shortcut, .svg-cluster {
+    fill: transparent;
+}
+
+/* Footer Css */
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd01,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd03,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd04,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd05,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd06,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd07,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd08,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd09,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd10,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd11,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-bkgd12,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon01,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon09,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon10,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon11,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon12,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon13,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon14,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon15,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon16,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon17,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_selectedTab-Footer .svg-icon18 {
+    fill: var(--GLOBAL_REGION_LABEL_COLOR);
+}
+
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon01,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon02,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon03,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon04,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon05,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon06,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon07,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon08,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon09,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon10,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon11,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon12,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon13,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon14,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon15,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon16,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon17,
+.amx-panelPage-facet-footer.amx-panelPage-bar .EMA_unSelected-Footer .svg-icon18 {
+    fill: var(--GLOBAL_REGION_LABEL_COLOR);
+    opacity: .5;
+}
+
+.EMA_selectedTab-Text {
+    color: var(--SELECTION_COLOR);
+}
+
+/* Shuttle Icon Css */
+.EMA_shuttleList_Icon .svg-icon01,
+.EMA_shuttleList_Icon .svg-icon02,
+.EMA_shuttleList_Icon .svg-icon03,
+.EMA_shuttleList_Icon .svg-icon04,
+.EMA_shuttleList_Icon .svg-icon05,
+.EMA_shuttleList_Icon .svg-icon06,
+.EMA_shuttleList_Icon .svg-icon07,
+.EMA_shuttleList_Icon .svg-icon08,
+.EMA_shuttleList_Icon .svg-icon09,
+.EMA_shuttleList_Icon .svg-icon10,
+.EMA_shuttleList_Icon .svg-icon11,
+.EMA_shuttleList_Icon .svg-icon12,
+.EMA_shuttleList_Icon .svg-icon13,
+.EMA_shuttleList_Icon .svg-icon14,
+.EMA_shuttleList_Icon .svg-icon15,
+.EMA_shuttleList_Icon .svg-icon16,
+.EMA_shuttleList_Icon .svg-icon17,
+.EMA_shuttleList_Icon .svg-icon18 {
+    fill: #FFFFFF; 
+}
+
+
+/***********************changes******************/
+
+
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button {
+    background-image: url(../images/select_boolean_switch_on_enabled.svg);
+}
+
+html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button:active, html[dir=rtl] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.on .switch-button:active {
+    background-image: url(../images/select_boolean_switch_on_pressed.svg);
+}
+.EMA_global_logo{
+    background-image: url(../images/oraclelogowhite_125.png);
+    height: var(--LOGO_HEIGHT);
+    width: var(--LOGO_WIDTH);
+}
+.EMA_headerFilter{
+ color: var(--GLOBAL_REGION_LABEL_COLOR);
+ fill: var(--GLOBAL_REGION_LABEL_COLOR);
+}
+.amx-panelPage-footer{
+   background-color: var(--GLOBAL_BACKGROUND_COLOR);
+}
+
+.amx-panelPage-footer .amx-outputText.EMA_unSelected-FooterText{
+    opacity: .5;
+}
+.amx-panelPage-footer .amx-outputText{
+    color: var(--GLOBAL_REGION_LABEL_COLOR);
+}
+
+.EMA_text-login, 
+.EMA_text-login.amx-outputText, 
+.EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch .field-label{
+    color: var(--PAGE_LINK_COLOR);
+}
+
+.EMA_commandButton-login.amx-commandButton{
+    background-color: var(--BUTTON_BACKGROUND_END_COLOR);
+    color: var(--BUTTON_LABEL_COLOR);
+}
+.EMA_commandButton.amx-commandButton{
+    background-color: var(--BUTTON_BACKGROUND_START_COLOR);
+    color: var(--BUTTON_LABEL_COLOR);
+}
+.EMA_loginBooleanSwitch{
+  fill:  var(--GLOBAL_BACKGROUND_COLOR);
+}
+.EMA_pickerSearchContainer{
+background-color:  var(--GLOBAL_BACKGROUND_COLOR);
+opacity: .8;
+}
+:root{
+    --BUTTON_LABEL_COLOR: #ffffff;
+    --HEADER_LABEL_COLOR: #333333;
+    --BUTTON_BACKGROUND_START_COLOR: #0a6daa;
+    --GRID_ICON_BKGD_COLOR: #000000;
+    --PAGE_LINK_COLOR: #0a6daa;
+    --LOGO_WIDTH: 119px;
+    --GLOBAL_REGION_BKG_COLOR: Transparent;
+    --GLOBAL_REGION_LABEL_COLOR: #0a6daa;
+    --BANNER_IMAGE: url("../images/fuse-watermark-oracle.png");
+    --GRID_ICON_COLOR: #ffffff;
+    --LOGO_NAME: url(images/logo-oracle-dark.png);
+    --LOGO_HEIGHT: 25px;
+    --SELECTION_COLOR: #047bc4;
+    --GRID_ICON_INDICATOR_COLOR: #ffffff;
+    --BUTTON_BACKGROUND_END_COLOR: #0a6daa;
+    --CORNER_RADIUS: 3px;
+    --GRID_ICON_SIZE: 96px;
+    --GLOBAL_BACKGROUND_COLOR: #8cd3ff;
+    --WATERMARK_NAME: url("../images/fuse-watermark-oracle.png");
+    --BUTTON_BORDER_COLOR: #c4ced7;
+    --GRID_ICON_SHAPE: 50%;
+}
+/* To be kept as last item in the CSS file ddmmyy*/
+.version_EMA_THEME_R13 {
+    color: #240317;
+}

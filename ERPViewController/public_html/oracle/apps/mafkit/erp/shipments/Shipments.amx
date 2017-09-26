@@ -11,8 +11,8 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
-                         styleClass="EMA_primaryHeader-button"/>
+                         icon="/resources/images/func_springboard.svg" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:fragment src="/oracle/apps/mafkit/erp/placeholder/Blank.amxf" id="f1"/>
   </amx:panelPage>

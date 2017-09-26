@@ -7,9 +7,10 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt" xmlns:custom="http://xmlns.example.com/custom">
   <amx:panelPage id="pp1" styleClass="EMA_header-selectOneChoice">
     <amx:facet name="header">
-      <amx:commandButton id="cb5" styleClass="EMA_headerFilter EMA_text-white EMA_PageHeader"
+      <amx:commandButton id="cb5" styleClass="EMA_headerFilter EMA_PageHeader"
                          shortDesc="Hiring Context Switcher" text="#{pageFlowScope.HiringBean.contextSwitcher}"
-                         iconPosition="trailing" icon="/resources/images/func_arrowheaddown_20_ena.png"/>
+                         iconPosition="trailing" icon="/resources/images/func_caretdown.svg"
+                         iconDelivery="fetchAndInline"/>
       <amx:selectOneChoice label="#{''}" id="soc1" value="#{pageFlowScope.HiringBean.contextSwitcher}" simple="true"
                            styleClass="EMA_PageHeader">
         <amx:selectItem id="si1" label="Requisitions" value="Requisitions"/>
@@ -18,12 +19,12 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     </amx:facet>
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}" id="cb1"
-                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
-                         styleClass="EMA_primaryHeader-button"/>
+                         icon="/resources/images/func_springboard.svg" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:facet name="secondary">
-      <amx:commandButton id="cb2" icon="/resources/images/func_ellipsis_24_ena.png" iconPosition="leading"
-                         shortDesc="More" styleClass="EMA_secondaryHeader-button">
+      <amx:commandButton id="cb2" icon="/resources/images/func_ellipses.svg" iconPosition="leading"
+                         shortDesc="More" styleClass="EMA_secondaryHeader-button" iconDelivery="fetchAndInline">
         <amx:showPopupBehavior id="spb1" popupId="contextMenuPopup" type="action" align="overlapBottomCenter"
                                alignId="pp1"/>
       </amx:commandButton>

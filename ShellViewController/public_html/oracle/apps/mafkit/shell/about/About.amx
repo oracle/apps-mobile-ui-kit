@@ -12,8 +12,8 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
     <amx:facet name="primary">
       <amx:commandButton actionListener="#{bindings.toggleSpringboard.execute}"
                          disabled="#{!bindings.toggleSpringboard.enabled}" id="cb2"
-                         icon="/resources/images/func_springboard_24_ena.png" shortDesc="Springboard"
-                         styleClass="EMA_primaryHeader-button"/>
+                         icon="/resources/images/func_springboard.svg" shortDesc="Springboard"
+                         styleClass="EMA_primaryHeader-button" iconDelivery="fetchAndInline"/>
     </amx:facet>
     <amx:panelGroupLayout id="pgl1" halign="center">
       <amx:image id="i1" source="/resources/images/maf_rdk_logo.png"

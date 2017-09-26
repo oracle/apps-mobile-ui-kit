@@ -15,13 +15,20 @@ Oracle Applications Cloud.
 
 [Learn more about Oracle Applications Cloud UX RDK](http://www.oracle.com/webfolder/ux/applications/successStories/oracleApplicationsCloudRDK.html)
 
+What's New In This Release
+=====
+* Upgrade to MAF 2.4.x, Xcode 8.3.x, and iOS 10.x
+* Default theme set to Application Cloud R13 Blue
+* Ability to switch between three themes using the Settings feature
+* Use of SVG Icons in theme-able areas to simplify working with themes
+
 Instructions for using the RDK
 =====
 Read the included Technical eBook to understand how the RDK code is organized and how to run the sample application on an iOS Simulator from within JDeveloper.
 
 ## Pre-Requisites
 JDeveloper 12.2.1.0.0 or later
-MAF 2.3.2 or later
+MAF 2.4.1 or later
 
 ## Deployment Platforms
 Oracle MAF is a write once, deploy multiple times development environment. Aside from adjusting style classes for different mobile

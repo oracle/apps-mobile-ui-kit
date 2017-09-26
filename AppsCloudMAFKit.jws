@@ -32,7 +32,7 @@
       <hash><url n="URL" path="SalesViewController/SalesViewController.jpr"/></hash>
       <hash><url n="URL" path="ShellViewController/ShellViewController.jpr"/></hash>
    </list>
-   <value n="MafApplicationJitCleanRequired" v="true"/>
+   <value n="MafApplicationJitCleanRequired" v="false"/>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="Android1">
@@ -216,8 +216,8 @@
                <value n="debugFlag" v="false"/>
                <value n="disableAppTransportSecurity" v="true"/>
                <value n="pushNotificationEnvironment" v="development"/>
-               <value n="simulatorDeviceId" v="187E8F69-2968-4F98-AB71-5FE17AC78A44"/>
-               <value n="simulatorTarget" v="iPhone 6s (iOS 10.2 - iPhone 6s)"/>
+               <value n="simulatorDeviceId" v="520152F5-B364-4D73-9DE1-7507D55D58C7"/>
+               <value n="simulatorTarget" v="iPhone 7 (iOS 10.3 - iPhone 7)"/>
                <value n="targetFamilyVersion" v="iPhone"/>
             </hash>
             <url n="jarURL" path="deploy/iOS1/iOS1.jar/"/>

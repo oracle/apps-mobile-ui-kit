@@ -22,7 +22,61 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
         <extends>mafkit-alta</extends>
         <style-sheet-name>resources/css/mafkit-alta-skin-android.css</style-sheet-name>
     </skin>
-    <skin-addition id="s4">
+    <skin id="s4">
+        <id>mafkit-alta-brightBlue</id>
+        <family>mafkit-alta-brightBlue</family>
+        <extends>mafkit-alta</extends>
+        <style-sheet-name>resources/css/mafkit-alta-brightBlue.css</style-sheet-name>
+    </skin>
+    <skin id="s5">
+        <id>mafkit-alta-brightBlue.iOS</id>
+        <family>mafkit-alta-brightBlue</family>
+        <extends>mafkit-alta-brightBlue</extends>
+        <style-sheet-name>resources/css/mafkit-alta-brightBlue-ios.css</style-sheet-name>
+    </skin>
+    <skin id="s6">
+        <id>mafkit-alta-brightBlue.Android</id>
+        <family>mafkit-alta-brightBlue</family>
+        <extends>mafkit-alta-brightBlue</extends>
+        <style-sheet-name>resources/css/mafkit-alta-brightBlue-android.css</style-sheet-name>
+    </skin>
+    <skin id="s7">
+        <id>mafkit-alta-darkGrey</id>
+        <family>mafkit-alta-darkGrey</family>
+        <extends>mafkit-alta</extends>
+        <style-sheet-name>resources/css/mafkit-alta-darkGrey.css</style-sheet-name>
+    </skin>
+    <skin id="s8">
+        <id>mafkit-alta-darkGrey.iOS</id>
+        <family>mafkit-alta-darkGrey</family>
+        <extends>mafkit-alta-darkGrey</extends>
+        <style-sheet-name>resources/css/mafkit-alta-darkGrey-ios.css</style-sheet-name>
+    </skin>
+    <skin id="s9">
+        <id>mafkit-alta-darkGrey.Android</id>
+        <family>mafkit-alta-darkGrey</family>
+        <extends>mafkit-alta-darkGrey</extends>
+        <style-sheet-name>resources/css/mafkit-alta-darkGrey-android.css</style-sheet-name>
+    </skin>
+    <skin id="s10">
+        <id>mafkit-alta-crispGreen</id>
+        <family>mafkit-alta-crispGreen</family>
+        <extends>mafkit-alta</extends>
+        <style-sheet-name>resources/css/mafkit-alta-crispGreen.css</style-sheet-name>
+    </skin>
+    <skin id="s11">
+        <id>mafkit-alta-crispGreen.iOS</id>
+        <family>mafkit-alta-crispGreen</family>
+        <extends>mafkit-alta-crispGreen</extends>
+        <style-sheet-name>resources/css/mafkit-alta-crispGreen-ios.css</style-sheet-name>
+    </skin>
+    <skin id="s12">
+        <id>mafkit-alta-crispGreen.Android</id>
+        <family>mafkit-alta-crispGreen</family>
+        <extends>mafkit-alta-crispGreen</extends>
+        <style-sheet-name>resources/css/mafkit-alta-crispGreen-android.css</style-sheet-name>
+    </skin>
+    <skin-addition id="s13">
         <skin-id>mafkit-alta</skin-id>
         <style-sheet-name>resources/css/mafkit-custom-components.css</style-sheet-name>
     </skin-addition>

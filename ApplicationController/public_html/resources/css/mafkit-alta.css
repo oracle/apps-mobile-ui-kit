@@ -909,7 +909,7 @@ html[dir=rtl] .amx-panelPage-facet-primary .amx-commandButton-back:after{
 
 
 .EMA_FooterTab-icon.amx-image{
-    height: 32px;
+    height: 24px;
     width: 32px;
 }
 
@@ -1126,7 +1126,9 @@ html[dir=rtl] .amx-panelPage-facet-primary .amx-commandButton-back:after{
 .EMA_inputText .amx-inputText-content {
     color: #0572CE;
 }
-
+.EMA_QuantityCounter-input.amx-inputText{
+ width:55px !important;
+}
 .EMA_QuantityCounter-input.amx-inputText .field-value{
     padding: 0px;
 }
@@ -2109,3 +2111,342 @@ html[dir=ltr] .EMA_selectBooleanSwitch-login.amx-selectBooleanSwitch.off .switch
 /**********************************
 *********OPPORTUNITY END***********
 **********************************/
+
+/**********************************
+***********Notification************
+**********************************/
+
+.EMA_applicationBadge.amx-commandButton .amx-commandButton-label{
+    background-color: #CC3300;
+    border: 1px solid #FFECE6;
+    font-size: 12px;
+    font-weight: bold;
+    height: 16px;
+    min-width: 16px;
+    border-radius: 8px;
+    line-height: 1.1;
+    padding: 0px 3px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block !important;
+    color:#FFFFFF;
+}
+
+/**********************************
+********Notification END***********
+**********************************/
+
+/*********************************
+*******CUSTOM SEARCH START********
+*********************************/
+.EMA_pickerSearchContainer{
+    z-index: 5;
+    background-color: rgba(66, 67, 69, 0.80);
+    padding: 9px 10px 6px 10px;
+}
+.EMA_mapSearchContainer .csearch{
+    position: relative;
+}
+
+.EMA_pickerSearchContainer.amx-panelGroupLayout a.clear_button_visible,
+.EMA_mapSearchContainer.EMA_pickerSearchContainer.amx-panelGroupLayout a.clear_button_visible{
+    top: 2px;
+    right: 0px;
+}
+.searchEnabled {
+    padding: 6px 15px 6px 30px;
+    background: url("../images/2X_Images/func_search_16_ena@2x.png")no-repeat 4px 3px;
+    background-size: 24px;
+    text-align: left;
+}
+
+.csearch {
+    padding-bottom: 3px;
+}
+
+.csearch input {
+    padding-left: 30px !important;
+    color: #000000;
+    height: 28px;
+}
+
+.rounded {
+    border-radius: 14px;
+    background-color: #FFFFFF !important;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.search {
+    padding: 6px 15px 6px 30px;
+    background: url("../images/func_search_16_ena.png")no-repeat 4px 3px;
+    background-size: 24px;
+}
+input.search:placeholder-shown {
+    text-align: center;
+}
+input.search:placeholder-shown:focus {
+    text-align: left;
+}
+.clear_button_visible {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/2X_Images/func_clear_16_ena@2x.png");
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+a#customSearchBoxanchor.clear_button_visible {
+    right: 5px;
+}
+.EMA_clearSearchContainer.amx-panelGroupLayout a.clear_button_visible{
+  top: 15px;
+    right: 80px;
+}
+/*********************************
+********CUSTOM SEARCH END*********
+*********************************/
+
+/*********************************
+************LIST VIEW*************
+*********************************/
+.amx-outputText.EMA_emptyListText {
+    font-size: 30px;
+    color: #878787;
+    padding: 10px;
+}
+
+.EMA_NoListDividers.amx-listView .amx-listItem,
+.EMA_NoListDividers.amx-listView .amx-listItem:active {
+    background-image: none;
+}
+
+.EMA_AddSelectionState.amx-listView .amx-listItem.amx-listItem-selected{
+background-color: #DCDCDE;
+}
+
+.EMA_standardListView.amx-listView .amx-listItem{
+  padding: 5px 0px 5px 10px;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout_content {
+  padding: 5px 0px 5px 10px;
+  box-sizing: border-box;
+}
+
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink{
+  display: none;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(1), 
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(2){
+  display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(3):nth-last-child(2){
+  display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:last-child.EMA_standardListView-accessoryButton-more{
+  display: table-cell;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(1):last-child.EMA_standardListView-accessoryButton-more, 
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(2):last-child.EMA_standardListView-accessoryButton-more, 
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(3):last-child.EMA_standardListView-accessoryButton-more, 
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout .EMA_standardListView-accessoryButton.amx-commandLink:nth-child(4):last-child.EMA_standardListView-accessoryButton-more{
+  display: none;
+}
+
+.EMA_listViewSearch-watermark{
+    margin-top: 40%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.EMA_listViewSearch-watermark-image{
+    width: 125px;
+    height: 125px;
+}
+
+html[dir=ltr] .EMA_standardListViewCaret.amx-listItem .amx-listItem-caret{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAw0lEQVR42qXUMQoCMRCFYUFYWLASBGFB8BKCB1lvmEoQtrIVPICVYCUIHsAbxDfg+qYQZ4Yp/jQhHyQkmdRav+36fooKOqCGc3YaadAe1U9DBNPIQCSOCdKiowbiGKETqhlMhiRGSGPnOEYoiRFKYoTyGKE89hsiNvNiXJjDigeao8sf5IU2FrLwINZhL9HVg0gpxLqQHboZyNZ6IoLc/QjTyCqOsBFZo0ccYeN2nhlE4n9tIInPn4gb0piBmJDGChF/b1g2T6rFGc2MAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+    right: 10px;
+    background-position: center;
+}
+
+html[dir=rtl] .EMA_standardListViewCaret.amx-listItem .amx-listItem-caret{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAaCAYAAAC6nQw6AAAAt0lEQVR42qXUwQZCQRjF8YghWkXEJXqJ6EFubziriFm1jR6gVbSK6AF6g+kMHWaRe+Z2Fv9vM5/f6jOTnHNz+74P6IgimtZvY5GE8rcDCgKSCEvEHISd0MxB2JmQjZR9B7kQKdkIsxFmI8xG2Bhk/guooegihLboPQBd0UJCGK3YUkGt2A2tBGRgA5e9E9gddQJqxh7EasjB1jXkYE+0IeRiL9SVZRdLKAhEYPrz11iNEPoHi0TYB4sKT6pjfEGoAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-size: 9px 13px;
+    left: 10px;
+    background-position: center;
+}
+
+.amx-panelFormLayout .EMA_standardListViewCaret.amx-listItem:last-child{
+    background-image: none;
+}
+/*********************************
+**********LIST VIEW END***********
+*********************************/
+
+/*********************************
+*******PROCUREMENT START**********
+*********************************/
+
+.EMA_productImageFrame{
+    border: 1px solid #CCCCCC;
+    border-radius: 50%; 
+    padding: 10px; 
+    width: 40px; 
+    height: 40px;
+}
+
+.EMA_image16{
+    width: 16px; 
+    height: 16px;
+}
+
+.EMA_image25{
+    width: 25px; 
+    height: 25px;
+}
+
+.EMA_image40{
+    width: 40px; 
+    height: 40px;
+}
+
+.EMA_image50{
+    width: 50px; 
+    height: 50px;
+}
+
+.EMA_image70{
+    width: 70px; 
+    height: 70px;
+}
+
+.EMA_image100{
+    width: 100px; 
+    height: 100px;
+}
+
+.EMA_image200{
+    width: 200px; 
+    height: 200px;
+}
+
+.EMA_noWrap, .EMA_noWrap.amx-outputText {
+    white-space: nowrap;
+}
+.EMA_preWrap, .EMA_preWrap.amx-outputText {
+    white-space: pre-wrap;
+}
+
+.EMA_padding10 {
+    padding: 10px;
+}
+
+.EMA_paddingVertical10 {
+    padding: 10px 0px 10px 0px;
+}
+
+.EMA_hiringCardArrow {
+    padding: 0px 5px 25px 5px;
+}
+
+.EMA_standardListView-accessory.amx-listView .amx-listItem .amx-accessoryLayout_content {
+  padding: 5px 0px 5px 10px;
+  box-sizing: border-box;
+}
+
+html .EMA_listView-card.amx-listView-cards .amx-listItem{
+display: inline-block;
+vertical-align: top;
+width: 172px;
+height: auto;
+background-image: none;
+border: none;
+background-color: transparent;
+box-sizing: border-box;
+margin-top: 10px;
+margin-left: 10px;
+margin-bottom: 0;
+padding: 10px;
+}
+
+/*********************************
+********PROCUREMENT END***********
+*********************************/
+
+/*********************************
+********SHIPMENT START************
+*********************************/
+
+.EMA_timeline-canvas{
+    background-color: rgb(245, 245, 245); 
+    padding: 0px 10px;
+}
+/*********************************
+*********SHIPMENT END*************
+*********************************/
+
+/*********************************
+*********HIRING START*************
+*********************************/
+
+.EMA_cardListView.amx-listView .amx-listItem .EMA_cardListContent{
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+.EMA_roundTopCorners5{
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+.EMA_roundBottomCorners5{
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+.EMA_dottedLine{
+    background-image: linear-gradient(transparent 20%, rgba(242, 247, 255, 0.8) 100%);
+    background-position: right;
+    background-size: 1.5px 7px;
+    background-repeat: repeat-y;
+}
+
+.EMA_candidateSubmission{
+    height:110px;
+    width:300px;
+}
+
+.EMA_lightGreySeparator{
+    border-top: 1px solid #D5DFD5; 
+}
+
+.EMA_darkGreySeparator{
+    border-top: 1px solid #666666; 
+}
+
+.EMA_darkerGreySeparator{
+    border-top: 1px solid #333333; 
+}
+
+.EMA_candidateContentTab{
+    opacity : 0.5;
+}
+
+/*********************************
+**********HIRING END**************
+*********************************/

@@ -10,7 +10,7 @@ Licensed under the Universal Permissive License v 1.0 as shown at http://oss.or
       <amx:facet name="top">
         <amx:panelGroupLayout id="pgl1" layout="vertical" halign="center">
           <amx:spacer id="s1" height="90"/>
-          <amx:outputText value="Apps UX Mobile" id="ot1" styleClass="EMA_text-white EMA_5XLargeFontSize"/>
+          <amx:outputText value="Mobile Apps UX" id="ot1" styleClass="EMA_text-white EMA_5XLargeFontSize"/>
           <amx:outputText value="Rapid Development Kit" id="ot3" styleClass="EMA_text-white EMA_4XLargeFontSize"/>
           <amx:spacer id="s2" height="60"/>
         </amx:panelGroupLayout>
